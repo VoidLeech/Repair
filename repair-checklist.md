@@ -1,8 +1,8 @@
 This is an incomplete list of issues, pull requests or commits that fix bugs (or are 1.20.1 exclusive bugs)
 
 ## Easy
-- [ ] https://github.com/Creators-of-Create/Create/pull/9658  
-- [ ] https://github.com/Creators-of-Create/Create/pull/9652  
+- [x] https://github.com/Creators-of-Create/Create/pull/9658  
+- [x] https://github.com/Creators-of-Create/Create/pull/9652  
 - [ ] https://github.com/Creators-of-Create/Create/issues/9448  
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500  
 - [ ] https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c  

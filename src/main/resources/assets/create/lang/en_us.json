@@ -1,0 +1,5 @@
+{
+  "create.ponder.speedometer.text_3": "Comparators can emit analog Redstone Signals relative to the Speedometer's measurements",
+  "tag.item.create.stone_types.galosphere.amethyst": "Amethyst",
+  "create.ponder.cart_assembler_dual.text_1": "Whenever two Cart Assemblers share an attached structure..."
+}
