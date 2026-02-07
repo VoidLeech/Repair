@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.create_repair.refmap.json",
   "mixins": [
-    "ContraptionUOEMixin",
-    "DeployerNotifyUpdateMixin",
+    "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "InventoryIdentifier$PairMixin",
     "LecternControllerPrintingMixin"
   ],
   "client": [

@@ -28,7 +28,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
 
 ## Hard
-- [ ] Fix stock being visually multiplied with multiple stock links on the same inventory https://github.com/Creators-of-Create/Create/pull/9793 (modifies the constructor, not sure if we can do that)
 - [ ] [#9459](https://github.com/Creators-of-Create/Create/issues/9459 ) uses a hacky mixin fix to never call setchanged on the client;
 it's simple but it's gross and might miss edge cases. the proper fix presumably requires asm to replace the class
 
@@ -43,4 +42,5 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9652
 - [x] https://github.com/Creators-of-Create/Create/issues/9448
 - [x] https://github.com/Creators-of-Create/Create/commit/dd133f667969870dd6e9b96395097ac93cd91ced
-- [x] https://github.com/Creators-of-Create/Create/issues/9459 
+- [x] https://github.com/Creators-of-Create/Create/issues/9459
+- [x] https://github.com/Creators-of-Create/Create/pull/9793

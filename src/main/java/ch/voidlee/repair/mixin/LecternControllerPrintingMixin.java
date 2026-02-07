@@ -17,7 +17,7 @@ public class LecternControllerPrintingMixin {
     private ItemStackHandler controllerFreq;
 
     @Inject(method="<init>", at=@At("RETURN"))
-    private void init(BlockEntityType<?> type, BlockPos pos, BlockState state, CallbackInfo ci) {
+    private void create_repair$initializeHandler(BlockEntityType<?> type, BlockPos pos, BlockState state, CallbackInfo ci) {
         this.controllerFreq = new ItemStackHandler(12);
     }
 }
