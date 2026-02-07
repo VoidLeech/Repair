@@ -2,11 +2,14 @@
   "required": true,
   "package": "ch.voidlee.repair.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "mixins.create_repair.refmap.json",
+  "refmap": "create_repair.refmap.json",
   "mixins": [
     "ContraptionUOEMixin"
   ],
   "client": [
   ],
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "minVersion": "0.8"
 }
