@@ -1,4 +1,10 @@
 package ch.voidlee.repair;
 
-public class RepairClient {
+import net.fabricmc.api.ClientModInitializer;
+
+public class RepairClient implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
+
+    }
 }
