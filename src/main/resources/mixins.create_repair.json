@@ -5,6 +5,7 @@
   "refmap": "mixins.create_repair.refmap.json",
   "mixins": [
     "ContraptionUOEMixin",
+    "DeployerNotifyUpdateMixin",
     "LecternControllerPrintingMixin"
   ],
   "client": [
