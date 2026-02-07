@@ -10,7 +10,7 @@ public class Repair {
     public static final String MOD_ID = "create_repair";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public Repair(FMLJavaModLoadingContext context)
+    public Repair()
     {
 
     }
