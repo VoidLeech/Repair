@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// https://github.com/Creators-of-Create/Create/issues/9448
 @Mixin(LecternControllerBlockEntity.class)
 public class LecternControllerPrintingMixin {
     @Shadow
