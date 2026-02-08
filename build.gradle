@@ -87,15 +87,21 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+    maven {
+        name = "Su5eD"
+        url = uri("https://maven.su5ed.dev/releases")
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    compileOnly(annotationProcessor "org.sinytra:sponge-mixin:0.12.11+mixin.0.8.5")
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixinextras_version}"))
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:${mixinextras_version}")) {
         jarJar.ranged(it, "[${mixinextras_version},)")
     }
+
+    implementation("org.sinytra.mixinbooster:mixin-booster:${mixinbooster_version}")
 
     // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
