@@ -26,7 +26,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] BE setRemoved not called https://github.com/Creators-of-Create/Create/issues/9821
 - [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
 - [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
-- [ ] Backtank glint when worn https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
   
 ## Medium
 - [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
