@@ -19,7 +19,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Cauldron crashes upon getting filled by Spout https://github.com/Creators-of-Create/Create/issues/9547
 - [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
 - [ ] Destroy blocks when growing tree with fertilizer https://github.com/Creators-of-Create/Create/pull/9758
-- [ ] Make FluidPropagator check for `PumpBlock` instead of `AllBlocks.MECHANICAL_PUMP` https://github.com/Creators-of-Create/Create/pull/9763 (assuming no mixin conflicts)
 - [ ] Fix Attribute Filter insertion https://github.com/Creators-of-Create/Create/pull/9729
 - [ ] Make pressing `E` not close the Train Schedule menu when typing https://github.com/Creators-of-Create/Create/pull/9735
 - [ ] Fix backtanks not having the enchantment glint when worn https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
@@ -49,6 +48,7 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [ ] Contraption collision optimization? Will really depend on whether that's safely doable.
 
 ## Done!
+- [x] https://github.com/Creators-of-Create/Create/pull/9763
 - [x] https://github.com/Creators-of-Create/Create/pull/9658
 - [x] https://github.com/Creators-of-Create/Create/pull/9652
 - [x] https://github.com/Creators-of-Create/Create/issues/9448
