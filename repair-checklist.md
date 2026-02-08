@@ -23,7 +23,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
 - [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
 - [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
-- [ ] BE setRemoved not called https://github.com/Creators-of-Create/Create/issues/9821
 - [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
 - [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
   
@@ -53,4 +52,5 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9459
 - [x] https://github.com/Creators-of-Create/Create/pull/9793
 - [x] https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
-- [x] Destroy blocks when growing tree with fertilizer https://github.com/Creators-of-Create/Create/pull/9758
+- [x] https://github.com/Creators-of-Create/Create/pull/9758
+- [x] https://github.com/Creators-of-Create/Create/issues/9821

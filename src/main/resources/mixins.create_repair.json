@@ -13,7 +13,8 @@
   ],
   "client": [
     "client.BacktankArmorLayerMixin",
-    "client.LayeredBacktankItemMixin"
+    "client.LayeredBacktankItemMixin",
+    "client.VirtualRenderWorldMixin"
   ],
   "minVersion": "0.8"
 }
