@@ -33,7 +33,7 @@ public abstract class LayeredBacktankItemMixin extends BacktankItem implements L
         HumanoidArmorLayerAccessor accessor = (HumanoidArmorLayerAccessor) layer;
         boolean glint = stack.hasFoil();
         if (glint) {
-            accessor.create$getOuterModel().renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.armorEntityGlint()), light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            accessor.create$getInnerModel().renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.armorEntityGlint()), light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
             accessor.create$getOuterModel().renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.armorEntityGlint()), light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
