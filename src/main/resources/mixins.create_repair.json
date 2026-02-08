@@ -11,6 +11,8 @@
     "LecternControllerPrintingMixin"
   ],
   "client": [
+    "client.BacktankArmorLayerMixin",
+    "client.LayeredBacktankItemMixin"
   ],
   "minVersion": "0.8"
 }
