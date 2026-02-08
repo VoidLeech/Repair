@@ -8,7 +8,8 @@
     "DeployerNotifyUpdateMixin",
     "FluidPropagatorMixin",
     "InventoryIdentifier$PairMixin",
-    "LecternControllerPrintingMixin"
+    "LecternControllerPrintingMixin",
+    "TreeFertilizerItemMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",

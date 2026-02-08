@@ -18,7 +18,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
 - [ ] Cauldron crashes upon getting filled by Spout https://github.com/Creators-of-Create/Create/issues/9547
 - [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
-- [ ] Destroy blocks when growing tree with fertilizer https://github.com/Creators-of-Create/Create/pull/9758
 - [ ] Fix Attribute Filter insertion https://github.com/Creators-of-Create/Create/pull/9729
 - [ ] Make pressing `E` not close the Train Schedule menu when typing https://github.com/Creators-of-Create/Create/pull/9735
 - [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
@@ -55,3 +54,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9459
 - [x] https://github.com/Creators-of-Create/Create/pull/9793
 - [x] https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
+- [x] Destroy blocks when growing tree with fertilizer https://github.com/Creators-of-Create/Create/pull/9758
