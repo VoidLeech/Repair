@@ -18,9 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LayeredArmorItem.class)
 public interface LayeredArmorItemMixin {
     @Inject(method="renderModel", at = @At(value = "TAIL"), remap = false)
-    private void create_repair$armorGlint(PoseStack poseStack, MultiBufferSource bufferSource, int light, ArmorItem item, Model model, boolean glint, float red, float green, float blue, ResourceLocation armorResource, CallbackInfo ci) {
-    if (glint) {
-        model.renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.armorEntityGlint()), light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+    private void create_repair$armorGlint(PoseStack poseStack, MultiBufferSource bufferSource, int light, ArmorItem item, Model model,
+                                          boolean glint, float red, float green, float blue, ResourceLocation armorResource, CallbackInfo ci) {
+        if (glint) {
+            model.renderToBuffer(poseStack, bufferSource.getBuffer(RenderType.armorEntityGlint()), light, OverlayTexture.NO_OVERLAY, red, green, blue, 1.0F);
+        }
     }
-}
 }
