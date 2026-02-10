@@ -1,3 +1,8 @@
+/*
+* Released under the terms of the MPL-2.0 license (see other-licenses/mpl-registrate)
+* as this is essentially a translation of a MPL-2.0 licensed Java patch into the Mixin DSL.
+*/
+
 package ch.voidlee.repair.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
