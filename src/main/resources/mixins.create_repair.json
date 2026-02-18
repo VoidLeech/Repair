@@ -5,7 +5,8 @@
   "refmap": "mixins.create_repair.refmap.json",
   "mixins": [
     "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "FluidBuilderMixin", "FluidPropagatorMixin",
-    "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin", "TreeFertilizerItemMixin"
+    "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin", "RotationPropagatorMixin",
+    "TreeFertilizerItemMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",

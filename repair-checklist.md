@@ -6,6 +6,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Optimization
 - [ ] Funnel Extraction, MountedItemStorageWrapper https://github.com/Creators-of-Create/Create/issues/9706
+- [ ] Contraption collision optimization? Will really depend on whether that's safely doable while still providing a performance improvement.
 
 ## Recipes
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
@@ -25,6 +26,8 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
 - [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
 - [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
+- [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
+- [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
   
 ## Medium
 - [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
@@ -33,15 +36,11 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] CC Tweaked Train Disassembly Crashing https://github.com/Creators-of-Create/Create/issues/9843
 
 ## Hard
-- [ ] [#9459](https://github.com/Creators-of-Create/Create/issues/9459 ) uses a hacky mixin fix to never call setchanged on the client;
+- [ ] [#9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
 it's simple but it's gross and might miss edge cases. the proper fix presumably requires asm to replace the class
 
 ## Unsorted
-- [ ] Adjustable Chain Gearshifts crashing due to float imprecision https://github.com/Creators-of-Create/Create/pull/9803
-- [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
 - [ ] Encased Fan shaft texture fix, Train Disassembly with CC Computer attached fixed, Fix Bottomless Limit being over by 1 https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
-- [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
-- [ ] Contraption collision optimization? Will really depend on whether that's safely doable.
 
 ## Done!
 - [x] https://github.com/Creators-of-Create/Create/pull/9763
@@ -54,3 +53,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
 - [x] https://github.com/Creators-of-Create/Create/pull/9758
 - [x] https://github.com/Creators-of-Create/Create/issues/9821
+- [x] https://github.com/Creators-of-Create/Create/pull/9803

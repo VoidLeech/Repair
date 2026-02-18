@@ -27,5 +27,5 @@ This project is released under the [MIT license](LICENSE).
 [FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/FluidBuilderMixin.java) is released under the [MPL-2.0 license](other-licenses/mpl_registrate)
 
 #### Third-Party Content
-By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](other-licenses/mit-create).
+By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](other-licenses/mit-create).  
 FluiderBuilderMixin (see above) is based on a commit to Registrate and thus licensed accordingly.
