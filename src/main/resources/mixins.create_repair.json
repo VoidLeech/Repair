@@ -6,7 +6,7 @@
   "mixins": [
     "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "FluidBuilderMixin", "FluidPropagatorMixin",
     "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin", "RotationPropagatorMixin",
-    "TreeFertilizerItemMixin"
+    "SchematicPrinterMixin", "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",

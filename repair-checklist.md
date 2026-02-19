@@ -1,7 +1,6 @@
 This is an incomplete list of issues, pull requests or commits that fix bugs (or are 1.20.1 exclusive bugs)
 
 ## Dupes / Inverse Dupes
-- [ ] Infinite Money Glitch with the Placard and schematics https://github.com/Creators-of-Create/Create/issues/9511
 - [ ] Postbox dupes if broken while menu open https://github.com/Creators-of-Create/Create/pull/9802
 
 ## Optimization
@@ -15,7 +14,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Crafting using waxed blocks https://github.com/Creators-of-Create/Create/pull/9801
 
 ## Easy
-- [ ] Track Node imprecision https://github.com/Creators-of-Create/Create/issues/9509
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
 - [ ] Cauldron crashes upon getting filled by Spout https://github.com/Creators-of-Create/Create/issues/9547
 - [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
@@ -36,7 +34,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] CC Tweaked Train Disassembly Crashing https://github.com/Creators-of-Create/Create/issues/9843
 
 ## Hard
-- [ ] [#9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
+- [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
 it's simple but it's gross and might miss edge cases. the proper fix presumably requires asm to replace the class
 
 ## Unsorted
@@ -54,3 +52,5 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9758
 - [x] https://github.com/Creators-of-Create/Create/issues/9821
 - [x] https://github.com/Creators-of-Create/Create/pull/9803
+- [x] https://github.com/Creators-of-Create/Create/issues/9511
+- [x] https://github.com/Creators-of-Create/Create/issues/9509
