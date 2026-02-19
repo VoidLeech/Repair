@@ -23,7 +23,7 @@ All of the above are subject to the difficulty of actually implementing them, ta
 **A:** No.
 
 ### Licensing
-This project is released under the [MIT license](LICENSE).
+This project is released under the [MIT license](LICENSE).  
 [FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/FluidBuilderMixin.java) is released under the [MPL-2.0 license](other-licenses/mpl_registrate)
 
 #### Third-Party Content
