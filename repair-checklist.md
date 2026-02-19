@@ -16,7 +16,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 ## Easy
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
 - [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
-- [ ] Fix Attribute Filter insertion https://github.com/Creators-of-Create/Create/pull/9729
 - [ ] Make pressing `E` not close the Train Schedule menu when typing https://github.com/Creators-of-Create/Create/pull/9735
 - [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
 - [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
@@ -54,3 +53,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9509
 - [x] https://github.com/Creators-of-Create/Create/issues/9843 
 - [x] https://github.com/Creators-of-Create/Create/issues/9547
+- [x] https://github.com/Creators-of-Create/Create/pull/9729

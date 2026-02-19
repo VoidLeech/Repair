@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/issues/9792
 // https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c
 @Mixin(BacktankArmorLayer.class)
-public class BacktankArmorLayerMixin {
+public abstract class BacktankArmorLayerMixin {
     @WrapOperation(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/MultiBufferSource;getBuffer(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;"))
     public VertexConsumer create_repair$useFoilBuffer(MultiBufferSource instance, RenderType renderType, Operation<VertexConsumer> original,
                                                       PoseStack ms, MultiBufferSource buffer, int light, LivingEntity entity, float yaw, float pitch,

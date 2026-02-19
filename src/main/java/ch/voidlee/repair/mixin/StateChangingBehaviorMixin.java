@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 
 // https://github.com/Creators-of-Create/Create/commit/640d35c3cbba4002bcd46c0eb016bcff8ebd78f9
 @Mixin(StateChangingBehavior.class)
-public class StateChangingBehaviorMixin {
+public abstract class StateChangingBehaviorMixin {
     @WrapMethod(method = "incrementingState", remap = false)
     private static BlockSpoutingBehaviour create_repair$missingCauldronLevel(int amount, Predicate<Fluid> fluidTest, IntegerProperty property, Operation<BlockSpoutingBehaviour> original){
         StateChangingBehavior orig = (StateChangingBehavior) original.call(amount, fluidTest, property);

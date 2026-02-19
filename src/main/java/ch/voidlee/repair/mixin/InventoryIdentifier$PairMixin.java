@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // https://github.com/Creators-of-Create/Create/pull/9793
 @Mixin(InventoryIdentifier.Pair.class)
-public class InventoryIdentifier$PairMixin {
+public abstract class InventoryIdentifier$PairMixin {
     @Mutable
     @Final
     @Shadow

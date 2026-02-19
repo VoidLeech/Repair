@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/commit/b91757a3a55205e9888e70fb5cb5c2380b4724c7
 @Mixin(TrackNodeLocation.class)
-public class TrackNodeLocationMixin {
+public abstract class TrackNodeLocationMixin {
     @ModifyExpressionValue(method = "<init>(DDD)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;floor(F)I", ordinal = 0))
     private static int create_repair$longRangeFloat1(int original, @Local(ordinal = 0, argsOnly = true) double x){
         return Mth.floor((double)Math.round(x * 2));

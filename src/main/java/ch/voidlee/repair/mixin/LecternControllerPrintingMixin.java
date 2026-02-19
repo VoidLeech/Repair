@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // https://github.com/Creators-of-Create/Create/issues/9448
 @Mixin(LecternControllerBlockEntity.class)
-public class LecternControllerPrintingMixin {
+public abstract class LecternControllerPrintingMixin {
     @Shadow
     private ItemStackHandler controllerFreq;
 

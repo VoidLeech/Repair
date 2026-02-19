@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // https://github.com/Creators-of-Create/Create/pull/9758
 @Mixin(TreeFertilizerItem.class)
-public class TreeFertilizerItemMixin {
+public abstract class TreeFertilizerItemMixin {
     @Inject(method = "useOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
     public void create_repair$dropBlocksWhenReplaced(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, @Local(name = "actualPos") BlockPos actualPos) {
         context.getLevel().destroyBlock(actualPos, true);
