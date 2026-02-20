@@ -6,6 +6,7 @@ import com.simibubi.create.Create;
 import com.simibubi.create.content.trains.schedule.ScheduleMenu;
 import com.simibubi.create.content.trains.schedule.ScheduleScreen;
 import com.simibubi.create.foundation.gui.menu.AbstractSimiContainerScreen;
+import io.github.fabricators_of_create.porting_lib.util.KeyBindingHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.spongepowered.asm.mixin.Mixin;
@@ -32,7 +33,7 @@ public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<Sc
     // Expressions can't target the necessary code for an 'easy' diff. Also we need to inject in two places to actually fix it due to bytecode getting reordered in compilation
     @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V"), remap = false, cancellable = true)
     private void create_repair$allowTypingE1(int pKeyCode, int pScanCode, int pModifiers, CallbackInfoReturnable<Boolean> cir, @Local(name = "hitEnter") boolean hitEnter, @Local(name = "mouseKey") InputConstants.Key mouseKey){
-        boolean hitE = getFocused() == null || minecraft.options.keyInventory.isActiveAndMatches(mouseKey);
+        boolean hitE = getFocused() == null || KeyBindingHelper.isActiveAndMatches(minecraft.options.keyInventory, mouseKey);
         if (hitEnter) {
             Create.LOGGER.warn("Enter");
             return;
@@ -48,7 +49,7 @@ public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<Sc
 
     @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/gui/menu/AbstractSimiContainerScreen;keyPressed(III)Z", ordinal = 1), remap = false, cancellable = true)
     private void create_repair$allowTypingE2(int pKeyCode, int pScanCode, int pModifiers, CallbackInfoReturnable<Boolean> cir, @Local(name = "hitEnter") boolean hitEnter, @Local(name = "mouseKey") InputConstants.Key mouseKey){
-        boolean hitE = getFocused() == null || minecraft.options.keyInventory.isActiveAndMatches(mouseKey);
+        boolean hitE = getFocused() == null || KeyBindingHelper.isActiveAndMatches(minecraft.options.keyInventory, mouseKey);
         if (hitEnter) {
             onEditorClose.accept(true);
             stopEditing();

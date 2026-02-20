@@ -5,7 +5,7 @@
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
-    "AttributeFilterMenuMixin", "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "FluidBuilderMixin",
+    "AttributeFilterMenuMixin", "ContraptionUOEMixin", "DeployerNotifyUpdateMixin",
     "FluidPropagatorMixin", "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin",
     "RotationPropagatorMixin", "SchematicPrinterMixin", "StateChangingBehaviorMixin", "StationBlockEntityMixin",
     "TrackNodeLocationMixin", "TreeFertilizerItemMixin"

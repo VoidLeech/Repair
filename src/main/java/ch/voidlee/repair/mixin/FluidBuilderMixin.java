@@ -5,6 +5,7 @@
 
 package ch.voidlee.repair.mixin;
 
+/* Probably still an issue even with the entire fluid backend being different but idk if anyone on Fabric uses Registrate to register bucketless fluids so not bothering to find that out yet
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.tterrag.registrate.AbstractRegistrate;
@@ -70,3 +71,4 @@ public abstract class FluidBuilderMixin<T extends ForgeFlowingFluid, P> extends 
         return ret;
     }
 }
+*/
