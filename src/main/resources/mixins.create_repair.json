@@ -3,12 +3,16 @@
   "package": "ch.voidlee.repair.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.create_repair.refmap.json",
+  "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
-    "ContraptionUOEMixin",
-    "DeployerNotifyUpdateMixin",
-    "LecternControllerPrintingMixin"
+    "AttributeFilterMenuMixin", "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "FluidBuilderMixin",
+    "FluidPropagatorMixin", "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin",
+    "RotationPropagatorMixin", "SchematicPrinterMixin", "StateChangingBehaviorMixin", "StationBlockEntityMixin",
+    "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
   ],
   "client": [
+    "client.BacktankArmorLayerMixin", "client.LayeredArmorItemMixin", "client.ScheduleScreenMixin",
+    "client.VirtualRenderWorldMixin"
   ],
   "minVersion": "0.8"
 }

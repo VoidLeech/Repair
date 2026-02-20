@@ -11,13 +11,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// https://github.com/Creators-of-Create/Create/issues/9448
 @Mixin(LecternControllerBlockEntity.class)
-public class LecternControllerPrintingMixin {
+public abstract class LecternControllerPrintingMixin {
     @Shadow
     private ItemStackHandler controllerFreq;
 
     @Inject(method="<init>", at=@At("RETURN"))
-    private void init(BlockEntityType<?> type, BlockPos pos, BlockState state, CallbackInfo ci) {
+    private void create_repair$initializeHandler(BlockEntityType<?> type, BlockPos pos, BlockState state, CallbackInfo ci) {
         this.controllerFreq = new ItemStackHandler(12);
     }
 }
