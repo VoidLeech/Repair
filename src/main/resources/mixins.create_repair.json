@@ -11,8 +11,7 @@
     "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
   ],
   "client": [
-    "client.BacktankArmorLayerMixin",
-    "client.LayeredArmorItemMixin",
+    "client.BacktankArmorLayerMixin", "client.LayeredArmorItemMixin", "client.ScheduleScreenMixin",
     "client.VirtualRenderWorldMixin"
   ],
   "minVersion": "0.8"

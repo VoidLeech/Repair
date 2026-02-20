@@ -7,7 +7,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Funnel Extraction, MountedItemStorageWrapper https://github.com/Creators-of-Create/Create/issues/9706
 - [ ] Contraption collision optimization? Will really depend on whether that's safely doable while still providing a performance improvement.
 
-## Recipes
+## Data Files
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
 - [ ] Use c:strings in Bound Cardboard recipe https://github.com/Creators-of-Create/Create/issues/9501
 - [ ] Fully-efficient clay recipe https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
@@ -16,7 +16,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 ## Easy
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
 - [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
-- [ ] Make pressing `E` not close the Train Schedule menu when typing https://github.com/Creators-of-Create/Create/pull/9735
 - [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
 - [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
 - [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
@@ -54,3 +53,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9843 
 - [x] https://github.com/Creators-of-Create/Create/issues/9547
 - [x] https://github.com/Creators-of-Create/Create/pull/9729
+- [x] https://github.com/Creators-of-Create/Create/pull/9735
