@@ -5,10 +5,13 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7.+'
+    id 'net.kyori.blossom' version '2.1.0'
 }
 
 version = mod_version
 group = mod_group_id
+
+String gitHash = calculateGitHash() + (hasUnstaged() ? "-modified" : "")
 
 base {
     archivesName = mod_id + '-forge-' + minecraft_version
@@ -61,7 +64,14 @@ minecraft {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets.main {
+    resources { srcDir 'src/generated/resources' }
+
+    blossom.javaSources {
+        property("version", version)
+        property("gitCommit", gitHash.toString())
+    }
+}
 
 processResources {
     from(file("LICENSE"))
@@ -176,4 +186,30 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+// https://github.com/Creators-of-Create/Create/blob/89dd311eea390128ba84a603620012c3bc68f2e6/build.gradle#L308C1-L331C2
+String calculateGitHash() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "rev-parse", "HEAD")
+        }
+        return output.standardOutput.asText.get().trim()
+    } catch (Throwable ignored) {
+        return "unknown"
+    }
+}
+
+boolean hasUnstaged() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "status", "--porcelain")
+        }
+        String result = output.standardOutput.asText.get().replace("/M gradlew(\\.bat)?/", "").trim()
+        if (!result.isEmpty())
+            println("Found stageable results:\n ${result}\n")
+        return !result.isEmpty()
+    } catch (Throwable ignored) {
+        return false
+    }
 }
