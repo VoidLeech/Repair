@@ -33,16 +33,11 @@ public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<Sc
     @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V"), remap = false, cancellable = true)
     private void create_repair$allowTypingE1(int pKeyCode, int pScanCode, int pModifiers, CallbackInfoReturnable<Boolean> cir, @Local(name = "hitEnter") boolean hitEnter, @Local(name = "mouseKey") InputConstants.Key mouseKey){
         boolean hitE = getFocused() == null || minecraft.options.keyInventory.isActiveAndMatches(mouseKey);
-        if (hitEnter) {
-            Create.LOGGER.warn("Enter");
-            return;
-        }
+        if (hitEnter) return;
         if (hitE) {
-            Create.LOGGER.warn("E");
             cir.setReturnValue(false);
             return;
         }
-        Create.LOGGER.warn("Def.");
         cir.setReturnValue(super.keyPressed(pKeyCode, pScanCode, pModifiers));
     }
 
