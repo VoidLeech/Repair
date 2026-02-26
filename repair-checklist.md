@@ -31,7 +31,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
 - [ ] Copycats do not render emissives correctly https://github.com/Creators-of-Create/Create/issues/9675
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
-- [ ] CC-tweaked index OOB https://github.com/Creators-of-Create/Create/pull/9984
+- [ ] Handcrank visual rotations https://github.com/Creators-of-Create/Create/pull/8828
 
 ## Hard
 - [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
@@ -60,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9729
 - [x] https://github.com/Creators-of-Create/Create/pull/9735
 - [x] https://github.com/Creators-of-Create/Create/pull/10013
+- [x] https://github.com/Creators-of-Create/Create/pull/9984
