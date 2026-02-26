@@ -2,6 +2,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Dupes / Inverse Dupes
 - [ ] Postbox dupes if broken while menu open https://github.com/Creators-of-Create/Create/pull/9802
+- [ ] Item loss between belts || DO NOT DO YET, AWAIT FOLLOW-UP PR https://github.com/Creators-of-Create/Create/pull/9954
 
 ## Optimization
 - [ ] Funnel Extraction, MountedItemStorageWrapper https://github.com/Creators-of-Create/Create/issues/9706
@@ -23,11 +24,14 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
 - [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
 - [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
+- [ ] Match seats tag for assembly on contraptions https://github.com/Creators-of-Create/Create/pull/9907
+- [ ] Don't harvest vanilla mushrooms on FD rich soil https://github.com/Creators-of-Create/Create/pull/9940
   
 ## Medium
 - [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
 - [ ] Copycats do not render emissives correctly https://github.com/Creators-of-Create/Create/issues/9675
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
+- [ ] CC-tweaked index OOB https://github.com/Creators-of-Create/Create/pull/9984
 
 ## Hard
 - [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
@@ -35,6 +39,7 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 
 ## Unsorted
 - [ ] Encased Fan shaft texture fix, Train Disassembly with CC Computer attached fixed, Fix Bottomless Limit being over by 1 https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
+- [ ] Smooth item rotation on depot/belt/drain https://github.com/Creators-of-Create/Create/pull/9942
 
 ## Done!
 - [x] https://github.com/Creators-of-Create/Create/pull/9763
