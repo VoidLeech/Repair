@@ -59,3 +59,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9547
 - [x] https://github.com/Creators-of-Create/Create/pull/9729
 - [x] https://github.com/Creators-of-Create/Create/pull/9735
+- [x] https://github.com/Creators-of-Create/Create/pull/10013
