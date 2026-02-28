@@ -9,8 +9,8 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Data Files
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
-- [ ] Use c:strings in Bound Cardboard recipe https://github.com/Creators-of-Create/Create/issues/9501
-- [ ] Fully-efficient clay recipe https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
+- [x...?] Use c:strings in Bound Cardboard recipe https://github.com/Creators-of-Create/Create/issues/9501
+- [x] Fully-efficient clay recipe https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
 - [ ] Crafting using waxed blocks https://github.com/Creators-of-Create/Create/pull/9801
 
 ## Easy
