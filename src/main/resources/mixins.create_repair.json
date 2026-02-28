@@ -8,7 +8,7 @@
     "AttributeFilterMenuMixin", "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "DisplayLinkPeripheralMixin",
     "FluidBuilderMixin", "FluidPropagatorMixin", "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin",
     "RotationPropagatorMixin", "SchematicPrinterMixin", "StateChangingBehaviorMixin", "StationBlockEntityMixin",
-    "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
+    "MixerStopMixingMixin", "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin", "client.LayeredArmorItemMixin", "client.ScheduleScreenMixin",

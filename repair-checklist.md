@@ -21,7 +21,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
 - [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
 - [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
-- [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
 - [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
 - [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
 - [ ] Match seats tag for assembly on contraptions https://github.com/Creators-of-Create/Create/pull/9907
@@ -61,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9735
 - [x] https://github.com/Creators-of-Create/Create/pull/10013
 - [x] https://github.com/Creators-of-Create/Create/pull/9984
+- [x] https://github.com/Creators-of-Create/Create/issues/6249
