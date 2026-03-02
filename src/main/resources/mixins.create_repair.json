@@ -5,14 +5,35 @@
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
-    "AttributeFilterMenuMixin", "ContraptionUOEMixin", "DeployerNotifyUpdateMixin", "DisplayLinkPeripheralMixin",
-    "FluidBuilderMixin", "FluidPropagatorMixin", "InventoryIdentifier$PairMixin", "LecternControllerPrintingMixin",
-    "RotationPropagatorMixin", "SchematicPrinterMixin", "StateChangingBehaviorMixin", "StationBlockEntityMixin",
-    "MixerStopMixingMixin", "TrackNodeLocationMixin", "TreeFertilizerItemMixin"
+    "AttributeFilterMenuMixin",
+    "ContraptionUOEMixin",
+    "DeployerNotifyUpdateMixin",
+    "DisplayLinkPeripheralMixin",
+    "FluidBuilderMixin",
+    "FluidPropagatorMixin",
+    "HandCrankBlockEntityMixin",
+    "InventoryIdentifier$PairMixin",
+    "KineticBlockEntityMixin",
+    "LecternControllerPrintingMixin",
+    "MixerStopMixingMixin",
+    "RotationPropagatorMixin",
+    "SchematicPrinterMixin",
+    "StateChangingBehaviorMixin",
+    "StationBlockEntityMixin",
+    "TrackNodeLocationMixin",
+    "TreeFertilizerItemMixin",
+    "ValveHandleBlockEntityMixin",
+    "client.HandCrankAndValveVisualMixin",
+    "client.HandCrankRendererMixin"
   ],
   "client": [
-    "client.BacktankArmorLayerMixin", "client.LayeredArmorItemMixin", "client.ScheduleScreenMixin",
+    "client.BacktankArmorLayerMixin",
+    "client.LayeredArmorItemMixin",
+    "client.ScheduleScreenMixin",
     "client.VirtualRenderWorldMixin"
   ],
+  "mixinextras": {
+    "minVersion": "0.5.3"
+  },
   "minVersion": "0.8"
 }
