@@ -10,9 +10,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Data Files
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
-- [ ] Use c:strings in Bound Cardboard recipe https://github.com/Creators-of-Create/Create/issues/9501
-- [ ] Fully-efficient clay recipe https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
-- [ ] Crafting using waxed blocks https://github.com/Creators-of-Create/Create/pull/9801
 
 ## Easy
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
@@ -58,6 +55,9 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9547
 - [x] https://github.com/Creators-of-Create/Create/pull/9729
 - [x] https://github.com/Creators-of-Create/Create/pull/9735
+- [x] https://github.com/Creators-of-Create/Create/issues/9501
+- [x] https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
+- [x] https://github.com/Creators-of-Create/Create/pull/9801
 - [x] https://github.com/Creators-of-Create/Create/pull/10013
 - [x] https://github.com/Creators-of-Create/Create/pull/9984
 - [x] https://github.com/Creators-of-Create/Create/issues/6249
