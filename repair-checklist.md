@@ -34,7 +34,6 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 
 ## Unsorted
 - [ ] Encased Fan shaft texture fix, Train Disassembly with CC Computer attached fixed, Fix Bottomless Limit being over by 1 https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
-- [ ] Smooth item rotation on depot/belt/drain https://github.com/Creators-of-Create/Create/pull/9942
 
 ## Done!
 - [x] https://github.com/Creators-of-Create/Create/pull/9763
@@ -61,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9984
 - [x] https://github.com/Creators-of-Create/Create/issues/6249
 - [x] https://github.com/Creators-of-Create/Create/pull/8828
+- [x] https://github.com/Creators-of-Create/Create/pull/9942

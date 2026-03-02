@@ -24,7 +24,8 @@
     "TreeFertilizerItemMixin",
     "ValveHandleBlockEntityMixin",
     "client.HandCrankAndValveVisualMixin",
-    "client.HandCrankRendererMixin"
+    "client.HandCrankRendererMixin",
+    "client.UprightItemRendererMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",
