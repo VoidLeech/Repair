@@ -2,7 +2,6 @@ package ch.voidlee.repair;
 
 import ch.voidlee.repair.data.RepairDynamicPack;
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -33,9 +32,5 @@ public class Repair {
 
             event.addRepositorySource(pack.getDynamicSource());
         }
-    }
-
-    public static ResourceLocation asResource(String path) {
-        return new ResourceLocation(MOD_ID, path);
     }
 }
