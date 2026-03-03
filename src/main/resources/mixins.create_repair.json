@@ -30,6 +30,7 @@
     "client.HandCrankAndValveVisualMixin",
     "client.HandCrankRendererMixin",
     "client.LayeredArmorItemMixin",
+    "client.RadialWrenchMenuMixin",
     "client.ScheduleScreenMixin",
     "client.UprightItemRendererMixin",
     "client.VirtualRenderWorldMixin",
