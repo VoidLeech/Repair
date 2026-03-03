@@ -10,7 +10,7 @@ So what do we do?
 3. Backport new API.
 4. *Backport applicable compat recipes. Oops user-facing after all.
 
-All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
+All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Create Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
 
 ### F.A.Q.
 **Q: Can this be used in my modpack?**  
@@ -29,3 +29,5 @@ This project is released under the [MIT license](LICENSE).
 #### Third-Party Content
 By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](other-licenses/mit-create).  
 FluiderBuilderMixin (see above) is based on a commit to Registrate and thus licensed accordingly.
+
+This project is an addon, though we treat it much like a fork. As such, we try to credit the contributors whose fixes we backport; aside from being in mixin form, their patches are almost applied 1:1, and the project wouldn't be possible without them. Having said that, such credit, typically expressed as co-authorship on a commit, does not actually mean that they have done any work specifically for our project, and shouldn't be seen as them endorsing our work.
