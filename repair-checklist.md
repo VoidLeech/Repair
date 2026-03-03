@@ -23,7 +23,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Don't harvest vanilla mushrooms on FD rich soil https://github.com/Creators-of-Create/Create/pull/9940
   
 ## Medium
-- [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
 
 ## Hard
@@ -61,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9942
 - [x] https://github.com/Creators-of-Create/Create/issues/9675
 - [x] https://github.com/Creators-of-Create/Create/pull/9736
+- [x] https://github.com/Creators-of-Create/Create/issues/9608
