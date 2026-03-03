@@ -22,15 +22,16 @@
     "StationBlockEntityMixin",
     "TrackNodeLocationMixin",
     "TreeFertilizerItemMixin",
-    "ValveHandleBlockEntityMixin",
-    "client.HandCrankAndValveVisualMixin",
-    "client.HandCrankRendererMixin",
-    "client.UprightItemRendererMixin"
+    "ValveHandleBlockEntityMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",
+    "client.CopycatModelMixin",
+    "client.HandCrankAndValveVisualMixin",
+    "client.HandCrankRendererMixin",
     "client.LayeredArmorItemMixin",
     "client.ScheduleScreenMixin",
+    "client.UprightItemRendererMixin",
     "client.VirtualRenderWorldMixin"
   ],
   "mixinextras": {
