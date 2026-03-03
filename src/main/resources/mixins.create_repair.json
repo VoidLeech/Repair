@@ -32,7 +32,8 @@
     "client.LayeredArmorItemMixin",
     "client.ScheduleScreenMixin",
     "client.UprightItemRendererMixin",
-    "client.VirtualRenderWorldMixin"
+    "client.VirtualRenderWorldMixin",
+    "client.XaeroTrainMapMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.3"
