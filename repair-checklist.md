@@ -13,7 +13,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Easy
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
-- [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
 - [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
 - [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
 - [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
@@ -25,7 +24,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
   
 ## Medium
 - [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
-- [ ] Copycats do not render emissives correctly https://github.com/Creators-of-Create/Create/issues/9675
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
 
 ## Hard
@@ -61,3 +59,5 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/6249
 - [x] https://github.com/Creators-of-Create/Create/pull/8828
 - [x] https://github.com/Creators-of-Create/Create/pull/9942
+- [x] https://github.com/Creators-of-Create/Create/issues/9675
+- [x] https://github.com/Creators-of-Create/Create/pull/9736
