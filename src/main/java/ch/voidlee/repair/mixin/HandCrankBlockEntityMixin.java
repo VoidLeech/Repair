@@ -8,14 +8,12 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlockEntity;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/pull/8828
 @Mixin(HandCrankBlockEntity.class)
-@Debug(export = true)
 public class HandCrankBlockEntityMixin {
     @Shadow
     public float chasingVelocity;
