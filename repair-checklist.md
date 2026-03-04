@@ -12,7 +12,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
 
 ## Easy
-- [ ] Don't harvest vanilla mushrooms on FD rich soil https://github.com/Creators-of-Create/Create/pull/9940
+- Empty! 🎉
   
 ## Medium
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
@@ -62,3 +62,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/pull/9907
 - [x] https://github.com/Creators-of-Create/Create/pull/9802
 - [x] https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
+- [x] https://github.com/Creators-of-Create/Create/pull/9940

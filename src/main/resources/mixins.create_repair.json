@@ -19,6 +19,7 @@
     "FluidPropagatorMixin",
     "FluidTankBlockMixin",
     "HandCrankBlockEntityMixin",
+    "HarvesterMovementBehaviourMixin",
     "InventoryIdentifier$PairMixin",
     "LecternControllerBlockEntityMixin",
     "LogisticallyLinkedBehaviourMixin",
