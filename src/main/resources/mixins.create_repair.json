@@ -29,6 +29,7 @@
     "ValveHandleBlockEntityMixin"
   ],
   "client": [
+    "client.CreateMainMenuScreenMixin",
     "client.BacktankArmorLayerMixin",
     "client.CopycatModelMixin",
     "client.HandCrankAndValveVisualMixin",
