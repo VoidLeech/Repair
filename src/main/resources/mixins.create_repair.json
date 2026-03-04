@@ -17,7 +17,7 @@
     "FluidTankBlockMixin",
     "HandCrankBlockEntityMixin",
     "InventoryIdentifier$PairMixin",
-    "LecternControllerPrintingMixin",
+    "LecternControllerBlockEntityMixin",
     "LogisticallyLinkedBehaviourMixin",
     "MixerStopMixingMixin",
     "RotationPropagatorMixin",
