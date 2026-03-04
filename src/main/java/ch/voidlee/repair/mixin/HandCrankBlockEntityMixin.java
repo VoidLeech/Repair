@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/pull/8828
 @Mixin(HandCrankBlockEntity.class)
-public class HandCrankBlockEntityMixin {
+public abstract class HandCrankBlockEntityMixin {
     @Shadow
     public float chasingVelocity;
 

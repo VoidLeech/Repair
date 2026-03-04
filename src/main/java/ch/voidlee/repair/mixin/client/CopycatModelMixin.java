@@ -18,7 +18,7 @@ import java.util.List;
 
 // https://github.com/Creators-of-Create/Create/commit/174671d1d721d1f970c77caeb0a79bced59111ad
 @Mixin(CopycatModel.class)
-public class CopycatModelMixin {
+public abstract class CopycatModelMixin {
     @Unique
     private static final ModelProperty<Boolean> CREATE_REPAIR$IS_EMISSIVE_PROPERTY = new ModelProperty<>();
 

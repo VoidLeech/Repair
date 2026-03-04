@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/commit/a9df5515a18c6906ab64242a195d12c21a6373c3
 @Mixin(XaeroTrainMap.class)
-public class XaeroTrainMapMixin {
+public abstract class XaeroTrainMapMixin {
     @Definition(id = "mapScale", local = @Local(type = double.class, name = "mapScale"))
     @Definition(id = "guiScale", local = @Local(type = double.class, name = "guiScale"))
     @Expression("mapScale / guiScale")

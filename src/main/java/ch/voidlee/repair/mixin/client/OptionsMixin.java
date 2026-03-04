@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Set;
 
 @Mixin(Options.class)
-public class OptionsMixin {
+public abstract class OptionsMixin {
 
     @Shadow
     public List<String> resourcePacks;

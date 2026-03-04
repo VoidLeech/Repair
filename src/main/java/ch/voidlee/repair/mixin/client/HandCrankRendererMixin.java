@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/pull/8828
 @Mixin(HandCrankRenderer.class)
-public class HandCrankRendererMixin {
+public abstract class HandCrankRendererMixin {
     @WrapOperation(method = "renderSafe(Lcom/simibubi/create/content/kinetics/crank/HandCrankBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/crank/HandCrankBlockEntity;getIndependentAngle(F)F"), remap = false)
     public float convertToRadians(HandCrankBlockEntity instance, float partialTicks, Operation<Float> original) {
         return AngleHelper.rad(original.call(instance, partialTicks));
