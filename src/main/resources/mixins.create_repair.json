@@ -8,6 +8,7 @@
     "AttributeFilterMenuMixin",
     "ConnectivityHandlerMixin",
     "ContraptionUOEMixin",
+    "CopycatBlockEntityMixin",
     "CTrainsMixin",
     "DeployerNotifyUpdateMixin",
     "DisplayLinkPeripheralMixin",
@@ -29,9 +30,9 @@
     "ValveHandleBlockEntityMixin"
   ],
   "client": [
-    "client.CreateMainMenuScreenMixin",
     "client.BacktankArmorLayerMixin",
     "client.CopycatModelMixin",
+    "client.CreateMainMenuScreenMixin",
     "client.HandCrankAndValveVisualMixin",
     "client.HandCrankRendererMixin",
     "client.LayeredArmorItemMixin",
