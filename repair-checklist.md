@@ -16,6 +16,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
   
 ## Medium
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
+  - Wait for an actual fix! This was marked as fixed in 6.0.9, but it actually wasn't.
 
 ## Hard
 - [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
