@@ -3,6 +3,7 @@ package ch.voidlee.repair.data;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.repository.PackSource;
+import org.jetbrains.annotations.NotNull;
 
 public class BuiltInResourcePackSource implements PackSource {
     private final boolean enabledByDefault;
@@ -12,7 +13,8 @@ public class BuiltInResourcePackSource implements PackSource {
     }
 
     @Override
-    public Component decorate(Component name) {
+    @NotNull
+    public Component decorate(@NotNull Component name) {
         return Component.translatable("pack.nameAndSource", name, Component.translatable("pack.source.builtin")).withStyle(ChatFormatting.GRAY);
     }
 

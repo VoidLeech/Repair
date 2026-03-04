@@ -40,6 +40,7 @@ public class Repair {
             event.addRepositorySource(pack.getDynamicSource());
             return;
         }
+
         Path resourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("resourcepacks/create_repair_asset_overrides");
         Pack assetOverrides = Pack.readMetaAndCreate("builtin/create_repair_asset_overrides",
                 Component.literal("Create Repair Asset Overrides"),
@@ -49,6 +50,5 @@ public class Repair {
                 Pack.Position.TOP,
                 new BuiltInResourcePackSource(true));
         event.addRepositorySource((packConsumer) -> packConsumer.accept(assetOverrides));
-
     }
 }

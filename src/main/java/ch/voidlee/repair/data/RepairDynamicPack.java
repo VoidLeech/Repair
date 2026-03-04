@@ -1,5 +1,6 @@
 package ch.voidlee.repair.data;
 
+import ch.voidlee.repair.Repair;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
@@ -17,13 +18,17 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.resources.IoSupplier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.io.InputStream;
 import java.util.*;
 
 import static com.simibubi.create.foundation.block.CopperBlockSet.DEFAULT_VARIANTS;
@@ -34,6 +39,19 @@ public class RepairDynamicPack extends DynamicPack {
 
     public RepairDynamicPack(PackType packType) {
         super(PACK_ID, packType);
+    }
+
+    @Override
+    @Nullable
+    public IoSupplier<InputStream> getRootResource(String @NotNull ... elements) {
+        if(elements[0].equals("pack.png")) {
+            return () -> {
+                InputStream stream = Repair.class.getResourceAsStream("/square_icon.png");
+                assert stream != null;
+                return stream;
+            };
+        }
+        return super.getRootResource(elements);
     }
 
     public void populate() {
