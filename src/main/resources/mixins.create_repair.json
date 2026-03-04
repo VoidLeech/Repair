@@ -6,6 +6,7 @@
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
     "AttributeFilterMenuMixin",
+    "ConnectivityHandlerMixin",
     "ContraptionUOEMixin",
     "CTrainsMixin",
     "DeployerNotifyUpdateMixin",

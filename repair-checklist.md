@@ -13,7 +13,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Easy
 - [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
-- [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
 - [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
 - [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
 - [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
@@ -61,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9608
 - [x] https://github.com/Creators-of-Create/Create/issues/9626
 - [x] https://github.com/Creators-of-Create/Create/pull/9814
+- [x] https://github.com/Creators-of-Create/Create/pull/9813
