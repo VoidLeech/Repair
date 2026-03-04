@@ -16,6 +16,8 @@
     "EntityMixin",
     "FactoryPanelBehaviourMixin",
     "FluidBuilderMixin",
+    "FluidDrainingBehaviourMixin",
+    "FluidFillingBehaviourMixin",
     "FluidPropagatorMixin",
     "FluidTankBlockMixin",
     "HandCrankBlockEntityMixin",
