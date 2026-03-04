@@ -13,6 +13,7 @@
     "CTrainsMixin",
     "DeployerNotifyUpdateMixin",
     "DisplayLinkPeripheralMixin",
+    "EntityMixin",
     "FactoryPanelBehaviourMixin",
     "FluidBuilderMixin",
     "FluidPropagatorMixin",

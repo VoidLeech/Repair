@@ -12,7 +12,6 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
 
 ## Easy
-- [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
 - [ ] Don't harvest vanilla mushrooms on FD rich soil https://github.com/Creators-of-Create/Create/pull/9940
   
 ## Medium
@@ -62,3 +61,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
 - [x] https://github.com/Creators-of-Create/Create/pull/9907
 - [x] https://github.com/Creators-of-Create/Create/pull/9802
+- [x] https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
