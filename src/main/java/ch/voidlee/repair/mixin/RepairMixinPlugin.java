@@ -23,12 +23,24 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (matches("SchematicPrinterMixin", mixinClassName)) {
-            // Both of these implemented a fix before we got to it
-            return !isModEarlyLoaded("tfg") && !isModEarlyLoaded("create_schematicannon_dupe_fix");
+            // These implemented a fix before we got to it
+            return !isModEarlyLoaded("tfg") &&
+                   !isModEarlyLoaded("create_schematicannon_dupe_fix") && // Ported from tfg
+                   !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Rebrand of dupe fix
+        }
+        if (matches("XaeroTrainMapMixin", mixinClassName)) {
+            // Again
+            return !isModEarlyLoaded("tfg") &&
+                   !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Ported from tfg
         }
         if (matches("StationBlockEntityMixin", mixinClassName)) {
             // Also separately fixed by tfg
             return !isModEarlyLoaded("tfg");
+        }
+
+        // Fabric Mixin Unavailability
+        if (matches("LayeredArmorItemMixin", mixinClassName)) {
+            return fabricMixinAvailable();
         }
         return true;
     }
@@ -55,6 +67,10 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     private boolean isModEarlyLoaded(String modId){
         return LoadingModList.get().getModFileById(modId) != null;
+    }
+
+    private boolean fabricMixinAvailable() {
+        return isModEarlyLoaded("connectormod") || isModEarlyLoaded("mixinbooster");
     }
 
     private boolean matches(String mixinToMatch, String mixinClassName) {
