@@ -12,6 +12,7 @@
     "DisplayLinkPeripheralMixin",
     "FluidBuilderMixin",
     "FluidPropagatorMixin",
+    "FluidTankBlockMixin",
     "HandCrankBlockEntityMixin",
     "InventoryIdentifier$PairMixin",
     "LecternControllerPrintingMixin",
@@ -25,12 +26,12 @@
     "ValveHandleBlockEntityMixin"
   ],
   "client": [
-    "client.OptionsMixin",
     "client.BacktankArmorLayerMixin",
     "client.CopycatModelMixin",
     "client.HandCrankAndValveVisualMixin",
     "client.HandCrankRendererMixin",
     "client.LayeredArmorItemMixin",
+    "client.OptionsMixin",
     "client.RadialWrenchMenuMixin",
     "client.ScheduleScreenMixin",
     "client.UprightItemRendererMixin",
