@@ -2,6 +2,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 
 ## Dupes / Inverse Dupes
 - [ ] Item loss between belts || DO NOT DO YET, AWAIT FOLLOW-UP PR https://github.com/Creators-of-Create/Create/pull/9954
+  - [ ] Follow-up: https://github.com/Creators-of-Create/Create/pull/10017/
 
 ## Optimization
 - [ ] Funnel Extraction, MountedItemStorageWrapper https://github.com/Creators-of-Create/Create/issues/9706
