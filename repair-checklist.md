@@ -1,7 +1,6 @@
 This is an incomplete list of issues, pull requests or commits that fix bugs (or are 1.20.1 exclusive bugs)
 
 ## Dupes / Inverse Dupes
-- [ ] Postbox dupes if broken while menu open https://github.com/Creators-of-Create/Create/pull/9802
 - [ ] Item loss between belts || DO NOT DO YET, AWAIT FOLLOW-UP PR https://github.com/Creators-of-Create/Create/pull/9954
 
 ## Optimization
@@ -61,3 +60,4 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9922
 - [x] https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
 - [x] https://github.com/Creators-of-Create/Create/pull/9907
+- [x] https://github.com/Creators-of-Create/Create/pull/9802
