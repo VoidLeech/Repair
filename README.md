@@ -12,7 +12,7 @@ So what do we do?
 
 All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Create Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
 
-Depends on Mixinbooster.
+Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Sinytra Connector or Mixinbooster, but not *both*. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
 
 ### Contributing
 There are three ways developers can assist with this project:
@@ -42,6 +42,6 @@ This project is released under the [MIT license](LICENSE).
 #### Third-Party Content
 By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](other-licenses/mit_create).  
 FluiderBuilderMixin (see above) is based on a commit to Registrate and thus licensed accordingly.  
-[OptionsMixin](src/main/java/ch/voidlee/repair/mixin/client/OptionsMixin.java) is based on Fabric API's GameOptionsMixin, which is licensed under the [Apache 2.0 license](other-licenses/apache_fabric)
+OptionsMixin is based on Fabric API's GameOptionsMixin, which is licensed under the [Apache 2.0 license](other-licenses/apache_fabric)
 
 This project is an addon, though we treat it much like a fork. As such, we try to credit the contributors whose fixes we backport; aside from being in mixin form, their patches are almost applied 1:1, and the project wouldn't be possible without them. Having said that, such credit, typically expressed as co-authorship on a commit, does not actually mean that they have done any work specifically for our project, and shouldn't be seen as them endorsing our work.
