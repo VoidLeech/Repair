@@ -37,11 +37,6 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
             // Also separately fixed by tfg
             return !isModEarlyLoaded("tfg");
         }
-
-        // Fabric Mixin Unavailability
-        if (matches("LayeredArmorItemMixin", mixinClassName)) {
-            return fabricMixinAvailable();
-        }
         return true;
     }
 
@@ -67,10 +62,6 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     private boolean isModEarlyLoaded(String modId){
         return LoadingModList.get().getModFileById(modId) != null;
-    }
-
-    private boolean fabricMixinAvailable() {
-        return isModEarlyLoaded("connectormod") || isModEarlyLoaded("mixinbooster");
     }
 
     private boolean matches(String mixinToMatch, String mixinClassName) {

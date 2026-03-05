@@ -32,3 +32,9 @@ description='''${mod_description}'''
     versionRange = "${create_version}"
     ordering = "NONE"
     side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "mixinbooster"
+    mandatory = true
+    versionRange = "[${mixinbooster_version},)"
+    ordering = "NONE"
+    side = "BOTH"
