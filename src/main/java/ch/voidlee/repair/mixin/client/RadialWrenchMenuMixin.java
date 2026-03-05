@@ -13,12 +13,12 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(RadialWrenchMenu.class)
 public abstract class RadialWrenchMenuMixin {
     @WrapOperation(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;getLevel()Lnet/minecraft/world/level/Level;"))
-    public Level maybeThereIsNoLevel(BlockEntity blockEntity, Operation<Level> original) {
+    private Level create_repair$maybeThereIsNoLevel(BlockEntity blockEntity, Operation<Level> original) {
         return blockEntity != null ? original.call(blockEntity) : null;
     }
 
     @WrapWithCondition(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;setLevel(Lnet/minecraft/world/level/Level;)V"))
-    public boolean onlyIfTheBlockEntityExists(BlockEntity blockEntity, Level level) {
+    private boolean create_repair$onlyIfTheBlockEntityExists(BlockEntity blockEntity, Level level) {
         return blockEntity != null;
     }
 }

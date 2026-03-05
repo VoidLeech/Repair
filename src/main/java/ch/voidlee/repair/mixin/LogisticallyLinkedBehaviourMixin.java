@@ -14,7 +14,7 @@ public abstract class LogisticallyLinkedBehaviourMixin {
     public static void keepAlive(LogisticallyLinkedBehaviour behaviour) {}
 
     @Inject(method = "initialize", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/packagerLink/GlobalLogisticsManager;linkLoaded(Ljava/util/UUID;Lnet/minecraft/core/GlobalPos;)V"), remap = false)
-    public void keepMeAlive(CallbackInfo ci) {
+    private void create_repair$keepMeAlive(CallbackInfo ci) {
         keepAlive((LogisticallyLinkedBehaviour)(Object) this);
     }
 }

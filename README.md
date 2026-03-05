@@ -12,7 +12,7 @@ So what do we do?
 
 All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Create Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
 
-Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Sinytra Connector or Mixinbooster, but not *both*. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
+Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Mixinbooster (recommended) or Sinytra Connector. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
 
 ### Contributing
 There are three ways developers can assist with this project:
@@ -27,7 +27,7 @@ Fabric requires Java 21 to build. LLM contributions will be rejected.
 **A:** Yes, obviously.
 
 **Q: Does this conflict with other mods backporting specific fixes?**  
-**A:** It shouldn't. Throughout our (admittedly slow to get off the ground) initial development we've become aware of other mods that backported specific fixes (and got those released earlier). Should those mods be present, our implementation of the fix will not be applied, and we use relatively compatible mixins in case we missed one. If we've missed one where it results in incorrect behaviour (or worse), do please let us know. 
+**A:** It shouldn't. Throughout our (admittedly slow to get off the ground) initial development we've become aware of other mods that backported specific fixes (and got those released earlier). Should those mods be present, our implementation of the fix will not be applied, and we use relatively compatible mixins in case we missed one. If we've missed one where it results in incorrect behaviour (or worse), do please let us know.
 
 **Q: Will you port this to Minecraft version X.Y.Z?**  
 **A:** We might start a 1.21.1 branch when Create drops support for that eventually. Otherwise, no, We're simply too far behind for that to be viably maintained.

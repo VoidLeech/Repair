@@ -18,7 +18,7 @@ public abstract class FluidTankBlockMixin extends Block {
     }
 
     @Inject(method = "onPlace", at = @At("TAIL"))
-    public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean moved, CallbackInfo ci) {
+    private void create_repair$onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean moved, CallbackInfo ci) {
         BlockState newState = world.getBlockState(pos);
         if (state != newState && newState.getBlock() == this) {
             world.markAndNotifyBlock(pos, world.getChunkAt(pos), oldState, newState, UPDATE_ALL_IMMEDIATE, 512);

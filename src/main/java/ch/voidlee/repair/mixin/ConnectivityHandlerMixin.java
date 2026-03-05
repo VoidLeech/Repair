@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/pull/9813/
 @Mixin(ConnectivityHandler.class)
-public class ConnectivityHandlerMixin {
+public abstract class ConnectivityHandlerMixin {
     @WrapOperation(method = "tryToFormNewMultiOfWidth", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/blockEntity/IMultiBlockEntityContainer;notifyMultiUpdated()V", ordinal = 1), remap = false)
-    private static void doNotNotifyMultiUpdatedTwice(IMultiBlockEntityContainer instance, Operation<Void> original) {
+    private static void create_repair$doNotNotifyMultiUpdatedTwice(IMultiBlockEntityContainer instance, Operation<Void> original) {
         // noop
     }
 }

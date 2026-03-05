@@ -25,6 +25,9 @@ public class Repair {
     public Repair() {
         LOGGER.info("{} {} initializing! Commit hash: {}", NAME, RepairBuildInfo.VERSION, RepairBuildInfo.GIT_COMMIT);
         LOGGER.info("{} modifies Create heavily to fix bugs! This should be regarded to any log-consumers.", NAME);
+        if (!ModList.get().isLoaded("connectormod") && !ModList.get().isLoaded("mixinbooster")) {
+            LOGGER.error("{} requires Fabric Mixin for some of its fixes, which isn't present. This can be resolved by installing either Mixinbooster (recommended) or Sinytra Connector", NAME);
+        }
 
         IEventBus bus = FMLJavaModLoadingContext.get()
                 .getModEventBus();

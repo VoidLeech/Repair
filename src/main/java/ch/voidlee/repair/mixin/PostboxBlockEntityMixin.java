@@ -10,10 +10,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
+// https://github.com/Creators-of-Create/Create/pull/9802
 @Mixin(PostboxBlockEntity.class)
 public class PostboxBlockEntityMixin {
     @WrapOperation(method = "onOpenChange", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
-    public boolean checkForNewBlockState(Level level, BlockPos pos, BlockState ogState, Operation<Boolean> original, boolean open) {
+    private boolean create_repair$checkForNewBlockState(Level level, BlockPos pos, BlockState ogState, Operation<Boolean> original, boolean open) {
         BlockState state = level.getBlockState(pos);
         if (!(state.getBlock() instanceof PostboxBlock))
             return false;
