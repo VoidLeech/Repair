@@ -14,13 +14,13 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/pull/9907
 @Mixin(Contraption.class)
-public class ContraptionMixin {
+public abstract class ContraptionMixin {
     @Definition(id = "getBlock", method = "Lnet/minecraft/world/level/block/state/BlockState;getBlock()Lnet/minecraft/world/level/block/Block;")
     @Definition(id = "SeatBlock", type = SeatBlock.class)
     @Definition(id = "state", local = @Local(type = BlockState.class, name = "state"))
     @Expression("state.getBlock() instanceof SeatBlock")
     @WrapOperation(method = "moveBlock", at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
-    public boolean detectAllTaggedSeats(Object object, Operation<Boolean> original, @Local(name = "state") BlockState state) {
+    private boolean create_repair$detectAllTaggedSeats(Object object, Operation<Boolean> original, @Local(name = "state") BlockState state) {
         return AllTags.AllBlockTags.SEATS.matches(state);
     }
 }

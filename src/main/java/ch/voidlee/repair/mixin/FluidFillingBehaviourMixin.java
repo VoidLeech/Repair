@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 // https://github.com/Creators-of-Create/Create/commit/ecbb4f2
 @Mixin(FluidFillingBehaviour.class)
-public class FluidFillingBehaviourMixin {
+public abstract class FluidFillingBehaviourMixin {
     @Definition(id = "size", method = "Ljava/util/Set;size()I")
     @Definition(id = "maxBlocks", local = @Local(name = "maxBlocks", type = int.class))
     @Expression("?.size() > maxBlocks")

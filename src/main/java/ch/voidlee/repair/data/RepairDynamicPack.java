@@ -1,12 +1,20 @@
 package ch.voidlee.repair.data;
 
 import ch.voidlee.repair.Repair;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+import com.mojang.serialization.JsonOps;
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
+import com.simibubi.create.content.kinetics.crusher.CrushingRecipe;
 import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
+import com.simibubi.create.content.kinetics.press.PressingRecipe;
+import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.block.CopperBlockSet;
+import com.simibubi.create.foundation.data.recipe.Mods;
 import com.simibubi.create.foundation.pack.DynamicPack;
 import com.simibubi.create.foundation.pack.DynamicPackSource;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -19,6 +27,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.resources.IoSupplier;
+import net.minecraft.tags.TagEntry;
+import net.minecraft.tags.TagFile;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -36,6 +46,8 @@ import static net.minecraft.world.level.block.WeatheringCopper.WeatherState.*;
 
 public class RepairDynamicPack extends DynamicPack {
     private static final String PACK_ID = "create_repair:dynamic_data";
+
+    private final Multimap<ResourceLocation, TagEntry> ITEM_TAGS = HashMultimap.create();
 
     public RepairDynamicPack(PackType packType) {
         super(PACK_ID, packType);
@@ -71,6 +83,14 @@ public class RepairDynamicPack extends DynamicPack {
         allWaxedCraftingForState(EXPOSED);
         allWaxedCraftingForState(OXIDIZED);
         allWaxedCraftingForState(WEATHERED);
+
+        updatedBwgCompat();
+
+        for (Map.Entry<ResourceLocation, Collection<TagEntry>> tags : ITEM_TAGS.asMap().entrySet()) {
+            TagFile tagFile = new TagFile(new ArrayList<>(tags.getValue()), false);
+            this.put(tags.getKey().withPrefix("tags/items/"), TagFile.CODEC.encodeStart(JsonOps.INSTANCE, tagFile).result().orElseThrow());
+        }
+        ITEM_TAGS.clear();
     }
 
     private InventoryChangeTrigger.TriggerInstance hasItem(ItemLike itemLike) {
@@ -141,10 +161,251 @@ public class RepairDynamicPack extends DynamicPack {
                 .save(this::saveFinishedRecipe, Create.asResource(recipePath));
     }
 
+    private void updatedBwgCompat() {
+        // Removed
+        disableCrushingRecipe("compat/biomeswevegone/ametrine_ore");
+        disableCrushingRecipe("compat/biomeswevegone/anthracite_ore");
+        disableCrushingRecipe("compat/biomeswevegone/blue_nether_gold_ore");
+        disableCrushingRecipe("compat/biomeswevegone/blue_nether_quartz_ore");
+        disableCrushingRecipe("compat/biomeswevegone/brimstone_nether_gold_ore");
+        disableCrushingRecipe("compat/biomeswevegone/brimstone_nether_quartz_ore");
+        disableCrushingRecipe("compat/biomeswevegone/cryptic_redstone_ore");
+        disableCrushingRecipe("compat/biomeswevegone/emeraldite_ore");
+        disableCrushingRecipe("compat/biomeswevegone/lignite_ore");
+        disableCrushingRecipe("compat/biomeswevegone/pervaded_netherrack");
+        disableMillingRecipe("compat/biomeswevegone/torch_ginger");
+        // Typo'd or renamed
+        disableMillingRecipe("compat/biomeswevegone/orchid");
+        disableMillingRecipe("compat/biomeswevegone/lolipop_flower");
+        disableMillingRecipe("compat/biomeswevegone/purple_rose");
+        disableMillingRecipe("compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen");
+        disableMillingRecipe("compat/biomeswevegone/compat/biomeswevegone/white_sage");
+        // Updated typo'd
+        new Builder<>("compat/biomeswevegone/japanese_orchid", MillingRecipe::new)
+                .require(Mods.BWG, "japanese_orchid")
+                .output(Items.PINK_DYE, 2)
+                .output(0.05f, Items.WHITE_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/lollipop_flower", MillingRecipe::new)
+                .require(Mods.BWG, "lollipop_flower")
+                .output(Items.YELLOW_DYE, 2)
+                .output(0.25f, Items.YELLOW_DYE)
+                .output(0.05f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/purple_sage", MillingRecipe::new)
+                .require(Mods.BWG, "purple_sage")
+                .output(Items.PURPLE_DYE, 2)
+                .output(0.1f, Items.MAGENTA_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/winter_cyclamen", MillingRecipe::new)
+                .require(Mods.BWG, "winter_cyclamen")
+                .output(Items.CYAN_DYE, 2)
+                .output(0.1f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/white_sage", MillingRecipe::new)
+                .require(Mods.BWG, "white_sage")
+                .output(Items.WHITE_DYE, 2)
+                .output(0.1f, Items.GRAY_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        // Wrong output
+        new Builder<>("compat/biomeswevegone/lush_grass_path", PressingRecipe::new)
+                .require(Mods.BWG, "lush_grass_block")
+                .output(Mods.BWG, "lush_dirt_path")
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/blue_sage", MillingRecipe::new)
+                .require(Mods.BWG, "blue_sage")
+                .output(Items.BLUE_DYE, 2)
+                .output(0.1f, Items.CYAN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/osiria_rose", MillingRecipe::new)
+                .require(Mods.BWG, "osiria_rose")
+                .output(Items.PINK_DYE, 2)
+                .output(0.1f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/cyan_amaranth", MillingRecipe::new)
+                .require(Mods.BWG, "cyan_amaranth")
+                .output(Items.CYAN_DYE, 3)
+                .output(0.05f, Items.GREEN_DYE, 2)
+                .output(0.25f, Items.CYAN_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/orange_amaranth", MillingRecipe::new)
+                .require(Mods.BWG, "orange_amaranth")
+                .output(Items.ORANGE_DYE, 3)
+                .output(0.05f, Items.GREEN_DYE, 2)
+                .output(0.25f, Items.ORANGE_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        // New (but analogous to existing recipes in base Create or its compat)
+        new Builder<>("compat/biomeswevegone/lush_dirt_path", PressingRecipe::new)
+                .require(Mods.BWG, "lush_dirt")
+                .output(Mods.BWG, "lush_dirt_path")
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/sandy_dirt_path", PressingRecipe::new)
+                .require(Mods.BWG, "sandy_dirt")
+                .output(Mods.BWG, "sandy_dirt_path")
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/black_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "black_sandstone")
+                .output(Mods.BWG, "black_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/blue_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "blue_sandstone")
+                .output(Mods.BWG, "blue_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/pink_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "pink_sandstone")
+                .output(Mods.BWG, "pink_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/purple_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "purple_sandstone")
+                .output(Mods.BWG, "purple_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/white_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "white_sandstone")
+                .output(Mods.BWG, "white_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/windswept_sandstone", MillingRecipe::new)
+                .require(Mods.BWG, "windswept_sandstone")
+                .output(Mods.BWG, "windswept_sand")
+                .duration(150)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/stripped_palo_verde_log", CuttingRecipe::new)
+                .require(Mods.BWG, "stripped_palo_verde_log")
+                .output(Items.BIRCH_PLANKS, 6)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/stripped_palo_verde_wood", CuttingRecipe::new)
+                .require(Mods.BWG, "stripped_palo_verde_wood")
+                .output(Items.BIRCH_PLANKS, 6)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/blue_rose_bush", MillingRecipe::new)
+                .require(Mods.BWG, "blue_rose_bush")
+                .output(Items.BLUE_DYE, 3)
+                .output(0.05f, Items.GREEN_DYE, 2)
+                .output(0.25f, Items.BLUE_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/horseweed", MillingRecipe::new)
+                .require(Mods.BWG, "horseweed")
+                .output(Items.GREEN_DYE, 2)
+                .output(0.25f, Items.BROWN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/winter_succulent", MillingRecipe::new)
+                .require(Mods.BWG, "winter_succulent")
+                .output(Items.GREEN_DYE, 2)
+                .output(0.25f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/mini_cactus", MillingRecipe::new)
+                .require(Mods.BWG, "mini_cactus")
+                .output(Items.GREEN_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/prickly_pear_cactus", MillingRecipe::new)
+                .require(Mods.BWG, "prickly_pear_cactus")
+                .output(Items.GREEN_DYE, 2)
+                .output(0.25f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/golden_spined_cactus", MillingRecipe::new)
+                .require(Mods.BWG, "golden_spined_cactus")
+                .output(Items.GREEN_DYE, 2)
+                .output(0.25f, Items.YELLOW_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/white_allium", MillingRecipe::new)
+                .require(Mods.BWG, "white_allium")
+                .output(Items.WHITE_DYE, 2)
+                .output(0.1f, Items.LIGHT_GRAY_DYE, 2)
+                .output(0.1f, Items.GRAY_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/white_allium_flower_bush", MillingRecipe::new)
+                .require(Mods.BWG, "white_allium_flower_bush")
+                .output(Items.WHITE_DYE, 3)
+                .output(0.05f, Items.GREEN_DYE, 2)
+                .output(0.25f, Items.LIGHT_GRAY_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        new Builder<>("compat/biomeswevegone/tall_white_allium", MillingRecipe::new)
+                .require(Mods.BWG, "tall_white_allium")
+                .output(Items.WHITE_DYE, 3)
+                .output(0.05f, Items.WHITE_DYE, 2)
+                .output(0.25f, Items.LIGHT_GRAY_DYE, 2)
+                .duration(50)
+                .whenModLoaded(Mods.BWG.getId())
+                .build();
+        // Tags
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("allium_oddion_soup"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("white_puffball_stew"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("aloe_vera_juice"), ITEM_TAGS);
+    }
+
+    private void insertIntoTag(ResourceLocation tag, ResourceLocation itemId, Multimap<ResourceLocation, TagEntry> tagMap) {
+        tagMap.put(tag, TagEntry.optionalElement(itemId));
+    }
+
     private String getPath(ItemLike itemLike) {
         ResourceLocation inputLoc = ForgeRegistries.ITEMS.getKey(itemLike.asItem());
         assert inputLoc != null;
         return inputLoc.getPath();
+    }
+
+    private void disableMillingRecipe(String recipeId) {
+        disableCreateRecipe(recipeId, MillingRecipe::new);
+    }
+
+    private void disableCrushingRecipe(String recipeId) {
+        disableCreateRecipe(recipeId, CrushingRecipe::new);
+    }
+
+    private <T extends ProcessingRecipe<?>> void disableCreateRecipe(String recipeId, ProcessingRecipeBuilder.ProcessingRecipeFactory<T> factory) {
+        new Builder<>(recipeId, factory)
+                .whenModMissing(Repair.MOD_ID) // (:
+                .build();
     }
 
     private class Builder<T extends ProcessingRecipe<?>> extends ProcessingRecipeBuilder<T> {
@@ -152,10 +413,9 @@ public class RepairDynamicPack extends DynamicPack {
             super(factory, Create.asResource(path));
         }
 
-        @Override
         public T build() {
             T t = super.build();
-            DataGenResult<T> result = new DataGenResult<>(t, Collections.emptyList());
+            DataGenResult<T> result = new DataGenResult<>(t, recipeConditions);
             RepairDynamicPack.this.put(result.getId().withPrefix("recipes/"), result.serializeRecipe());
             return t;
         }

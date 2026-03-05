@@ -25,7 +25,7 @@ public abstract class CreateMainMenuScreenMixin extends Screen {
     }
 
     @WrapOperation(method = "addButtons", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/infrastructure/gui/CreateMainMenuScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;", ordinal = 5))
-    public GuiEventListener storeAndDisableReportIssues(CreateMainMenuScreen screen, GuiEventListener button, Operation<GuiEventListener> original) {
+    private GuiEventListener create_repair$storeAndDisableReportIssues(CreateMainMenuScreen screen, GuiEventListener button, Operation<GuiEventListener> original) {
         if(button instanceof AbstractWidget widget) {
             create_repair$create_report_issues_button = widget;
             widget.active = false;
@@ -34,7 +34,7 @@ public abstract class CreateMainMenuScreenMixin extends Screen {
     }
 
     @Inject(method = "renderWindowForeground", at = @At(value = "INVOKE", target = "Ljava/util/List;forEach(Ljava/util/function/Consumer;)V"), remap = false)
-    public void renderIssuesTooltip(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
+    private void create_repair$renderIssuesTooltip(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
         if (mouseX < create_repair$create_report_issues_button.getX() || mouseX > create_repair$create_report_issues_button.getX() + 98)
             return;
         if (mouseY < create_repair$create_report_issues_button.getY() || mouseY > create_repair$create_report_issues_button.getY() + 20)

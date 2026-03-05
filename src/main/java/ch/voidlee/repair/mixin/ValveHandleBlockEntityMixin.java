@@ -16,12 +16,12 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(ValveHandleBlockEntity.class)
 public abstract class ValveHandleBlockEntityMixin {
     @WrapOperation(method = "getIndependentAngle", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/base/KineticBlockEntityRenderer;getAngleForBe(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;)F"), remap = false)
-    public float convertToDegrees(KineticBlockEntity be, BlockPos pos, Direction.Axis axis, Operation<Float> original) {
+    private float create_repair$convertToDegrees(KineticBlockEntity be, BlockPos pos, Direction.Axis axis, Operation<Float> original) {
         return AngleHelper.deg(original.call(be, pos, axis));
     }
 
     @ModifyReturnValue(method = "getIndependentAngle", at = @At(value = "RETURN", ordinal = 1), remap = false)
-    public float convertToDegreesTheSequel(float original) {
+    private float create_repair$convertToDegreesTheSequel(float original) {
         return original * Mth.RAD_TO_DEG;
     }
 }

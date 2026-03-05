@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(TreeFertilizerItem.class)
 public abstract class TreeFertilizerItemMixin {
     @Inject(method = "useOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
-    public void create_repair$dropBlocksWhenReplaced(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, @Local(name = "actualPos") BlockPos actualPos) {
+    private void create_repair$dropBlocksWhenReplaced(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, @Local(name = "actualPos") BlockPos actualPos) {
         context.getLevel().destroyBlock(actualPos, true);
     }
 }

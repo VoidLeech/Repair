@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // https://github.com/Creators-of-Create/Create/pull/9921
-// For parity with 6.0.10 (not released)
 @Mixin(MechanicalMixerBlockEntity.class)
 public abstract class MixerStopMixingMixin extends BasinOperatingBlockEntity {
     @Shadow
@@ -23,7 +22,7 @@ public abstract class MixerStopMixingMixin extends BasinOperatingBlockEntity {
     }
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/mixer/MechanicalMixerBlockEntity;isVirtual()Z"), remap = false)
-    public void tick(CallbackInfo ci) {
+    private void create_repair$tick(CallbackInfo ci) {
         if (getSpeed() == 0) {
             if (runningTicks < 20)
                 runningTicks = 40 - runningTicks;

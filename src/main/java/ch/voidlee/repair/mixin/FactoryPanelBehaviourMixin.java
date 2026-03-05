@@ -27,7 +27,7 @@ public abstract class FactoryPanelBehaviourMixin {
     // IntelliJ complains about this @Local, but it works!...
     @SuppressWarnings("UnresolvedLocalCapture")
     @Inject(method = "tickStorageMonitor", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/factoryBoard/FactoryPanelBehaviour;getUnloadedLinks()I"), remap = false)
-    public void invalidateSummaries(CallbackInfo ci, @Local(name = "unloadedLinkCount") int unloadedLinkCount) {
+    private void create_repair$invalidateSummaries(CallbackInfo ci, @Local(name = "unloadedLinkCount") int unloadedLinkCount) {
         FactoryPanelBlockEntity panelBE = panelBE();
         if (!panelBE.restocker && unloadedLinkCount == 0 && this.lastReportedUnloadedLinks != 0) {
             LogisticsManager.SUMMARIES.invalidate(this.network);

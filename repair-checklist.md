@@ -8,7 +8,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
 - [ ] Contraption collision optimization? Will really depend on whether that's safely doable while still providing a performance improvement.
 
 ## Data Files
-- [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
+- Empty! 🎉
 
 ## Easy
 - Empty! 🎉
@@ -18,7 +18,7 @@ This is an incomplete list of issues, pull requests or commits that fix bugs (or
   - Wait for an actual fix! This was marked as fixed in 6.0.9, but it actually wasn't.
 
 ## Hard
-- [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
+- [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setChanged on the client;
 it's simple but it's gross and might miss edge cases. the proper fix presumably requires asm to replace the class
 
 ## Unsorted
@@ -64,4 +64,6 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
 - [x] https://github.com/Creators-of-Create/Create/pull/9940
 - [x] https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
+- [x] https://github.com/Creators-of-Create/Create/issues/9500
+- [x] https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff
 - [x] https://github.com/Creators-of-Create/Create/issues/9706
