@@ -21,6 +21,6 @@ public abstract class ContraptionMixin {
     @Expression("state.getBlock() instanceof SeatBlock")
     @WrapOperation(method = "moveBlock", at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private boolean create_repair$detectAllTaggedSeats(Object object, Operation<Boolean> original, @Local(name = "state") BlockState state) {
-        return AllTags.AllBlockTags.SEATS.matches(state);
+        return original.call(object) || AllTags.AllBlockTags.SEATS.matches(state);
     }
 }
