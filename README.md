@@ -8,13 +8,13 @@ So what do we do?
 1. Fix 1.20.1-exclusive bugs.
 2. Backport Create's fixes for bugs that also affected 1.20.1.
 3. Backport new API.
-4. *Backport applicable compat recipes. Oops user-facing after all.
+4. *Backport applicable compat recipes. Oops, it's user-facing after all.
 
 All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Create Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
 
-Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Mixinbooster (recommended) or Sinytra Connector. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
+For a full list of our backported fixes, tweaks, and more, check out our [Big List of Backports](https://github.com/VoidLeech/Repair/blob/mc1.20.1/forge/dev/REPAIRED.md).
 
-For a full list on what we've done, see [REPAIRED.md](REPAIRED.md).
+Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Mixinbooster (recommended) or Sinytra Connector. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
 
 ### Contributing
 There are three ways developers can assist with this project:
