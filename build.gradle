@@ -3,10 +3,13 @@ plugins {
     id 'idea'
     id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
     id 'maven-publish'
+    id 'net.kyori.blossom' version '2.1.0'
 }
 
 version = mod_version
 group = mod_group_id
+
+String gitHash = calculateGitHash() + (hasUnstaged() ? "-modified" : "")
 
 base {
     archivesName = mod_id + '-fabric-' + minecraft_version
@@ -32,7 +35,32 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
-
+    maven { url = "https://maven.squiddev.cc" }
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
+    maven {
+        name = "Greenhouse"
+        url = "https://maven.greenhouse.lgbt/releases/"
+    }
+    maven {
+        url "https://jitpack.io/" // Fabric ASM
+        content {
+            excludeGroup "io.github.fabricators_of_create"
+        }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -42,23 +70,42 @@ dependencies {
 
     //modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+    if (enable_emi.toBoolean())
+        modRuntimeOnly("dev.emi:emi-forge:${emi_version}")
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modImplementation "com.simibubi.create:create-fabric:${create_version}.${create_version_number}"
 
+    modCompileOnly("cc.tweaked:cc-tweaked-${minecraft_version}-fabric-api:${cc_tweaked_version}")
+    if (enable_cc_tweaked.toBoolean())
+        modRuntimeOnly("cc.tweaked:cc-tweaked-${minecraft_version}-fabric:${cc_tweaked_version}")
+
+    modCompileOnly("vectorwing:FarmersDelight:${farmers_delight_version}") {
+        exclude(group: "net.fabricmc")
+    }
+    if (enable_farmers_delight.toBoolean())
+        modRuntimeOnly("vectorwing:FarmersDelight:${farmers_delight_version}") {
+            exclude(group: "net.fabricmc")
+        }
 }
 
 processResources {
     def replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description, create_version: create_version
+            mod_authors: mod_authors, mod_description: mod_description, create_version: create_version,
+            homepage: homepage
     ]
 
     filesMatching("fabric.mod.json") {
         expand replaceProperties
     }
     inputs.properties(replaceProperties)
+
+    //blossom.javaSources {
+    //    property("version", version)
+    //    property("gitCommit", gitHash.toString())
+    //}
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -91,5 +138,31 @@ publishing {
         maven {
             url "file://${project.projectDir}/mcmodsrepo"
         }
+    }
+}
+
+// https://github.com/Creators-of-Create/Create/blob/89dd311eea390128ba84a603620012c3bc68f2e6/build.gradle#L308C1-L331C2
+String calculateGitHash() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "rev-parse", "HEAD")
+        }
+        return output.standardOutput.asText.get().trim()
+    } catch (Throwable ignored) {
+        return "unknown"
+    }
+}
+
+boolean hasUnstaged() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "status", "--porcelain")
+        }
+        String result = output.standardOutput.asText.get().replace("/M gradlew(\\.bat)?/", "").trim()
+        if (!result.isEmpty())
+            println("Found stageable results:\n ${result}\n")
+        return !result.isEmpty()
+    } catch (Throwable ignored) {
+        return false
     }
 }

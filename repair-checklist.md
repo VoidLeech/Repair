@@ -1,40 +1,28 @@
 This is an incomplete list of issues, pull requests or commits that fix bugs (or are 1.20.1 exclusive bugs)
 
 ## Dupes / Inverse Dupes
-- [ ] Postbox dupes if broken while menu open https://github.com/Creators-of-Create/Create/pull/9802
+- [ ] Item loss between belts || DO NOT DO YET, AWAIT FOLLOW-UP PR https://github.com/Creators-of-Create/Create/pull/9954
+  - [ ] Follow-up: https://github.com/Creators-of-Create/Create/pull/10017/
 
 ## Optimization
-- [ ] Funnel Extraction, MountedItemStorageWrapper https://github.com/Creators-of-Create/Create/issues/9706
 - [ ] Contraption collision optimization? Will really depend on whether that's safely doable while still providing a performance improvement.
 
 ## Data Files
-- [ ] BWG of https://github.com/Creators-of-Create/Create/issues/9500
-- [ ] Use c:strings in Bound Cardboard recipe https://github.com/Creators-of-Create/Create/issues/9501
-- [ ] Fully-efficient clay recipe https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
-- [ ] Crafting using waxed blocks https://github.com/Creators-of-Create/Create/pull/9801
+- Empty! 🎉
 
 ## Easy
-- [ ] Factory gauges do not check the network on load https://github.com/Creators-of-Create/Create/issues/8245
-- [ ] Respect interfaceScale for Xaero Train Map https://github.com/Creators-of-Create/Create/pull/9736
-- [ ] Fix empty tanks sometimes not being fillable https://github.com/Creators-of-Create/Create/pull/9814
-- [ ] Fix steam engine not filling with water https://github.com/Creators-of-Create/Create/pull/9813
-- [ ] Limit max train size to prevent OOM https://github.com/Creators-of-Create/Create/issues/9626
-- [ ] Lectern Controller interaction range https://github.com/Creators-of-Create/Create/issues/9922
-- [ ] Mixers still mixing at low/zero speed https://github.com/Creators-of-Create/Create/issues/6249
-- [ ] Fix copycat blocks dropping items when /fill'd https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
-- [ ] Bouncy Seats, but also some other unlabeled fixes https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
+- Empty! 🎉
   
 ## Medium
-- [ ] RadialWrenchHandler visual glitches with non-BlockEntity blocks https://github.com/Creators-of-Create/Create/issues/9608
-- [ ] Copycats do not render emissives correctly https://github.com/Creators-of-Create/Create/issues/9675
 - [ ] Redstone Links & Nixie Tubes read redstone signals from the incorrect block face https://github.com/Creators-of-Create/Create/issues/8734
+  - Wait for an actual fix! This was marked as fixed in 6.0.9, but it actually wasn't.
 
 ## Hard
-- [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setchanged on the client;
+- [ ] [Our fix to #9459](https://github.com/Creators-of-Create/Create/issues/9459) uses a hacky mixin fix to never call setChanged on the client;
 it's simple but it's gross and might miss edge cases. the proper fix presumably requires asm to replace the class
 
 ## Unsorted
-- [ ] Encased Fan shaft texture fix, Train Disassembly with CC Computer attached fixed, Fix Bottomless Limit being over by 1 https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
+- Empty! 🎉
 
 ## Done!
 - [x] https://github.com/Creators-of-Create/Create/pull/9763
@@ -54,3 +42,28 @@ it's simple but it's gross and might miss edge cases. the proper fix presumably 
 - [x] https://github.com/Creators-of-Create/Create/issues/9547
 - [x] https://github.com/Creators-of-Create/Create/pull/9729
 - [x] https://github.com/Creators-of-Create/Create/pull/9735
+- [x] https://github.com/Creators-of-Create/Create/issues/9501
+- [x] https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c
+- [x] https://github.com/Creators-of-Create/Create/pull/9801
+- [x] https://github.com/Creators-of-Create/Create/pull/10013
+- [x] https://github.com/Creators-of-Create/Create/pull/9984
+- [x] https://github.com/Creators-of-Create/Create/issues/6249
+- [x] https://github.com/Creators-of-Create/Create/pull/8828
+- [x] https://github.com/Creators-of-Create/Create/pull/9942
+- [x] https://github.com/Creators-of-Create/Create/issues/9675
+- [x] https://github.com/Creators-of-Create/Create/pull/9736
+- [x] https://github.com/Creators-of-Create/Create/issues/9608
+- [x] https://github.com/Creators-of-Create/Create/issues/9626
+- [x] https://github.com/Creators-of-Create/Create/pull/9814
+- [x] https://github.com/Creators-of-Create/Create/pull/9813
+- [x] https://github.com/Creators-of-Create/Create/issues/8245
+- [x] https://github.com/Creators-of-Create/Create/issues/9922
+- [x] https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf
+- [x] https://github.com/Creators-of-Create/Create/pull/9907
+- [x] https://github.com/Creators-of-Create/Create/pull/9802
+- [x] https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e
+- [x] https://github.com/Creators-of-Create/Create/pull/9940
+- [x] https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543
+- [x] https://github.com/Creators-of-Create/Create/issues/9500
+- [x] https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff
+- [x] https://github.com/Creators-of-Create/Create/issues/9706

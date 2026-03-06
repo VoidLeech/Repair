@@ -17,7 +17,7 @@ public abstract class SchematicPrinterMixin {
     private SchematicLevel blockReader;
 
     @ModifyArg(method = "getCurrentRequirement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/utility/BlockHelper;prepareBlockEntityData(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;)Lnet/minecraft/nbt/CompoundTag;"), remap = false)
-    private BlockEntity create_repair$(BlockEntity original, @Local(name = "target") BlockPos target){
+    private BlockEntity create_repair$passCorrectBlockEntity(BlockEntity original, @Local(name = "target") BlockPos target){
         return blockReader.getBlockEntity(target);
     }
 }

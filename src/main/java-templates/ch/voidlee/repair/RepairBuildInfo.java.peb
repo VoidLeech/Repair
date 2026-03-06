@@ -1,0 +1,6 @@
+package ch.voidlee.repair;
+
+public class RepairBuildInfo {
+    public static String VERSION = "{{ version }}";
+    public static String GIT_COMMIT = "{{ gitCommit }}";
+}

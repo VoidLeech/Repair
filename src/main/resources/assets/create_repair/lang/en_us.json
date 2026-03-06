@@ -1,0 +1,6 @@
+{
+  "itemGroup.create_repair.base": "Create Repair",
+  "resourcePack.create_repair.title": "Create Repair Asset Overrides",
+  "resourcePack.create_repair.description": "Model & Typo fixes for Create provided by Create Repair",
+  "create_repair.menu.unsupported": "Create on 1.20.1 is unsupported, and is no longer receiving updates."
+}
