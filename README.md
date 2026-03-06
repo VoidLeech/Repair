@@ -14,11 +14,13 @@ All of the above are subject to the difficulty of actually implementing them, ta
 
 Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Mixinbooster (recommended) or Sinytra Connector. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
 
+For a full list on what we've done, see [REPAIRED.md](REPAIRED.md).
+
 ### Contributing
 There are three ways developers can assist with this project:
 - Submit fixes for bugs in our code (target the Forge branch unless the change is specific to Fabric).
 - Backport PRs or commits from Create (please try to list the original author as co-author of your commit).
-- For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then optionally to us.
+- For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then, optionally, to us.
 
 Fabric requires Java 21 to build. LLM contributions will be rejected.
 

@@ -37,8 +37,6 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix the Mechanical Mixer continuing to Mix when power is cut](https://github.com/Creators-of-Create/Create/issues/6249) (Thanks, AyOhEe and IThundxr!)
 - [x] [Increase epsilon of the RotationPropagator speed comparison](https://github.com/Creators-of-Create/Create/pull/10013) (Thanks, Cyvack!)
 - [x] [Respect macOS's interfaceScale for the Xaero's Train Map](https://github.com/Creators-of-Create/Create/pull/9736) (Thanks, SoprachevAK!)
-- [x] [Using a Schematicannon to place a Linked Controller Lectern no longer crashes](https://github.com/Creators-of-Create/Create/issues/9448)
-
 
 ## Crashes Fixed
 - [x] [Fix a crash when filling a Cauldron with a Spout](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
@@ -47,6 +45,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix CC:Tweaked crashing when a train is disassembled by a computer](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
 - [x] [Limit Train configs to prevent an OOM](https://github.com/Creators-of-Create/Create/issues/9626) (Thanks, IThundxr!)
 - [x] [Setting the Display Link cursor position to a negative value using CC:Tweaked causes a crash](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
+- [x] [Using a Schematicannon to place a Linked Controller Lectern no longer crashes](https://github.com/Creators-of-Create/Create/issues/9448)
 - [x] [REGISTRATE] [Fix bucket-less fluids crashing](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 
 ## Tweaks
