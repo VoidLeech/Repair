@@ -67,11 +67,12 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixinextras_version}")))
 
     //modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
     if (enable_emi.toBoolean())
-        modRuntimeOnly("dev.emi:emi-forge:${emi_version}")
+        modRuntimeOnly("dev.emi:emi-fabric:${emi_version}")
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modImplementation "com.simibubi.create:create-fabric:${create_version}.${create_version_number}"
@@ -89,6 +90,15 @@ dependencies {
         }
 }
 
+sourceSets {
+    main {
+        blossom.javaSources {
+            property("version", version)
+            property("gitCommit", gitHash.toString())
+        }
+    }
+}
+
 processResources {
     def replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
@@ -101,11 +111,6 @@ processResources {
         expand replaceProperties
     }
     inputs.properties(replaceProperties)
-
-    //blossom.javaSources {
-    //    property("version", version)
-    //    property("gitCommit", gitHash.toString())
-    //}
 }
 
 tasks.withType(JavaCompile).configureEach {

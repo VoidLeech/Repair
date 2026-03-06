@@ -1,7 +1,6 @@
-package ch.voidlee.repair.mixin.forge;
+/*package ch.voidlee.repair.mixin.forge;
 
 import ch.voidlee.repair.implementation.RepairedMountedItemStorageWrapper;
-import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,4 +22,4 @@ public class CombinedInvWrapperMixin {
             cir.setReturnValue(wrapper.create_repair$getSlotFromIndex(slot, index));
         }
     }
-}
+}*/

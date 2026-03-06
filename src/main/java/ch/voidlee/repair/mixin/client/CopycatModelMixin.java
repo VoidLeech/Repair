@@ -1,40 +1,34 @@
 package ch.voidlee.repair.mixin.client;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.simibubi.create.content.decoration.copycat.CopycatModel;
-import net.minecraft.client.renderer.block.model.BakedQuad;
+import io.github.fabricators_of_create.porting_lib.models.QuadTransformers;
+import net.fabricmc.fabric.api.renderer.v1.render.RenderContext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.QuadTransformers;
-import net.minecraftforge.client.model.data.ModelData;
-import net.minecraftforge.client.model.data.ModelProperty;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
-
-import java.util.List;
 
 // https://github.com/Creators-of-Create/Create/commit/174671d1d721d1f970c77caeb0a79bced59111ad
 @Mixin(CopycatModel.class)
 public abstract class CopycatModelMixin {
-    @Unique
-    private static final ModelProperty<Boolean> CREATE_REPAIR$IS_EMISSIVE_PROPERTY = new ModelProperty<>();
 
-    @ModifyReturnValue(method = "gatherModelData", at = @At("TAIL"), remap = false)
-    private ModelData.Builder create_repair$withEmissiveData(ModelData.Builder original, @Local(name = "material") BlockState material,
-                                                             @Local(argsOnly = true) BlockAndTintGetter level, @Local(argsOnly = true) BlockPos pos) {
-        original.with(CREATE_REPAIR$IS_EMISSIVE_PROPERTY, material.emissiveRendering(level, pos));
-        return original;
+    @WrapOperation(method = "emitBlockQuads", at = @At(value = "INVOKE", target = "Lnet/fabricmc/fabric/api/renderer/v1/render/RenderContext;pushTransform(Lnet/fabricmc/fabric/api/renderer/v1/render/RenderContext$QuadTransform;)V"), remap = false)
+    private void create_repair$setEmissivity(RenderContext instance, RenderContext.QuadTransform quadTransform, Operation<Void> original, @Local(argsOnly = true) BlockAndTintGetter level, @Local(argsOnly = true) BlockPos pos, @Local(name = "material") BlockState material) {
+        original.call(instance, quadTransform);
+        if (material.emissiveRendering(level, pos)) {
+            instance.pushTransform(QuadTransformers.settingMaxEmissivity());
+        }
     }
 
-    @ModifyReturnValue(method = "getQuads(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/util/RandomSource;Lnet/minecraftforge/client/model/data/ModelData;Lnet/minecraft/client/renderer/RenderType;)Ljava/util/List;",
-            at = @At("TAIL"), remap = false)
-    private List<BakedQuad> create_repair$setEmissivity(List<BakedQuad> original, @Local(argsOnly = true) ModelData data) {
-        if (Boolean.TRUE.equals(data.get(CREATE_REPAIR$IS_EMISSIVE_PROPERTY))) {
-            QuadTransformers.settingMaxEmissivity().processInPlace(original);
+    @WrapOperation(method = "emitBlockQuads", at = @At(value = "INVOKE", target = "Lnet/fabricmc/fabric/api/renderer/v1/render/RenderContext;popTransform()V"), remap = false)
+    private void create_repair$popEmissivity(RenderContext instance, Operation<Void> original, @Local(argsOnly = true) BlockAndTintGetter level, @Local(argsOnly = true) BlockPos pos, @Local(name = "material") BlockState material) {
+        original.call(instance);
+        if (material.emissiveRendering(level, pos)) {
+            instance.popTransform();
         }
-        return original;
     }
 }

@@ -31,6 +31,7 @@ public class Repair implements ModInitializer {
                 Component.literal("Create Repair Asset Overrides"),
                 ResourcePackActivationType.DEFAULT_ENABLED
                 );
+        AddPackFindersEvent.EVENT.register(Repair::addPackFinders);
     }
 
     private static void addPackFinders(AddPackFindersEvent event) {

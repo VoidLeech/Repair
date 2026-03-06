@@ -24,11 +24,9 @@
     "HarvesterMovementBehaviourMixin",
     "InventoryIdentifier$PairMixin",
     "InvManipulationBehaviourMixin",
-    "ItemHelperMixin",
     "LecternControllerBlockEntityMixin",
     "LogisticallyLinkedBehaviourMixin",
     "MixerStopMixingMixin",
-    "MountedItemStorageWrapperMixin",
     "PostboxBlockEntityMixin",
     "RotationPropagatorMixin",
     "SchematicPrinterMixin",
@@ -36,8 +34,7 @@
     "StationBlockEntityMixin",
     "TrackNodeLocationMixin",
     "TreeFertilizerItemMixin",
-    "ValveHandleBlockEntityMixin",
-    "forge.CombinedInvWrapperMixin"
+    "ValveHandleBlockEntityMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",
@@ -46,7 +43,6 @@
     "client.HandCrankAndValveVisualMixin",
     "client.HandCrankRendererMixin",
     "client.LayeredArmorItemMixin",
-    "client.OptionsMixin",
     "client.RadialWrenchMenuMixin",
     "client.ScheduleScreenMixin",
     "client.UprightItemRendererMixin",

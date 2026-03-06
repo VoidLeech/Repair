@@ -1,11 +1,10 @@
-package ch.voidlee.repair.mixin;
+/*package ch.voidlee.repair.mixin;
 
 import ch.voidlee.repair.implementation.RepairedMountedItemStorageWrapper;
 import com.google.common.collect.ImmutableMap;
 import com.simibubi.create.api.contraption.storage.item.MountedItemStorage;
 import com.simibubi.create.api.contraption.storage.item.MountedItemStorageWrapper;
 import net.minecraft.core.BlockPos;
-import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -47,4 +46,4 @@ public class MountedItemStorageWrapperMixin extends CombinedInvWrapper implement
     public int[] create_repair$slotOffsets() {
         return create_repair$slotOffsets;
     }
-}
+}*/
