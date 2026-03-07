@@ -23,7 +23,7 @@ public abstract class MixerStopMixingMixin extends BasinOperatingBlockEntity {
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/mixer/MechanicalMixerBlockEntity;isVirtual()Z"), remap = false)
     private void create_repair$tick(CallbackInfo ci) {
-        if (getSpeed() == 0) {
+        if (getSpeed() == 0 || !isSpeedRequirementFulfilled()) {
             if (runningTicks < 20)
                 runningTicks = 40 - runningTicks;
             else if (runningTicks == 20)

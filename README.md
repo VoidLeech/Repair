@@ -8,9 +8,11 @@ So what do we do?
 1. Fix 1.20.1-exclusive bugs.
 2. Backport Create's fixes for bugs that also affected 1.20.1.
 3. Backport new API.
-4. *Backport applicable compat recipes. Oops user-facing after all.
+4. *Backport applicable compat recipes. Oops, it's user-facing after all.
 
 All of the above are subject to the difficulty of actually implementing them, taking into account the invasiveness of the required changes: no update to Create Repair should break an addon, lest we saddle either Create, the addon, or both, with issue reports.
+
+For a full list of our backported fixes, tweaks, and more, check out our [Big List of Backports](https://github.com/VoidLeech/Repair/blob/mc1.20.1/forge/dev/REPAIRED.md).
 
 Some bugs require Fabric Mixin to fix, which for Forge can be provided by either Mixinbooster (recommended) or Sinytra Connector. As such, there is no hard dependency on either, but those fixes will be disabled if neither is present.
 
@@ -18,7 +20,7 @@ Some bugs require Fabric Mixin to fix, which for Forge can be provided by either
 There are three ways developers can assist with this project:
 - Submit fixes for bugs in our code (target the Forge branch unless the change is specific to Fabric).
 - Backport PRs or commits from Create (please try to list the original author as co-author of your commit).
-- For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then optionally to us.
+- For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then, optionally, to us.
 
 Fabric requires Java 21 to build. LLM contributions will be rejected.
 
