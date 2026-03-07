@@ -27,6 +27,7 @@
     "LecternControllerBlockEntityMixin",
     "LogisticallyLinkedBehaviourMixin",
     "MixerStopMixingMixin",
+    "MountedItemStorageWrapperMixin",
     "PostboxBlockEntityMixin",
     "RotationPropagatorMixin",
     "SchematicPrinterMixin",
@@ -34,7 +35,8 @@
     "StationBlockEntityMixin",
     "TrackNodeLocationMixin",
     "TreeFertilizerItemMixin",
-    "ValveHandleBlockEntityMixin"
+    "ValveHandleBlockEntityMixin",
+    "forge.CombinedInvWrapperMixin"
   ],
   "client": [
     "client.BacktankArmorLayerMixin",
