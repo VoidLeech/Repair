@@ -16,8 +16,9 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 ## Recipe Tweaks
 - [x] [Adjust the Clay crushing recipe to always give 4 clay balls](https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c) (Thanks, IThundxr!)
 - [x] [Allow crafting Waxed Copper Tile/Shingle stairs directly](https://github.com/Creators-of-Create/Create/pull/9801) (Thanks, techno-sam!)
-- [x] [Fix Biomes We've Gone compatibility recipes](https://github.com/Creators-of-Create/Create/issues/9500) (Thanks, VoidLeech!)
+- [x] [Fix Biomes We've Gone compatibility recipes](https://github.com/Creators-of-Create/Create/issues/9500)
 - [x] [Fix the Bound Cardboard crafting recipe using `minecraft:string` instead of `forge:string`](https://github.com/Creators-of-Create/Create/issues/9501) (Thanks, IThundxr!)
+- [x] [Fix Environmental compatibility recipes](https://github.com/Creators-of-Create/Create/pull/8471)
 
 ## Bugs Fixed
 - [x] [Fix a precision error in TrackNodeLocation](https://github.com/Creators-of-Create/Create/issues/9509) (Thanks, IThundxr!)
