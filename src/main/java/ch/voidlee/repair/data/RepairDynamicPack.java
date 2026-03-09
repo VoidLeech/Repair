@@ -85,6 +85,9 @@ public class RepairDynamicPack extends DynamicPack {
         allWaxedCraftingForState(WEATHERED);
 
         updatedBwgCompat();
+        updatedSGCompat();
+        updatedEnvironmentalCompat();
+        updatedAutumnityCompat();
 
         for (Map.Entry<ResourceLocation, Collection<TagEntry>> tags : ITEM_TAGS.asMap().entrySet()) {
             TagFile tagFile = new TagFile(new ArrayList<>(tags.getValue()), false);
@@ -161,6 +164,7 @@ public class RepairDynamicPack extends DynamicPack {
                 .save(this::saveFinishedRecipe, Create.asResource(recipePath));
     }
 
+    // https://github.com/Creators-of-Create/Create/pull/9537
     private void updatedBwgCompat() {
         // Removed
         disableCrushingRecipe("compat/biomeswevegone/ametrine_ore");
@@ -253,7 +257,7 @@ public class RepairDynamicPack extends DynamicPack {
                 .duration(50)
                 .whenModLoaded(Mods.BWG.getId())
                 .build();
-        // New (but analogous to existing recipes in base Create or its compat)
+        // New
         new Builder<>("compat/biomeswevegone/lush_dirt_path", PressingRecipe::new)
                 .require(Mods.BWG, "lush_dirt")
                 .output(Mods.BWG, "lush_dirt_path")
@@ -382,6 +386,77 @@ public class RepairDynamicPack extends DynamicPack {
         insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("allium_oddion_soup"), ITEM_TAGS);
         insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("white_puffball_stew"), ITEM_TAGS);
         insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.BWG.asResource("aloe_vera_juice"), ITEM_TAGS);
+    }
+
+    // https://github.com/Creators-of-Create/Create/pull/9537
+    private void updatedSGCompat() {
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.SILENT_GEMS.asResource("flower_basket"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.SILENT_GEMS.asResource("uncooked_meaty_stew"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.SILENT_GEMS.asResource("meaty_stew"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.SILENT_GEMS.asResource("uncooked_fishy_stew"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.SILENT_GEMS.asResource("fishy_stew"), ITEM_TAGS);
+    }
+
+    // https://github.com/Creators-of-Create/Create/pull/8471
+    private void updatedEnvironmentalCompat() {
+        // Wrong/adjusted output
+        new Builder<>("path", PressingRecipe::new)
+                .require(Ingredient.of(Items.DIRT, Items.COARSE_DIRT, Items.ROOTED_DIRT, Items.MYCELIUM, Items.PODZOL))
+                .output(Items.DIRT_PATH)
+                .whenModMissing(Mods.ENV.getId())
+                .build();
+        new Builder<>("compat/environmental/blue_delphinium", MillingRecipe::new)
+                .require(Mods.ENV, "blue_delphinium")
+                .output(Items.LIGHT_BLUE_DYE, 3)
+                .output(0.1f, Items.LIGHT_BLUE_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.ENV.getId())
+                .build();
+        new Builder<>("compat/environmental/dianthus", MillingRecipe::new)
+                .require(Mods.ENV, "dianthus")
+                .output(Items.LIME_DYE, 2)
+                .output(0.1f, Items.LIME_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.ENV.getId())
+                .build();
+        new Builder<>("compat/environmental/white_lotus_flower", MillingRecipe::new)
+                .require(Mods.ENV, "white_lotus_flower")
+                .output(Items.WHITE_DYE, 2)
+                .output(0.1f, Items.WHITE_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.ENV.getId())
+                .build();
+        // New
+        new Builder<>("compat/environmental/dirt_path", PressingRecipe::new)
+                .require(Ingredient.of(Items.DIRT, Items.COARSE_DIRT, Items.ROOTED_DIRT))
+                .output(Mods.ENV, "dirt_path")
+                .whenModLoaded(Mods.ENV.getId())
+                .build();
+        new Builder<>("path_from_grass", PressingRecipe::new)
+                .require(Items.GRASS_BLOCK)
+                .output(Items.DIRT_PATH)
+                .build();
+        new Builder<>("compat/environmental/tasselflower", MillingRecipe::new)
+                .require(Mods.ENV, "tasselflower")
+                .output(Items.ORANGE_DYE, 2)
+                .output(0.1f, Items.GREEN_DYE)
+                .duration(50)
+                .whenModLoaded(Mods.ENV.getId())
+                .build();
+        // Tags
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_LOGS.tag.location(), Mods.ENV.asResource("stripped_pine_log"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_WOOD.tag.location(), Mods.ENV.asResource("stripped_pine_wood"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_LOGS.tag.location(), Mods.ENV.asResource("stripped_plum_log"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_WOOD.tag.location(), Mods.ENV.asResource("stripped_plum_wood"), ITEM_TAGS);
+    }
+
+    // https://github.com/Creators-of-Create/Create/pull/8471
+    private void updatedAutumnityCompat() {
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.AUTUM.asResource("foul_soup"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.AUTUM.asResource("syrup_bottle"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.UPRIGHT_ON_BELT.tag.location(), Mods.AUTUM.asResource("sap_bottle"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_LOGS.tag.location(), Mods.AUTUM.asResource("stripped_maple_log"), ITEM_TAGS);
+        insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_WOOD.tag.location(), Mods.AUTUM.asResource("stripped_maple_wood"), ITEM_TAGS);
     }
 
     private void insertIntoTag(ResourceLocation tag, ResourceLocation itemId, Multimap<ResourceLocation, TagEntry> tagMap) {
