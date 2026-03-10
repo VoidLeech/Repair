@@ -30,6 +30,7 @@
     "LogisticallyLinkedBehaviourMixin",
     "MixerStopMixingMixin",
     "MountedItemStorageWrapperMixin",
+    "PloughMovementBehaviourMixin",
     "PostboxBlockEntityMixin",
     "RotationPropagatorMixin",
     "SchematicPrinterMixin",

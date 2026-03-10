@@ -54,6 +54,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)
 - [x] [Changes to `FluidPropagator` to support any pump extending `PumpBlock`](https://github.com/Creators-of-Create/Create/pull/9763) (Thanks, hadron13!)
 - [x] [Prevent mushrooms being harvested while on Farmer's Delight Rich Soil](https://github.com/Creators-of-Create/Create/pull/9940) (Thanks, AyOhEe!)
+- [x] [Add plough blacklist and whitelist tags](https://github.com/Creators-of-Create/Create/pull/9346)
 
 ## Dupes Fixed
 - [x] [Fix a dupe when breaking a Postbox while its menu is open](https://github.com/Creators-of-Create/Create/pull/9802) (Thanks, techno-sam!)
