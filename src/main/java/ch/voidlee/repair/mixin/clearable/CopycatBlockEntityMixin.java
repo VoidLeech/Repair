@@ -1,4 +1,4 @@
-package ch.voidlee.repair.mixin;
+package ch.voidlee.repair.mixin.clearable;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.decoration.copycat.CopycatBlockEntity;
