@@ -3,8 +3,8 @@ package ch.voidlee.repair.mixin.clearable;
 import com.simibubi.create.content.logistics.BigItemStack;
 import com.simibubi.create.content.logistics.packager.PackagerBlockEntity;
 import com.simibubi.create.content.logistics.packager.PackagerItemHandler;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.world.Clearable;
-import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
@@ -20,7 +20,10 @@ public abstract class PackagerBlockEntityMixin implements Clearable {
 
     @Override
     public void clearContent() {
-        inventory.setStackInSlot(0, ItemStack.EMPTY);
+        try (Transaction transaction = Transaction.openOuter()) {
+            inventory.extract(inventory.getResource(), 1, transaction);
+            transaction.commit();
+        }
         queuedExitingPackages.clear();
     }
 }

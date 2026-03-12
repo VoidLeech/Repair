@@ -1,6 +1,5 @@
 package ch.voidlee.repair.mixin.clearable;
 
-import ch.voidlee.repair.mixin.accessor.ItemStackHandlerAccessor;
 import com.simibubi.create.content.schematics.table.SchematicTableBlockEntity;
 import net.minecraft.world.Clearable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,6 +13,6 @@ public abstract class SchematicTableBlockEntityMixin implements Clearable {
 
     @Override
     public void clearContent() {
-        ((ItemStackHandlerAccessor) inventory).create_repair$getStacks().clear();
+        inventory.getSlots().clear();
     }
 }
