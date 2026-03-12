@@ -27,7 +27,7 @@
     "ItemHelperMixin",
     "LecternControllerBlockEntityMixin",
     "LogisticallyLinkedBehaviourMixin",
-    "MixerStopMixingMixin",
+    "MechanicalMixerBlockEntityMixin",
     "MountedItemStorageWrapperMixin",
     "PloughMovementBehaviourMixin",
     "PostboxBlockEntityMixin",

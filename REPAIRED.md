@@ -27,6 +27,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix blocks destroyed by tree fertilizer not dropping](https://github.com/Creators-of-Create/Create/pull/9758) (Thanks, katietheqt!)
 - [x] [Fix closing the Train Schedule menu by pressing E while typing](https://github.com/Creators-of-Create/Create/pull/9729) (Thanks, fywchis!)
 - [x] [Fix Copycats dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf) (Thanks, IThundxr!)
+- [x] [Fix a bunch of other blocks dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24) (Thanks, IThundxr!)
 - [x] [Fix duplicate readings from Stock Links on the same storage](https://github.com/Creators-of-Create/Create/pull/9793) (Thanks, techno-sam!)
 - [x] [Fix Factory Gauges requesting packages on load](https://github.com/Creators-of-Create/Create/issues/8245) (Thanks, curryducker!)
 - [x] [Fix Fluid Tanks not properly updating neighbors](https://github.com/Creators-of-Create/Create/pull/9814) (Thanks, techno-sam!)
@@ -46,7 +47,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix Adjustable Chain Gearshifts crashing the game with certain inputs](https://github.com/Creators-of-Create/Create/pull/9803) (Thanks, techno-sam!)
 - [x] [Fix CC:Tweaked crashing when a train is disassembled by a computer](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
 - [x] [Limit Train configs to prevent an OOM](https://github.com/Creators-of-Create/Create/issues/9626) (Thanks, IThundxr!)
-- [x] [Setting the Display Link cursor position to a negative value using CC:Tweaked causes a crash](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
+- [x] [Setting the Display Link cursor position to a negative value using CC:Tweaked crashes CC scripts](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
 - [x] [Using a Schematicannon to place a Linked Controller Lectern no longer crashes](https://github.com/Creators-of-Create/Create/issues/9448)
 - [x] [REGISTRATE] [Fix bucket-less fluids crashing](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 
@@ -54,7 +55,8 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)
 - [x] [Changes to `FluidPropagator` to support any pump extending `PumpBlock`](https://github.com/Creators-of-Create/Create/pull/9763) (Thanks, hadron13!)
 - [x] [Prevent mushrooms being harvested while on Farmer's Delight Rich Soil](https://github.com/Creators-of-Create/Create/pull/9940) (Thanks, AyOhEe!)
-- [x] [Add plough blacklist and whitelist tags](https://github.com/Creators-of-Create/Create/pull/9346)
+- [x] [Add plough blacklist and whitelist block tags: `#create:plough_blacklist`, `#create:plough_whitelist`](https://github.com/Creators-of-Create/Create/pull/9346)
+- [x] [Remove limit on mixer processing time](https://github.com/Creators-of-Create/Create/pull/10022) (Thanks, AyOhEe!)
 
 ## Dupes Fixed
 - [x] [Fix a dupe when breaking a Postbox while its menu is open](https://github.com/Creators-of-Create/Create/pull/9802) (Thanks, techno-sam!)
