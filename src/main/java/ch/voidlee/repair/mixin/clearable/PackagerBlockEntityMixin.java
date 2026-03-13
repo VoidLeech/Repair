@@ -20,9 +20,11 @@ public abstract class PackagerBlockEntityMixin implements Clearable {
 
     @Override
     public void clearContent() {
-        try (Transaction transaction = Transaction.openOuter()) {
-            inventory.extract(inventory.getResource(), 1, transaction);
-            transaction.commit();
+        if  (!inventory.isResourceBlank()) {
+            try (Transaction transaction = Transaction.openOuter()) {
+                inventory.extract(inventory.getResource(), 1, transaction);
+                transaction.commit();
+            }
         }
         queuedExitingPackages.clear();
     }
