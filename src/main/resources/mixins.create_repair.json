@@ -6,6 +6,7 @@
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
     "AttributeFilterMenuMixin",
+    "BeltInventoryMixin",
     "ConnectivityHandlerMixin",
     "ContraptionMixin",
     "ContraptionUOEMixin",
@@ -31,11 +32,9 @@
     "PostboxBlockEntityMixin",
     "RotationPropagatorMixin",
     "SchematicPrinterMixin",
-    "clearable.SchematicTableBlockEntityMixin",
     "StateChangingBehaviorMixin",
     "StationBlockEntityMixin",
     "TrackNodeLocationMixin",
-    "clearable.TrackObserverBlockEntityMixin",
     "TreeFertilizerItemMixin",
     "ValveHandleBlockEntityMixin",
     "clearable.BasinBlockEntityMixin",
@@ -56,11 +55,13 @@
     "clearable.PackagePortBlockEntityMixin",
     "clearable.PackagerBlockEntityMixin",
     "clearable.SawBlockEntityMixin",
+    "clearable.SchematicTableBlockEntityMixin",
     "clearable.SmartChuteBlockEntityMixin",
     "clearable.SmartFluidPipeBlockEntityMixin",
     "clearable.SmartObserverBlockEntityMixin",
     "clearable.StockTickerBlockEntityMixin",
     "clearable.ThresholdSwitchBlockEntityMixin",
+    "clearable.TrackObserverBlockEntityMixin",
     "forge.CombinedInvWrapperMixin"
   ],
   "client": [

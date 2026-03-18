@@ -40,6 +40,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix the Mechanical Mixer continuing to Mix when power is cut](https://github.com/Creators-of-Create/Create/issues/6249) (Thanks, AyOhEe and IThundxr!)
 - [x] [Increase epsilon of the RotationPropagator speed comparison](https://github.com/Creators-of-Create/Create/pull/10013) (Thanks, Cyvack!)
 - [x] [Respect macOS's interfaceScale for the Xaero's Train Map](https://github.com/Creators-of-Create/Create/pull/9736) (Thanks, SoprachevAK!)
+- [x] [Fix conveyors losing items when they are unloaded](https://github.com/Creators-of-Create/Create/issues/9882) (Thanks, Apertyotis!)
 
 ## Crashes Fixed
 - [x] [Fix a crash when filling a Cauldron with a Spout](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
