@@ -1,0 +1,19 @@
+package ch.voidlee.repair.mixin.bug_fixes.clearable;
+
+import com.simibubi.create.content.kinetics.crusher.CrushingWheelControllerBlockEntity;
+import com.simibubi.create.content.processing.recipe.ProcessingInventory;
+import net.minecraft.world.Clearable;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+
+// https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
+@Mixin(CrushingWheelControllerBlockEntity.class)
+public abstract class CrushingWheelControllerBlockEntityMixin implements Clearable {
+    @Shadow
+    public ProcessingInventory inventory;
+
+    @Override
+    public void clearContent() {
+        inventory.clear();
+    }
+}
