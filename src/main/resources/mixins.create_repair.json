@@ -31,6 +31,7 @@
     "bug_fixes.clearable.PackagePortBlockEntityMixin",
     "bug_fixes.clearable.PackagerBlockEntityMixin",
     "bug_fixes.clearable.SawBlockEntityMixin",
+    "bug_fixes.clearable.SchematicannonBlockEntityMixin",
     "bug_fixes.clearable.SchematicTableBlockEntityMixin",
     "bug_fixes.clearable.SmartChuteBlockEntityMixin",
     "bug_fixes.clearable.SmartFluidPipeBlockEntityMixin",
