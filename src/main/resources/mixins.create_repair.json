@@ -5,14 +5,14 @@
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
-    "LecternControllerBlockEntityMixin",
-    "MechanicalMixerBlockEntityMixin",
     "accessor.ItemStackHandlerAccessor",
     "bug_fixes.AttributeFilterMenuMixin",
     "bug_fixes.ConnectivityHandlerMixin",
     "bug_fixes.EntityMixin",
     "bug_fixes.FluidTankBlockMixin",
     "bug_fixes.InventoryIdentifier$PairMixin",
+    "bug_fixes.LecternControllerBlockEntityMixin",
+    "bug_fixes.MechanicalMixerBlockEntityMixin",
     "bug_fixes.TrackNodeLocationMixin",
     "bug_fixes.clearable.BasinBlockEntityMixin",
     "bug_fixes.clearable.BeltBlockEntityMixin",
@@ -53,6 +53,7 @@
     "crash_fixes.CTrainsMixin",
     "crash_fixes.DisplayLinkPeripheralMixin",
     "crash_fixes.FluidBuilderMixin",
+    "crash_fixes.LecternControllerBlockEntityMixin",
     "crash_fixes.RotationPropagatorMixin",
     "crash_fixes.StateChangingBehaviorMixin",
     "crash_fixes.StationBlockEntityMixin",
@@ -64,6 +65,7 @@
     "tweaks.ContraptionMixin",
     "tweaks.FluidPropagatorMixin",
     "tweaks.HarvesterMovementBehaviourMixin",
+    "tweaks.MechanicalMixerBlockEntityMixin",
     "tweaks.PloughMovementBehaviourMixin"
   ],
   "client": [
