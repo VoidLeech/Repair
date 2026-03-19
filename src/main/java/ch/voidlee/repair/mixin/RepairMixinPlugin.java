@@ -22,24 +22,24 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (matches("SchematicPrinterMixin", mixinClassName)) {
+        if (matches("bug_fixes.dupes.SchematicPrinterMixin", mixinClassName)) {
             // These implemented a fix before we got to it
             return !isModEarlyLoaded("tfg") &&
                    !isModEarlyLoaded("create_schematicannon_dupe_fix") && // Ported from tfg
                    !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Rebrand of dupe fix
         }
-        if (matches("XaeroTrainMapMixin", mixinClassName)) {
+        if (matches("client.bug_fixes.XaeroTrainMapMixin", mixinClassName)) {
             // Again
             return !isModEarlyLoaded("tfg") &&
                    !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Ported from tfg
         }
-        if (matches("StationBlockEntityMixin", mixinClassName)) {
+        if (matches("crash_fixes.StationBlockEntityMixin", mixinClassName)) {
             // Also separately fixed by tfg
             return !isModEarlyLoaded("tfg");
         }
 
         // Fabric Mixin Unavailability
-        if (matches("LayeredArmorItemMixin", mixinClassName)) {
+        if (matches("client.bug_fixes.backtank_glint.LayeredArmorItemMixin", mixinClassName)) {
             return fabricMixinAvailable();
         }
         return true;
