@@ -19,7 +19,7 @@ public abstract class AttributeFilterMenuMixin extends AbstractFilterMenu {
     }
 
     @ModifyExpressionValue(method = "quickMoveStack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Inventory;getItem(I)Lnet/minecraft/world/item/ItemStack;"), remap = false)
-    private ItemStack create_repair$moveCorrectStack(ItemStack original, @Local(argsOnly = true) int index){
+    private ItemStack create_repair$moveCorrectStack(ItemStack original, @Local(argsOnly = true) int index) {
         return slots.get(index).getItem();
     }
 }

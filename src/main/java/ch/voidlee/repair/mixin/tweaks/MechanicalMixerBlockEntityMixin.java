@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/pull/10022
 @Mixin(MechanicalMixerBlockEntity.class)
 public abstract class MechanicalMixerBlockEntityMixin {
-
     @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;clamp(III)I", remap = true), remap = false)
     private int create_repair$mixersMayGoSlower(int pValue, int pMin, int pMax, Operation<Integer> original) {
         if (pValue < pMax) {

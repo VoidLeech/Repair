@@ -16,8 +16,9 @@ public class PostboxBlockEntityMixin {
     @WrapOperation(method = "onOpenChange", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
     private boolean create_repair$checkForNewBlockState(Level level, BlockPos pos, BlockState ogState, Operation<Boolean> original, boolean open) {
         BlockState state = level.getBlockState(pos);
-        if (!(state.getBlock() instanceof PostboxBlock))
+        if (!(state.getBlock() instanceof PostboxBlock)) {
             return false;
+        }
 
         return original.call(level, pos, state.setValue(PostboxBlock.OPEN, open));
     }

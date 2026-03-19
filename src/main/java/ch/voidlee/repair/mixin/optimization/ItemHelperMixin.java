@@ -15,7 +15,9 @@ public class ItemHelperMixin {
     @WrapOperation(method = "extract(Lnet/minecraftforge/items/IItemHandler;Ljava/util/function/Predicate;Lcom/simibubi/create/foundation/item/ItemHelper$ExtractionCountMode;IZ)Lnet/minecraft/world/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(II)I"), remap = false)
     private static int skipEmptyStacks(int a, int b, Operation<Integer> original, @Local(name = "slot") int slot, @Local(name = "inv") IItemHandler inv) {
         ItemStack slotStack = inv.getStackInSlot(slot);
-        if (slotStack.isEmpty()) return 0;
+        if (slotStack.isEmpty()) {
+            return 0;
+        }
         return original.call(a, b);
     }
 }

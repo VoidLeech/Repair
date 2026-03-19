@@ -15,7 +15,7 @@ public abstract class VirtualRenderWorldMixin {
     @WrapOperation(method = "removeBlockEntity", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;"))
     private <K, V> V create_repair$callSetRemoved(Map<K, V> instance, Object o, Operation<V> original) {
         V removed = original.call(instance, o);
-        if(removed instanceof BlockEntity blockEntity) {
+        if (removed instanceof BlockEntity blockEntity) {
             blockEntity.setRemoved();
         }
 

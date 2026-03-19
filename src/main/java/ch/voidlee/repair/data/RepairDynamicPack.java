@@ -56,7 +56,7 @@ public class RepairDynamicPack extends DynamicPack {
     @Override
     @Nullable
     public IoSupplier<InputStream> getRootResource(String @NotNull ... elements) {
-        if(elements[0].equals("pack.png")) {
+        if (elements[0].equals("pack.png")) {
             return () -> {
                 InputStream stream = Repair.class.getResourceAsStream("/square_icon.png");
                 assert stream != null;
@@ -106,7 +106,9 @@ public class RepairDynamicPack extends DynamicPack {
     private void saveFinishedRecipe(FinishedRecipe recipe) {
         this.put(recipe.getId().withPrefix("recipes/"), recipe.serializeRecipe());
 
-        if(recipe.getAdvancementId() == null) return;
+        if (recipe.getAdvancementId() == null) {
+            return;
+        }
         this.put(recipe.getAdvancementId().withPrefix("advancements/"), recipe.serializeAdvancement());
     }
 

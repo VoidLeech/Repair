@@ -1,6 +1,5 @@
 package ch.voidlee.repair.data;
 
-import ch.voidlee.repair.Repair;
 import com.simibubi.create.Create;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.TagKey;
