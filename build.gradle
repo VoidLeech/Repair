@@ -128,8 +128,29 @@ java {
 jar {
     inputs.property "archivesName", project.base.archivesName
 
-    from("LICENSE") {
-        rename { "${it}_${inputs.properties.archivesName}"}
+    from("LICENSE")
+    from("README.md")
+    from("REPAIRED.md")
+    from(fileTree("other-licenses/")) {
+        rename { "other-licenses/${it}"}
+    }
+}
+
+sourcesJar {
+    from("LICENSE")
+    from("README.md")
+    from("REPAIRED.md")
+    from(fileTree("other-licenses/")) {
+        rename { "other-licenses/${it}"}
+    }
+}
+
+javadocJar {
+    from("LICENSE")
+    from("README.md")
+    from("REPAIRED.md")
+    from(fileTree("other-licenses/")) {
+        rename { "other-licenses/${it}"}
     }
 }
 
