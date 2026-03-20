@@ -75,7 +75,8 @@ sourceSets.main {
 
 processResources {
     from(file("LICENSE"))
-    from(file("README.MD"))
+    from(file("README.md"))
+    from(file("REPAIRED.md"))
     from(fileTree("other-licenses/")) {
         rename { "other-licenses/${it}"}
     }
@@ -132,7 +133,7 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     // compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-    if (enable_emi.toBoolean())
+    if (System.getenv("EMI_IN_DEV_ENV") != null && System.getenv("EMI_IN_DEV_ENV").toBoolean())
         runtimeOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
 
     implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}-${create_version_number}:slim") { transitive = false })
@@ -197,6 +198,24 @@ tasks.named('jar', Jar).configure {
     }
 
     finalizedBy 'reobfJar'
+}
+
+tasks.named('sourcesJar').configure {
+    from(file("LICENSE"))
+    from(file("README.md"))
+    from(file("REPAIRED.md"))
+    from(fileTree("other-licenses/")) {
+        rename { "other-licenses/${it}"}
+    }
+}
+
+tasks.named('javadocJar').configure {
+    from(file("LICENSE"))
+    from(file("README.md"))
+    from(file("REPAIRED.md"))
+    from(fileTree("other-licenses/")) {
+        rename { "other-licenses/${it}"}
+    }
 }
 
 publishing {
