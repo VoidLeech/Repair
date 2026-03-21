@@ -22,7 +22,8 @@ There are three ways developers can assist with this project:
 - Backport PRs or commits from Create (please try to list the original author as co-author of your commit).
 - For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then, optionally, to us.
 
-Fabric requires Java 21 to build. LLM contributions will be rejected.
+Fabric requires Java 21 to build. LLM contributions will be rejected.  
+If you prefer EMI in your development environment over JEI, add the `EMI_IN_DEV_ENV` environment variable with value `true`.
 
 ### F.A.Q.
 **Q: Can this be used in my modpack?**  
