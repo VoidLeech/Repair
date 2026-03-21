@@ -32,7 +32,7 @@ public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<Sc
     // We also need to inject in two places due to bytecode getting reordered in compilation
 
     // Primary fix
-    @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/gui/menu/AbstractSimiContainerScreen;keyPressed(III)Z", ordinal = 1), remap = false, cancellable = true)
+    @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/gui/menu/AbstractSimiContainerScreen;keyPressed(III)Z", ordinal = 1), cancellable = true)
     private void create_repair$allowTypingE2(int pKeyCode, int pScanCode, int pModifiers, CallbackInfoReturnable<Boolean> cir, @Local(name = "hitEnter") boolean hitEnter, @Local(name = "mouseKey") InputConstants.Key mouseKey){
         boolean hitE = getFocused() == null || minecraft.options.keyInventory.isActiveAndMatches(mouseKey);
         if (hitEnter) {
@@ -49,7 +49,7 @@ public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<Sc
     }
 
     // Niche code path to make code flow fully match 'upstream'
-    @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V"), remap = false, cancellable = true)
+    @Inject(method = "keyPressed", at = @At(value = "INVOKE", target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V", remap = false), cancellable = true)
     private void create_repair$allowTypingE1(int pKeyCode, int pScanCode, int pModifiers, CallbackInfoReturnable<Boolean> cir, @Local(name = "hitEnter") boolean hitEnter, @Local(name = "mouseKey") InputConstants.Key mouseKey){
         boolean hitE = getFocused() == null || minecraft.options.keyInventory.isActiveAndMatches(mouseKey);
         if (hitEnter) {

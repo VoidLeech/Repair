@@ -23,7 +23,7 @@ public abstract class CreateMainMenuScreenMixin extends Screen {
         super(pTitle);
     }
 
-    @WrapOperation(method = "addButtons", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/Button;builder(Lnet/minecraft/network/chat/Component;Lnet/minecraft/client/gui/components/Button$OnPress;)Lnet/minecraft/client/gui/components/Button$Builder;", ordinal = 3))
+    @WrapOperation(method = "addButtons", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/Button;builder(Lnet/minecraft/network/chat/Component;Lnet/minecraft/client/gui/components/Button$OnPress;)Lnet/minecraft/client/gui/components/Button$Builder;", ordinal = 3, remap = true), remap = false)
     private Button.Builder create_repair$changeReportIssuesLink(Component message, Button.OnPress ogOnPress, Operation<Button.Builder> original) {
         return original.call(message, (Button.OnPress)($ -> linkTo(CREATE_REPAIR_HOW_TO_REPORT_ISSUES)));
     }

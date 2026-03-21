@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(StationBlockEntity.class)
 public abstract class StationBlockEntityMixin {
     @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/compat/computercraft/AbstractComputerBehaviour;prepareComputerEvent(Lcom/simibubi/create/compat/computercraft/events/ComputerEvent;)V"), remap = false)
-    private void create_repair$noEventIfNoTrain(AbstractComputerBehaviour instance, ComputerEvent event, Operation<Void> original){
+    private void create_repair$noEventIfNoTrain(AbstractComputerBehaviour instance, ComputerEvent event, Operation<Void> original) {
         if (event instanceof StationTrainPresenceEvent trainPresenceEvent && trainPresenceEvent.train != null) {
             original.call(instance, event);
         }

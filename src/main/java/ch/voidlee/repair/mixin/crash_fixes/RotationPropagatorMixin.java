@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(RotationPropagator.class)
 public abstract class RotationPropagatorMixin {
     @ModifyExpressionValue(method = "propagateNewSource", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;getTheoreticalSpeed()F", ordinal = 2), remap = false)
-    private static float create_repair$fixFloatImprecision(float original, @Local(name = "newSpeed") float newSpeed){
+    private static float create_repair$fixFloatImprecision(float original, @Local(name = "newSpeed") float newSpeed) {
         if (Math.abs(original - newSpeed) <= 1e-4f) {
             return newSpeed;
         }
