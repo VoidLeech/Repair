@@ -39,11 +39,11 @@ Fabric requires Java 21 to build. LLM contributions will be rejected.
 
 ### Licensing
 This project is released under the [MIT license](LICENSE).  
-[FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/crash_fixes/FluidBuilderMixin.java) is released under the [MPL-2.0 license](other-licenses/mpl_registrate)
+[FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/crash_fixes/FluidBuilderMixin.java) is released under the [MPL-2.0 license](other-licenses/mpl_registrate).
 
 #### Third-Party Content
 By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](https://github.com/Creators-of-Create/Create/blob/mc1.21.1/dev/LICENSE.md).  
 [FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/crash_fixes/FluidBuilderMixin.java) is based on a commit to Registrate, which is licensed under the [MPL-2.0 license](https://github.com/tterrag1098/Registrate/blob/1.21.8/dev/LICENSE).  
-[OptionsMixin](src/main/java/ch/voidlee/repair/mixin/client/OptionsMixin.java) is based on Fabric API's GameOptionsMixin, which is licensed under the [Apache 2.0 license](https://github.com/FabricMC/fabric-api/blob/1.20.1/LICENSE)
+[OptionsMixin](src/main/java/ch/voidlee/repair/mixin/client/OptionsMixin.java) is based on Fabric API's GameOptionsMixin, which is licensed under the [Apache 2.0 license](https://github.com/FabricMC/fabric-api/blob/1.20.1/LICENSE).
 
 This project is an addon, though we treat it much like a fork. As such, we try to credit the contributors whose fixes we backport; aside from being in mixin form, their patches are almost applied 1:1, and the project wouldn't be possible without them. Having said that, such credit, typically expressed as co-authorship on a commit, does not actually mean that they have done any work specifically for our project, and shouldn't be seen as them endorsing our work.
