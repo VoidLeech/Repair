@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/pull/9942
 @Mixin({ItemDrainRenderer.class, BeltRenderer.class, DepotRenderer.class})
 public abstract class UprightItemRendererMixin {
-    @WrapOperation(method = "renderItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;position()Lnet/minecraft/world/phys/Vec3;"))
+    @WrapOperation(method = "renderItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;position()Lnet/minecraft/world/phys/Vec3;", remap = true), remap = false)
     private static Vec3 create_repair$replacePosition(Entity instance, Operation<Vec3> original) {
         return Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
     }

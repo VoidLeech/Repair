@@ -71,7 +71,7 @@ dependencies {
 
     //modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
-    if (enable_emi.toBoolean())
+    if (System.getenv("EMI_IN_DEV_ENV") != null && System.getenv("EMI_IN_DEV_ENV").toBoolean())
         modRuntimeOnly("dev.emi:emi-fabric:${emi_version}")
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"

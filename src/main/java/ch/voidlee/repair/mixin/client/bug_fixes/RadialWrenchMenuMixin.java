@@ -12,12 +12,12 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/issues/9608
 @Mixin(RadialWrenchMenu.class)
 public abstract class RadialWrenchMenuMixin {
-    @WrapOperation(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;getLevel()Lnet/minecraft/world/level/Level;"))
+    @WrapOperation(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;getLevel()Lnet/minecraft/world/level/Level;", remap = true), remap = false)
     private Level create_repair$maybeThereIsNoLevel(BlockEntity blockEntity, Operation<Level> original) {
         return blockEntity != null ? original.call(blockEntity) : null;
     }
 
-    @WrapWithCondition(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;setLevel(Lnet/minecraft/world/level/Level;)V"))
+    @WrapWithCondition(method = "renderRadialSectors", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/BlockEntity;setLevel(Lnet/minecraft/world/level/Level;)V", remap = true), remap = false)
     private boolean create_repair$onlyIfTheBlockEntityExists(BlockEntity blockEntity, Level level) {
         return blockEntity != null;
     }

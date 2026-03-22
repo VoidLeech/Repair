@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 @Mixin(StateChangingBehavior.class)
 public abstract class StateChangingBehaviorMixin {
     @WrapMethod(method = "incrementingState", remap = false)
-    private static BlockSpoutingBehaviour create_repair$missingCauldronLevel(int amount, Predicate<Fluid> fluidTest, IntegerProperty property, Operation<BlockSpoutingBehaviour> original){
+    private static BlockSpoutingBehaviour create_repair$missingCauldronLevel(int amount, Predicate<Fluid> fluidTest, IntegerProperty property, Operation<BlockSpoutingBehaviour> original) {
         StateChangingBehavior orig = (StateChangingBehavior) original.call(amount, fluidTest, property);
         int max = property.getPossibleValues().stream().max(Integer::compareTo).orElseThrow();
         return new StateChangingBehavior(orig.amount(), orig.fluidTest(), state -> state.hasProperty(property) && state.getValue(property) < max, orig.fillFunction());

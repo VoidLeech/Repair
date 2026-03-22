@@ -78,7 +78,9 @@
     "client.bug_fixes.backtank_glint.LayeredArmorItemMixin",
     "client.bug_fixes.handle_rotation.HandCrankAndValveVisualMixin",
     "client.bug_fixes.handle_rotation.HandCrankRendererMixin",
-    "client.crash_fixes.ContraptionUOEMixin"
+    "client.crash_fixes.ContraptionUOEMixin",
+    "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
+    "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.3"

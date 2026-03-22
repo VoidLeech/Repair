@@ -47,7 +47,7 @@ public abstract class FunnelBlockEntityMixin {
         }
     }
 
-    @ModifyArg(method = "activateExtractor", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;"), index = 1, remap = false)
+    @ModifyArg(method = "activateExtractor", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;", remap = true), index = 1, remap = false)
     private AABB create_repair$thereIsAnAABB(AABB original) {
         return getEntityOverflowScanningArea();
     }

@@ -48,8 +48,9 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix a crash when a train is disassembled using CC:Tweaked](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
 - [x] [Limit Train configs to prevent OOM](https://github.com/Creators-of-Create/Create/issues/9626) (Thanks, IThundxr!)
 - [x] [Fix a crash in the CC:Tweaked lua scripts when setting the Display Link cursor position to a negative value](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
-- [x] [FIx a crash when using a Schematicannon to place a Linked Controller Lectern](https://github.com/Creators-of-Create/Create/issues/9448)
+- [x] [Fix a crash when using a Schematicannon to place a Linked Controller Lectern](https://github.com/Creators-of-Create/Create/issues/9448)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
+- [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
 
 ## Tweaks
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)

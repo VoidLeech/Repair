@@ -12,7 +12,7 @@ import java.util.Map;
 // https://github.com/Creators-of-Create/Create/issues/9821
 @Mixin(VirtualRenderWorld.class)
 public abstract class VirtualRenderWorldMixin {
-    @WrapOperation(method = "removeBlockEntity", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;"))
+    @WrapOperation(method = "removeBlockEntity", at = @At(value = "INVOKE", target = "Ljava/util/Map;remove(Ljava/lang/Object;)Ljava/lang/Object;", remap = false))
     private <K, V> V create_repair$callSetRemoved(Map<K, V> instance, Object o, Operation<V> original) {
         V removed = original.call(instance, o);
         if (removed instanceof BlockEntity blockEntity) {
