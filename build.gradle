@@ -67,7 +67,8 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixinextras_version}")))
+    // Include depending on whether there's a fabric loader version that provides the currently used version of mixinextras
+    /*include(*/ implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${mixinextras_version}")) /*)*/
 
     //modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
@@ -102,12 +103,13 @@ sourceSets {
 processResources {
     def replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+            loader_version: loader_version,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_version: create_version,
             homepage: homepage
     ]
 
-    filesMatching("fabric.mod.json") {
+    filesMatching(["fabric.mod.json", "pack.mcmeta"]) {
         expand replaceProperties
     }
     inputs.properties(replaceProperties)
