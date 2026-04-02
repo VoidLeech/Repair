@@ -7,6 +7,7 @@
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
     "accessor.ItemStackHandlerAccessor",
+    "accessor.ToolboxInventoryAccessor",
     "bug_fixes.AttributeFilterMenuMixin",
     "bug_fixes.ConnectivityHandlerMixin",
     "bug_fixes.EntityMixin",
@@ -45,6 +46,7 @@
     "bug_fixes.dupes.PostboxBlockEntityMixin",
     "bug_fixes.dupes.SchematicPrinterMixin",
     "bug_fixes.dupes.voiding.BeltInventoryMixin",
+    "bug_fixes.dupes.voiding.ToolboxInventoryMixin",
     "bug_fixes.dupes.voiding.TreeFertilizerItemMixin",
     "bug_fixes.fluid_limit.FluidDrainingBehaviourMixin",
     "bug_fixes.fluid_limit.FluidFillingBehaviourMixin",
