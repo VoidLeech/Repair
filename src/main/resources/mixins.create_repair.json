@@ -2,9 +2,11 @@
   "required": true,
   "package": "ch.voidlee.repair.mixin",
   "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
+    "accessor.ToolboxInventoryAccessor",
     "bug_fixes.AttributeFilterMenuMixin",
     "bug_fixes.ConnectivityHandlerMixin",
     "bug_fixes.EntityMixin",
@@ -43,6 +45,7 @@
     "bug_fixes.dupes.PostboxBlockEntityMixin",
     "bug_fixes.dupes.SchematicPrinterMixin",
     "bug_fixes.dupes.voiding.BeltInventoryMixin",
+    "bug_fixes.dupes.voiding.ToolboxInventoryMixin",
     "bug_fixes.dupes.voiding.TreeFertilizerItemMixin",
     "bug_fixes.fluid_limit.FluidDrainingBehaviourMixin",
     "bug_fixes.fluid_limit.FluidFillingBehaviourMixin",
@@ -85,5 +88,7 @@
   "mixinextras": {
     "minVersion": "0.5.3"
   },
-  "minVersion": "0.8"
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
