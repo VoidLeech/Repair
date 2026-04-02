@@ -9,7 +9,6 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Correct the spelling of "Restone" and "Amethust"](https://github.com/Creators-of-Create/Create/pull/9658) (Thanks, PoppyBlossom!)
 - [x] [Fix Backtanks not having the enchantment glint when worn](https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c) (Thanks, IThundxr!)
 - [x] [Fix emissive textures in copycats](https://github.com/Creators-of-Create/Create/issues/9675) (Thanks, IThundxr!)
-- [x] [Fix incorrect rendering in the Wrench Rotation Menu with non-BlockEntity blocks](https://github.com/Creators-of-Create/Create/issues/9608) (Thanks, CKenJa!)
 - [x] [Fix the Encased Fan shaft's texture being rotated incorrectly](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!)
 - [x] [Fix upright item renderers using per-tick position instead of camera position](https://github.com/Creators-of-Create/Create/pull/9942)
 - [x] [Prevent ladders from being split into multiple meshes when assembled in contraptions](https://github.com/Creators-of-Create/Create/commit/25c625dfb8ff8e3fb9cad5ff5deb39ebc1fa202a) (Thanks, Jozufozu!)
@@ -41,6 +40,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Respect macOS's interfaceScale for the Xaero's Train Map](https://github.com/Creators-of-Create/Create/pull/9736) (Thanks, SoprachevAK!)
 - [x] [Fix conveyors losing items when they are unloaded](https://github.com/Creators-of-Create/Create/issues/9882) (Thanks, Apertyotis!)
 - [x] [Fix toolboxes deleting items when reloaded](https://github.com/Creators-of-Create/Create/pull/9757) (Thanks, katietheqt)
+- [x] [Fix incorrect rendering in the Wrench Rotation Menu with non-BlockEntity blocks, leading to those blocks not being rotateable](https://github.com/Creators-of-Create/Create/issues/9608) (Thanks, IThundxr!)
 
 ## Crashes Fixed
 - [x] [Fix a crash when filling a Cauldron with a Spout](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
