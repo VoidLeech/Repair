@@ -72,7 +72,6 @@
   "client": [
     "client.CreateMainMenuScreenMixin",
     "client.bug_fixes.CopycatModelMixin",
-    "client.bug_fixes.RadialWrenchMenuMixin",
     "client.bug_fixes.ScheduleScreenMixin",
     "client.bug_fixes.UprightItemRendererMixin",
     "client.bug_fixes.VirtualRenderWorldMixin",
@@ -81,6 +80,8 @@
     "client.bug_fixes.backtank_glint.LayeredArmorItemMixin",
     "client.bug_fixes.handle_rotation.HandCrankAndValveVisualMixin",
     "client.bug_fixes.handle_rotation.HandCrankRendererMixin",
+    "client.bug_fixes.wrench_menu.RadialWrenchMenu$EvilBlockElementMixin",
+    "client.bug_fixes.wrench_menu.RadialWrenchMenuMixin",
     "client.crash_fixes.ContraptionUOEMixin",
     "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
     "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin"

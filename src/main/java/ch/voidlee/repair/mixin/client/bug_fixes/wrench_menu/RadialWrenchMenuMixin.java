@@ -1,4 +1,4 @@
-package ch.voidlee.repair.mixin.client.bug_fixes;
+package ch.voidlee.repair.mixin.client.bug_fixes.wrench_menu;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
