@@ -13,6 +13,7 @@
     "bug_fixes.EntityMixin",
     "bug_fixes.FluidTankBlockMixin",
     "bug_fixes.InventoryIdentifier$PairMixin",
+    "bug_fixes.ItemSlotsMixin",
     "bug_fixes.LecternControllerBlockEntityMixin",
     "bug_fixes.MechanicalMixerBlockEntityMixin",
     "bug_fixes.TrackNodeLocationMixin",
