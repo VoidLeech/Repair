@@ -3,11 +3,12 @@ package ch.voidlee.repair.data;
 import ch.voidlee.repair.Repair;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.mojang.serialization.JsonOps;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
-import com.simibubi.create.content.kinetics.crusher.CrushingRecipe;
 import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
 import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
@@ -19,6 +20,14 @@ import com.simibubi.create.foundation.pack.DynamicPack;
 import com.simibubi.create.foundation.pack.DynamicPackSource;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import io.github.fabricators_of_create.porting_lib.tags.Tags;
+import io.github.fabricators_of_create.porting_lib.util.TrueCondition;
+import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.SemanticVersion;
+import net.fabricmc.loader.api.Version;
+import net.fabricmc.loader.api.VersionParsingException;
+import net.fabricmc.loader.impl.util.version.SemanticVersionImpl;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -48,6 +57,8 @@ public class RepairDynamicPack extends DynamicPack {
     private static final String PACK_ID = "create_repair:dynamic_data";
 
     private final Multimap<ResourceLocation, TagEntry> ITEM_TAGS = HashMultimap.create();
+
+    private static final JsonObject DISABLED_RECIPE;
 
     public RepairDynamicPack(PackType packType) {
         super(PACK_ID, packType);
@@ -88,6 +99,7 @@ public class RepairDynamicPack extends DynamicPack {
         updatedSGCompat();
         updatedEnvironmentalCompat();
         updatedAutumnityCompat();
+        fixGalosphereCompat();
 
         for (Map.Entry<ResourceLocation, Collection<TagEntry>> tags : ITEM_TAGS.asMap().entrySet()) {
             TagFile tagFile = new TagFile(new ArrayList<>(tags.getValue()), false);
@@ -169,23 +181,23 @@ public class RepairDynamicPack extends DynamicPack {
     // https://github.com/Creators-of-Create/Create/pull/9537
     private void updatedBwgCompat() {
         // Removed
-        disableCrushingRecipe("compat/biomeswevegone/ametrine_ore");
-        disableCrushingRecipe("compat/biomeswevegone/anthracite_ore");
-        disableCrushingRecipe("compat/biomeswevegone/blue_nether_gold_ore");
-        disableCrushingRecipe("compat/biomeswevegone/blue_nether_quartz_ore");
-        disableCrushingRecipe("compat/biomeswevegone/brimstone_nether_gold_ore");
-        disableCrushingRecipe("compat/biomeswevegone/brimstone_nether_quartz_ore");
-        disableCrushingRecipe("compat/biomeswevegone/cryptic_redstone_ore");
-        disableCrushingRecipe("compat/biomeswevegone/emeraldite_ore");
-        disableCrushingRecipe("compat/biomeswevegone/lignite_ore");
-        disableCrushingRecipe("compat/biomeswevegone/pervaded_netherrack");
-        disableMillingRecipe("compat/biomeswevegone/torch_ginger");
+        disableRecipe("compat/biomeswevegone/ametrine_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/anthracite_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/blue_nether_gold_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/blue_nether_quartz_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/brimstone_nether_gold_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/brimstone_nether_quartz_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/cryptic_redstone_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/emeraldite_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/lignite_ore", CRUSHING);
+        disableRecipe("compat/biomeswevegone/pervaded_netherrack", CRUSHING);
+        disableRecipe("compat/biomeswevegone/torch_ginger", MILLING);
         // Typo'd or renamed
-        disableMillingRecipe("compat/biomeswevegone/orchid");
-        disableMillingRecipe("compat/biomeswevegone/lolipop_flower");
-        disableMillingRecipe("compat/biomeswevegone/purple_rose");
-        disableMillingRecipe("compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen");
-        disableMillingRecipe("compat/biomeswevegone/compat/biomeswevegone/white_sage");
+        disableRecipe("compat/biomeswevegone/orchid", MILLING);
+        disableRecipe("compat/biomeswevegone/lolipop_flower", MILLING);
+        disableRecipe("compat/biomeswevegone/purple_rose", MILLING);
+        disableRecipe("compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen", MILLING);
+        disableRecipe("compat/biomeswevegone/compat/biomeswevegone/white_sage", MILLING);
         // Updated typo'd
         new Builder<>("compat/biomeswevegone/japanese_orchid", MillingRecipe::new)
                 .require(Mods.BWG, "japanese_orchid")
@@ -461,6 +473,29 @@ public class RepairDynamicPack extends DynamicPack {
         insertIntoTag(AllTags.AllItemTags.MODDED_STRIPPED_WOOD.tag.location(), Mods.AUTUM.asResource("stripped_maple_wood"), ITEM_TAGS);
     }
 
+    // Not as trivial as just fixing the recipes, don't want to require a specific version of Galosphere
+    private void fixGalosphereCompat() {
+        if (!FabricLoader.getInstance().isModLoaded(Mods.GS.getId())) {
+            return;
+        }
+        SemanticVersion hasPalladiumStartingFrom = null;
+        try {
+            hasPalladiumStartingFrom = new SemanticVersionImpl("1.20.1-1.5.0", false);
+        } catch (VersionParsingException e) {
+            throw new RuntimeException(e);
+        }
+        Version galosphereVersion = FabricLoader.getInstance().getModContainer(Mods.GS.getId()).get().getMetadata().getVersion();
+        // < 1.5.0 versions for Forge 1.20.1 had 1.20.1- leading the version; but later Neoforge (and the 1.20.1 backport) no longer have it
+        // Fabric doesn't have a 1.20.1 1.5.x release (yet?) but the 1.21.1 version still has it; just use Fabric's system until proven we need something else
+        if (galosphereVersion.compareTo(hasPalladiumStartingFrom) < 0) {
+            // Keep old recipes
+            return;
+        }
+        disableRecipe("galosphere/crushed_raw_silver", SPLASHING);
+        disableRecipe("silver_ingot_compat_galosphere", SMELTING);
+        disableRecipe("silver_ingot_compat_galosphere", BLASTING);
+    }
+
     private void insertIntoTag(ResourceLocation tag, ResourceLocation itemId, Multimap<ResourceLocation, TagEntry> tagMap) {
         tagMap.put(tag, TagEntry.optionalElement(itemId));
     }
@@ -471,18 +506,14 @@ public class RepairDynamicPack extends DynamicPack {
         return inputLoc.getPath();
     }
 
-    private void disableMillingRecipe(String recipeId) {
-        disableCreateRecipe(recipeId, MillingRecipe::new);
-    }
+    private static final String SPLASHING = "splashing";
+    private static final String SMELTING = "smelting";
+    private static final String BLASTING = "blasting";
+    private static final String MILLING = "milling";
+    private static final String CRUSHING = "crushing";
 
-    private void disableCrushingRecipe(String recipeId) {
-        disableCreateRecipe(recipeId, CrushingRecipe::new);
-    }
-
-    private <T extends ProcessingRecipe<?>> void disableCreateRecipe(String recipeId, ProcessingRecipeBuilder.ProcessingRecipeFactory<T> factory) {
-        new Builder<>(recipeId, factory)
-                .whenModMissing(Repair.MOD_ID) // (:
-                .build();
+    private void disableRecipe(String recipeId, String recipeType) {
+        RepairDynamicPack.this.put(Create.asResource(recipeId).withPrefix(recipeType + "/").withPrefix("recipes/"), DISABLED_RECIPE);
     }
 
     private class Builder<T extends ProcessingRecipe<?>> extends ProcessingRecipeBuilder<T> {
@@ -496,5 +527,13 @@ public class RepairDynamicPack extends DynamicPack {
             RepairDynamicPack.this.put(result.getId().withPrefix("recipes/"), result.serializeRecipe());
             return t;
         }
+    }
+
+    static {
+        JsonObject jsonObject = new JsonObject();
+        JsonArray conditions = new JsonArray(1);
+        conditions.add(DefaultResourceConditions.not(TrueCondition.INSTANCE).toJson());
+        jsonObject.add(ResourceConditions.CONDITIONS_KEY, conditions);
+        DISABLED_RECIPE = jsonObject;
     }
 }

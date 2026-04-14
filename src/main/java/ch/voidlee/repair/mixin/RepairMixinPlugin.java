@@ -22,22 +22,8 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (matches("bug_fixes.dupes.SchematicPrinterMixin", mixinClassName)) {
-            // These implemented a fix before we got to it
-            return !isModEarlyLoaded("tfg") &&
-                   !isModEarlyLoaded("create_schematicannon_dupe_fix") && // Ported from tfg
-                   !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Rebrand of dupe fix
-        }
-        if (matches("client.bug_fixes.XaeroTrainMapMixin", mixinClassName)) {
-            // Again
-            return !isModEarlyLoaded("tfg") &&
-                   !isModEarlyLoaded("create_6_0_8_backported_fixes"); // Ported from tfg
-        }
-        if (matches("crash_fixes.StationBlockEntityMixin", mixinClassName)) {
-            // Also separately fixed by tfg
-            return !isModEarlyLoaded("tfg");
-        }
-
+        // No one to conflict with :)
+        // No one else seems to fix bugs on Fabric :(
         return true;
     }
 

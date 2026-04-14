@@ -89,6 +89,7 @@ dependencies {
         modRuntimeOnly("vectorwing:FarmersDelight:${farmers_delight_version}") {
             exclude(group: "net.fabricmc")
         }
+    // modruntimeOnly("maven.modrinth:galosphere:1.20.1-1.4.1-fabric")
 }
 
 sourceSets {

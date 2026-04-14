@@ -41,6 +41,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Fix conveyors losing items when they are unloaded](https://github.com/Creators-of-Create/Create/issues/9882) (Thanks, Apertyotis!)
 - [x] [Fix toolboxes deleting items when reloaded](https://github.com/Creators-of-Create/Create/pull/9757) (Thanks, katietheqt)
 - [x] [Fix incorrect rendering in the Wrench Rotation Menu with non-BlockEntity blocks, leading to those blocks not being rotateable](https://github.com/Creators-of-Create/Create/issues/9608) (Thanks, IThundxr!)
+- [x] [Fix item capabilities being reset when serializing contraption inventories](https://github.com/VoidLeech/Repair/issues/10)
 
 ## Crashes Fixed
 - [x] [Fix a crash when filling a Cauldron with a Spout](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
@@ -50,6 +51,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 - [x] [Limit Train configs to prevent OOM](https://github.com/Creators-of-Create/Create/issues/9626) (Thanks, IThundxr!)
 - [x] [Fix a crash in the CC:Tweaked lua scripts when setting the Display Link cursor position to a negative value](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
 - [x] [Fix a crash when using a Schematicannon to place a Linked Controller Lectern](https://github.com/Creators-of-Create/Create/issues/9448)
+- [x] [Fix a crash when using the latest version of Galosphere](https://github.com/Creators-of-Create/Create/issues/10156)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
 
