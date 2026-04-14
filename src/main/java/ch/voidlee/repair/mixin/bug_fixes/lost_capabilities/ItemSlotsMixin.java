@@ -1,4 +1,4 @@
-package ch.voidlee.repair.mixin.bug_fixes;
+package ch.voidlee.repair.mixin.bug_fixes.lost_capabilities;
 
 import ch.voidlee.repair.implementation.RepairCodecs;
 import com.mojang.serialization.Codec;
