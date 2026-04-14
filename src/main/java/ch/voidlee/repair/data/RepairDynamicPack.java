@@ -485,9 +485,9 @@ public class RepairDynamicPack extends DynamicPack {
             // Keep old recipes
             return;
         }
-        disableRecipe("galosphere/crushed_raw_silver", "splashing");
-        disableRecipe("silver_ingot_compat_galosphere", "smelting");
-        disableRecipe("silver_ingot_compat_galosphere", "blasting");
+        disableRecipe("galosphere/crushed_raw_silver", SPLASHING);
+        disableRecipe("silver_ingot_compat_galosphere", SMELTING);
+        disableRecipe("silver_ingot_compat_galosphere", BLASTING);
     }
 
     private void insertIntoTag(ResourceLocation tag, ResourceLocation itemId, Multimap<ResourceLocation, TagEntry> tagMap) {
