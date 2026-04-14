@@ -149,7 +149,10 @@ dependencies {
 
     compileOnly(fg.deobf("maven.modrinth:farmers-delight:${farmers_delight_version}"))
     if (enable_farmers_delight.toBoolean())
-        implementation(fg.deobf("maven.modrinth:farmers-delight:${farmers_delight_version}"))
+        runtimeOnly(fg.deobf("maven.modrinth:farmers-delight:${farmers_delight_version}"))
+
+    // Requires bumping Forge to like 47.4.0 to actually run
+    // runtimeOnly(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))
 }
 
 mixin {
