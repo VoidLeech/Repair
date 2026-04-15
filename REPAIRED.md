@@ -1,5 +1,6 @@
 # Create Repair's Big List of Backports
-This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimizations, and dupe fixes that Create Repair has backported.
+This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimizations, and dupe fixes that Create Repair has backported.  
+Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Connector to be (fully) fixed.
 
 ## Optimizations
 - [x] [Significantly optimize Funnel extraction and MountedItemStorageWrapper](https://github.com/Creators-of-Create/Create/issues/9706) (Thanks, PoppyBlossom!)
@@ -7,7 +8,7 @@ This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimization
 ## Visual Fixes
 - [x] [Correct the spelling of "Assember"](https://github.com/Creators-of-Create/Create/pull/9652) (Thanks, PoppyBlossom!)
 - [x] [Correct the spelling of "Restone" and "Amethust"](https://github.com/Creators-of-Create/Create/pull/9658) (Thanks, PoppyBlossom!)
-- [x] [Fix Backtanks not having the enchantment glint when worn](https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c) (Thanks, IThundxr!)
+- [x] [FM] [Fix Backtanks not having the enchantment glint when worn](https://github.com/Creators-of-Create/Create/commit/79b5d3b37e2d1970818dd97ca460b649cd0a456c) (Thanks, IThundxr!)
 - [x] [Fix emissive textures in copycats](https://github.com/Creators-of-Create/Create/issues/9675) (Thanks, IThundxr!)
 - [x] [Fix the Encased Fan shaft's texture being rotated incorrectly](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!)
 - [x] [Fix upright item renderers using per-tick position instead of camera position](https://github.com/Creators-of-Create/Create/pull/9942)
