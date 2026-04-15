@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.content.equipment.armor.BacktankArmorLayer;
+import com.simibubi.create.content.equipment.armor.BacktankItem;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -21,6 +22,6 @@ public abstract class BacktankArmorLayerMixin {
     public VertexConsumer create_repair$useFoilBuffer(MultiBufferSource instance, RenderType renderType, Operation<VertexConsumer> original,
                                                       PoseStack ms, MultiBufferSource buffer, int light, LivingEntity entity, float yaw, float pitch,
                                                       float pt, float p_225628_8_, float p_225628_9_, float p_225628_10_) {
-        return ItemRenderer.getFoilBuffer(buffer, Sheets.cutoutBlockSheet(), false, true);
+        return ItemRenderer.getFoilBuffer(buffer, Sheets.cutoutBlockSheet(), false, entity.getItemBySlot(BacktankItem.SLOT).hasFoil());
     }
 }
