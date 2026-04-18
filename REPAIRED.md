@@ -1,6 +1,6 @@
 # Create Repair's Big List of Backports
 This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimizations, and dupe fixes that Create Repair has backported.  
-Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Connector to be (fully) fixed.
+Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Connector to be (fully) fixed on Forge.
 
 ## Optimizations
 - [x] [Significantly optimize Funnel extraction and MountedItemStorageWrapper](https://github.com/Creators-of-Create/Create/issues/9706) (Thanks, PoppyBlossom!)
