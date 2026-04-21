@@ -19,10 +19,10 @@ import java.util.function.Consumer;
 // https://github.com/Creators-of-Create/Create/pull/9735
 @Mixin(ScheduleScreen.class)
 public abstract class ScheduleScreenMixin extends AbstractSimiContainerScreen<ScheduleMenu> {
-    @Shadow
+    @Shadow(remap = false)
     private Consumer<Boolean> onEditorClose;
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract void stopEditing();
 
     public ScheduleScreenMixin(ScheduleMenu container, Inventory inv, Component title) {

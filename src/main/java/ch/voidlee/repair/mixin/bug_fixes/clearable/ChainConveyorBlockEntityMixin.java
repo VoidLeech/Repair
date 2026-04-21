@@ -14,13 +14,13 @@ import java.util.Set;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(ChainConveyorBlockEntity.class)
 public abstract class ChainConveyorBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     public Set<BlockPos> connections;
 
-    @Shadow
+    @Shadow(remap = false)
     Map<BlockPos, List<ChainConveyorPackage>> travellingPackages;
 
-    @Shadow
+    @Shadow(remap = false)
     List<ChainConveyorPackage> loopingPackages;
 
     @Override

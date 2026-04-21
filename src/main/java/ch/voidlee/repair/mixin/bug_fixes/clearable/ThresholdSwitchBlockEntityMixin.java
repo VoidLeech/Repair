@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ThresholdSwitchBlockEntity.class)
 public abstract class ThresholdSwitchBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     private FilteringBehaviour filtering;
 
     @Override

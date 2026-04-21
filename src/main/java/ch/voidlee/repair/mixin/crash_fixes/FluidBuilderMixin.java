@@ -38,7 +38,7 @@ import java.util.function.Supplier;
 // https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff
 @Mixin(FluidBuilder.class)
 public abstract class FluidBuilderMixin<T extends ForgeFlowingFluid, P> extends AbstractBuilder<Fluid, T, P, FluidBuilder<T, P>> {
-    @Shadow
+    @Shadow(remap = false)
     private NonNullConsumer<ForgeFlowingFluid.Properties> fluidProperties;
 
     public FluidBuilderMixin(AbstractRegistrate<?> owner, P parent, String name, BuilderCallback callback, ResourceKey<Registry<Fluid>> registryKey) {

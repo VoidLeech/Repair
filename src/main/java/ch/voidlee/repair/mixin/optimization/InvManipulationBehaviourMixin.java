@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 // https://github.com/Creators-of-Create/Create/pull/9706/
 @Mixin(InvManipulationBehaviour.class)
 public abstract class InvManipulationBehaviourMixin {
-    @Shadow
+    @Shadow(remap = false)
     protected abstract Predicate<ItemStack> getFilterTest(Predicate<ItemStack> customFilter);
 
     @Inject(method = "extract(Lcom/simibubi/create/foundation/item/ItemHelper$ExtractionCountMode;ILjava/util/function/Predicate;)Lnet/minecraft/world/item/ItemStack;", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/blockEntity/behaviour/inventory/InvManipulationBehaviour;getFilterTest(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;"), cancellable = true, remap = false)

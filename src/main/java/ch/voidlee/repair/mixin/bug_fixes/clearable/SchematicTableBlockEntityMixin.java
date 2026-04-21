@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(SchematicTableBlockEntity.class)
 public abstract class SchematicTableBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     public SchematicTableBlockEntity.SchematicTableInventory inventory;
 
     @Override

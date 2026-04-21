@@ -18,10 +18,10 @@ import java.lang.ref.WeakReference;
 // https://github.com/Creators-of-Create/Create/pull/9706/
 @Mixin(FunnelBlockEntity.class)
 public abstract class FunnelBlockEntityMixin {
-    @Shadow
+    @Shadow(remap = false)
     private WeakReference<Entity> lastObserved;
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract AABB getEntityOverflowScanningArea();
 
     @WrapOperation(method = "activateExtractor", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/funnel/FunnelBlockEntity;getEntityOverflowScanningArea()Lnet/minecraft/world/phys/AABB;"), remap = false)

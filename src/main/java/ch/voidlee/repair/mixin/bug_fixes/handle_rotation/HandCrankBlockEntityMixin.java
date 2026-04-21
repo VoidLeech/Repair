@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/pull/8828
 @Mixin(HandCrankBlockEntity.class)
 public abstract class HandCrankBlockEntityMixin {
-    @Shadow
+    @Shadow(remap = false)
     public float chasingVelocity;
 
     @ModifyReturnValue(method = "getIndependentAngle", at = @At(value = "RETURN", ordinal = 0), remap = false)

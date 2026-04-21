@@ -13,10 +13,10 @@ import java.util.List;
 
 @Mixin(PackagerBlockEntity.class)
 public abstract class PackagerBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     public PackagerItemHandler inventory;
 
-    @Shadow
+    @Shadow(remap = false)
     public List<BigItemStack> queuedExitingPackages;
 
     @Override

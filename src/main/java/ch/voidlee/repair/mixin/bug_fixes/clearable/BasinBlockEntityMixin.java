@@ -14,16 +14,16 @@ import java.util.List;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(BasinBlockEntity.class)
 public abstract class BasinBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     protected List<ItemStack> spoutputBuffer;
 
-    @Shadow
+    @Shadow(remap = false)
     public BasinInventory inputInventory;
 
-    @Shadow
+    @Shadow(remap = false)
     protected SmartInventory outputInventory;
 
-    @Shadow
+    @Shadow(remap = false)
     private FilteringBehaviour filtering;
 
     @Override

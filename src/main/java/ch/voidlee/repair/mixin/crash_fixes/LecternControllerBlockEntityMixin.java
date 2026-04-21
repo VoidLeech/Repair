@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // https://github.com/Creators-of-Create/Create/issues/9448
 @Mixin(LecternControllerBlockEntity.class)
 public abstract class LecternControllerBlockEntityMixin {
-    @Shadow
+    @Shadow(remap = false)
     private ItemStackHandler controllerFreq;
 
     @Inject(method = "<init>", at = @At("RETURN"))

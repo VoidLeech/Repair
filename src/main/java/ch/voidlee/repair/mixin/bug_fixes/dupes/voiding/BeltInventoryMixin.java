@@ -16,18 +16,18 @@ import java.util.List;
 // https://github.com/Creators-of-Create/Create/pull/10017
 @Mixin(BeltInventory.class)
 public abstract class BeltInventoryMixin {
-    @Shadow
+    @Shadow(remap = false)
     @Final
     List<TransportedItemStack> toInsert;
 
-    @Shadow
+    @Shadow(remap = false)
     @Final
     List<TransportedItemStack> toRemove;
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract void insert(TransportedItemStack newStack);
 
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private List<TransportedItemStack> items;
 
