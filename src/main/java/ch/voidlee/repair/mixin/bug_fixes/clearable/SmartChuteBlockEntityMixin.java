@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
+// https://github.com/Creators-of-Create/Create/pull/10196
 @Mixin(SmartChuteBlockEntity.class)
 public abstract class SmartChuteBlockEntityMixin extends ChuteBlockEntityMixin {
     @Shadow
