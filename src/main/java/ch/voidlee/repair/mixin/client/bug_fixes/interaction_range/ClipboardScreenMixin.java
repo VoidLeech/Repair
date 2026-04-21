@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/commit/394073dc1af30b5190504c10a0482cc6e2580703
 @Mixin(ClipboardScreen.class)
 public abstract class ClipboardScreenMixin extends AbstractSimiScreen {
-    @Shadow
+    @Shadow(remap = false)
     public BlockPos targetedBlock;
 
     @ModifyExpressionValue(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;closerThan(Lnet/minecraft/core/Vec3i;D)Z"))

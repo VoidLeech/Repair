@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a
 @Mixin(ControlsInputPacket.class)
 public abstract class ControlsInputPacketMixin {
-    @Shadow
+    @Shadow(remap = false)
     private BlockPos controlsPos;
 
     @ModifyExpressionValue(method = "lambda$handle$0", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/Vec3;closerThan(Lnet/minecraft/core/Position;D)Z"))

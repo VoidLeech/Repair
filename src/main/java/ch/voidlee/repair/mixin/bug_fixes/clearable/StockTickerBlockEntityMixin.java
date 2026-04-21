@@ -12,10 +12,10 @@ import java.util.List;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(StockTickerBlockEntity.class)
 public abstract class StockTickerBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     protected List<ItemStack> categories;
 
-    @Shadow
+    @Shadow(remap = false)
     protected SmartInventory receivedPayments;
 
     @Override

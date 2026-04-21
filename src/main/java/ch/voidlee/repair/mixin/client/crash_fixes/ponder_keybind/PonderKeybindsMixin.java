@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff
 @Mixin(PonderKeybinds.class)
 public abstract class PonderKeybindsMixin {
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private KeyMapping mapping;
 

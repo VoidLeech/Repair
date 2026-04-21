@@ -6,6 +6,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(ToolboxInventory.class)
 public interface ToolboxInventoryAccessor {
-    @Accessor("settling")
+    @Accessor(value = "settling", remap = false)
     void create_repair$setSettling(boolean val);
 }

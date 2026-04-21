@@ -16,7 +16,7 @@ public abstract class CreateMainMenuScreenMixin extends Screen {
     @Unique
     private final String CREATE_REPAIR_HOW_TO_REPORT_ISSUES = "https://github.com/VoidLeech/Repair/wiki/Reporting-Issues-to-Create";
 
-    @Shadow
+    @Shadow(remap = false)
     protected abstract void linkTo(String url);
 
     protected CreateMainMenuScreenMixin(Component pTitle) {

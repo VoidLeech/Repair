@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // https://github.com/Creators-of-Create/Create/pull/9921
 @Mixin(MechanicalMixerBlockEntity.class)
 public abstract class MechanicalMixerBlockEntityMixin extends BasinOperatingBlockEntity {
-    @Shadow
+    @Shadow(remap = false)
     public int runningTicks;
 
     public MechanicalMixerBlockEntityMixin(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {

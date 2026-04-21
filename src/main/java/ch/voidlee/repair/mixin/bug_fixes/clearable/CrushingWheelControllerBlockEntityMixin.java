@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(CrushingWheelControllerBlockEntity.class)
 public abstract class CrushingWheelControllerBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     public ProcessingInventory inventory;
 
     @Override

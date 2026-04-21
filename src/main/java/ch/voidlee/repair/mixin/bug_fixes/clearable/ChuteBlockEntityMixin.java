@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(ChuteBlockEntity.class)
 public abstract class ChuteBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     ItemStack item;
 
     @Override

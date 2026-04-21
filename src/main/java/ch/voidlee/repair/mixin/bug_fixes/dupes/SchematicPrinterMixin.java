@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 // https://github.com/Creators-of-Create/Create/commit/b91757a3a55205e9888e70fb5cb5c2380b4724c7
 @Mixin(SchematicPrinter.class)
 public abstract class SchematicPrinterMixin {
-    @Shadow
+    @Shadow(remap = false)
     private SchematicLevel blockReader;
 
     @ModifyArg(method = "getCurrentRequirement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/utility/BlockHelper;prepareBlockEntityData(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;)Lnet/minecraft/nbt/CompoundTag;"), remap = false)

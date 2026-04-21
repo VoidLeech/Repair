@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a
 @Mixin(TrainRelocationPacket.class)
 public abstract class TrainRelocationPacketMixin {
-    @Shadow
+    @Shadow(remap = false)
     BlockPos pos;
 
     @ModifyExpressionValue(method = "lambda$handle$3", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/Vec3;closerThan(Lnet/minecraft/core/Position;D)Z", ordinal = 0))

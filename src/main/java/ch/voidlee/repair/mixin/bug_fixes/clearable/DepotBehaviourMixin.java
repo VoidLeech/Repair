@@ -13,13 +13,13 @@ import java.util.List;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(DepotBehaviour.class)
 public abstract class DepotBehaviourMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     ItemStackHandler processingOutputBuffer;
 
-    @Shadow
+    @Shadow(remap = false)
     List<TransportedItemStack> incoming;
 
-    @Shadow
+    @Shadow(remap = false)
     TransportedItemStack heldItem;
 
     @Override

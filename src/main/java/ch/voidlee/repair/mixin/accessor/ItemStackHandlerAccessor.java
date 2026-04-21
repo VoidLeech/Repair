@@ -8,6 +8,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(ItemStackHandler.class)
 public interface ItemStackHandlerAccessor {
-    @Accessor("stacks")
+    @Accessor(value = "stacks", remap = false)
     NonNullList<ItemStack> create_repair$getStacks();
 }

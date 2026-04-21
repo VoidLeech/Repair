@@ -15,14 +15,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class InventoryIdentifier$PairMixin {
     @Mutable
     @Final
-    @Shadow
+    @Shadow(remap = false)
     private BlockPos first;
     @Mutable
     @Final
-    @Shadow
+    @Shadow(remap = false)
     private BlockPos second;
 
-    @Inject(method = "<init>", at = @At("RETURN"))
+    @Inject(method = "<init>", at = @At("RETURN"), remap = false)
     private void create_repair$sortPair(BlockPos first, BlockPos second, CallbackInfo ci) {
         boolean isFirstLower = first.compareTo(second) < 0;
         this.first = isFirstLower ? first : second;

@@ -11,10 +11,10 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/commit/efc3d3e
 @Mixin(CopycatBlockEntity.class)
 public abstract class CopycatBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     private BlockState material;
 
-    @Shadow
+    @Shadow(remap = false)
     private ItemStack consumedItem;
 
     @Override

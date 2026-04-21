@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 // https://github.com/Creators-of-Create/Create/commit/394073dc1af30b5190504c10a0482cc6e2580703
 @Mixin(ClipboardEditPacket.class)
 public abstract class ClipboardEditPacketMixin {
-    @Shadow
+    @Shadow(remap = false)
     private BlockPos targetedBlock;
 
     @ModifyExpressionValue(method = "lambda$handle$0", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;closerThan(Lnet/minecraft/core/Vec3i;D)Z"))

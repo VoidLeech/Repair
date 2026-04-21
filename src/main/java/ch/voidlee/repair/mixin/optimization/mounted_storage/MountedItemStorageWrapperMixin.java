@@ -18,7 +18,7 @@ public class MountedItemStorageWrapperMixin extends CombinedInvWrapper implement
     @Unique private int[] create_repair$slotToStorage;
     @Unique private int[] create_repair$slotOffsets;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
+    @Inject(method = "<init>", at = @At("TAIL"), remap = false)
     public void initOptimization(ImmutableMap<BlockPos, MountedItemStorage> storages, CallbackInfo ci) {
         // Build lookup arrays
         int totalSlots = getSlots();

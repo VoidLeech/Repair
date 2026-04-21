@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/pull/10196
 @Mixin(SmartChuteBlockEntity.class)
 public abstract class SmartChuteBlockEntityMixin extends ChuteBlockEntityMixin {
-    @Shadow
+    @Shadow(remap = false)
     FilteringBehaviour filtering;
 
     @Override

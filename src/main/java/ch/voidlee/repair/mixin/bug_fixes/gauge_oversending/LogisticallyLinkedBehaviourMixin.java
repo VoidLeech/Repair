@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // https://github.com/Creators-of-Create/Create/pull/9649
 @Mixin(LogisticallyLinkedBehaviour.class)
 public abstract class LogisticallyLinkedBehaviourMixin {
-    @Shadow
+    @Shadow(remap = false)
     public static void keepAlive(LogisticallyLinkedBehaviour behaviour) {}
 
     @Inject(method = "initialize", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/packagerLink/GlobalLogisticsManager;linkLoaded(Ljava/util/UUID;Lnet/minecraft/core/GlobalPos;)V"), remap = false)

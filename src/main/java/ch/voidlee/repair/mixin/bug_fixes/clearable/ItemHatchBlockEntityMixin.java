@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
 @Mixin(ItemHatchBlockEntity.class)
 public abstract class ItemHatchBlockEntityMixin implements Clearable {
-    @Shadow
+    @Shadow(remap = false)
     public FilteringBehaviour filtering;
 
     @Override
