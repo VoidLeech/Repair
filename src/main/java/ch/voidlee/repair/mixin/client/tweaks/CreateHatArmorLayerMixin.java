@@ -1,6 +1,6 @@
-package ch.voidlee.repair.mixin.tweaks;
+package ch.voidlee.repair.mixin.client.tweaks;
 
-import ch.voidlee.repair.mixin.accessor.RabbitModelAccessor;
+import ch.voidlee.repair.mixin.client.accessor.RabbitModelAccessor;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.content.equipment.hats.CreateHatArmorLayer;
@@ -31,7 +31,7 @@ public class CreateHatArmorLayerMixin {
         }
     }
 
-    @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z", ordinal = 0, remap = false))
+    @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z", ordinal = 0), remap = false)
     private void injectCustomHatModelRender(CallbackInfo ci, @Local(argsOnly = true) PoseStack ms, @Local(name = "entityModel") EntityModel<?> entityModel, @Local(name = "info") TrainHatInfo info, @Local(name = "partsToHead") List<ModelPart> partsToHead) {
         if (entityModel instanceof RabbitModel<?> model) {
             if (model.young) {
