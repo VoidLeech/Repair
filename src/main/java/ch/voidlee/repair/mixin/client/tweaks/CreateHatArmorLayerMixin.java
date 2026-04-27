@@ -20,14 +20,12 @@ import java.util.List;
 @Mixin(CreateHatArmorLayer.class)
 public class CreateHatArmorLayerMixin {
 
-    @Inject(method = "registerOn", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void addCustomModelException(EntityRenderer<?> entityRenderer, CallbackInfo ci) {
-        if (entityRenderer instanceof LivingEntityRenderer<?, ?> livingRenderer) {
-            if (livingRenderer.getModel() instanceof RabbitModel) {
-                CreateHatArmorLayer<?, ?> layer = new CreateHatArmorLayer<>(livingRenderer);
-                livingRenderer.addLayer((CreateHatArmorLayer) layer);
-                ci.cancel();
-            }
+    @Inject(method = "registerOn", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;getModel()Lnet/minecraft/client/model/EntityModel;"), cancellable = true, remap = false)
+    private static void addCustomModelException(EntityRenderer<?> entityRenderer, CallbackInfo ci, @Local(name = "livingRenderer") LivingEntityRenderer<?, ?> livingRenderer, @Local(name = "model") EntityModel<?> model) {
+        if (model instanceof RabbitModel) {
+            CreateHatArmorLayer<?, ?> layer = new CreateHatArmorLayer<>(livingRenderer);
+            livingRenderer.addLayer((CreateHatArmorLayer) layer);
+            ci.cancel();
         }
     }
 
