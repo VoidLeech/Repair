@@ -17,10 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 
-@Mixin(value = CreateHatArmorLayer.class, remap = false)
+@Mixin(value = CreateHatArmorLayer.class)
 public class CreateHatArmorLayerMixin {
 
-    @Inject(method = "registerOn", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "registerOn", at = @At("HEAD"), cancellable = true, remap = false)
     private static void addCustomModelException(EntityRenderer<?> entityRenderer, CallbackInfo ci) {
         if (entityRenderer instanceof LivingEntityRenderer<?, ?> livingRenderer) {
             if (livingRenderer.getModel() instanceof RabbitModel) {
