@@ -84,6 +84,7 @@
     "tweaks.PloughMovementBehaviourMixin"
   ],
   "client": [
+    "accessor.RabbitModelAccessor",
     "client.CreateMainMenuScreenMixin",
     "client.OptionsMixin",
     "client.bug_fixes.CopycatModelMixin",
@@ -102,7 +103,8 @@
     "client.crash_fixes.ClipboardScreenMixin",
     "client.crash_fixes.ContraptionUOEMixin",
     "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
-    "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin"
+    "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin",
+    "tweaks.CreateHatArmorLayerMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.3"
