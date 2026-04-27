@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 
-@Mixin(value = CreateHatArmorLayer.class)
+@Mixin(CreateHatArmorLayer.class)
 public class CreateHatArmorLayerMixin {
 
     @Inject(method = "registerOn", at = @At("HEAD"), cancellable = true, remap = false)
