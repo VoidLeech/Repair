@@ -80,6 +80,7 @@
   ],
   "client": [
     "client.CreateMainMenuScreenMixin",
+    "client.accessor.RabbitModelAccessor",
     "client.bug_fixes.CopycatModelMixin",
     "client.bug_fixes.ScheduleScreenMixin",
     "client.bug_fixes.UprightItemRendererMixin",
@@ -97,7 +98,8 @@
     "client.crash_fixes.ClipboardScreenMixin",
     "client.crash_fixes.ContraptionUOEMixin",
     "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
-    "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin"
+    "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin",
+    "client.tweaks.CreateHatArmorLayerMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.3"
