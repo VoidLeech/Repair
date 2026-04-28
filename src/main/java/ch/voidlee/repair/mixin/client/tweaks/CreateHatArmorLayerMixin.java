@@ -18,10 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 @Mixin(CreateHatArmorLayer.class)
-public class CreateHatArmorLayerMixin {
+public abstract class CreateHatArmorLayerMixin {
 
     @Inject(method = "registerOn", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;getModel()Lnet/minecraft/client/model/EntityModel;"), cancellable = true, remap = false)
-    private static void addCustomModelException(EntityRenderer<?> entityRenderer, CallbackInfo ci, @Local(name = "livingRenderer") LivingEntityRenderer<?, ?> livingRenderer, @Local(name = "model") EntityModel<?> model) {
+    private static void create_repair$addCustomModelException(EntityRenderer<?> entityRenderer, CallbackInfo ci, @Local(name = "livingRenderer") LivingEntityRenderer<?, ?> livingRenderer, @Local(name = "model") EntityModel<?> model) {
         if (model instanceof RabbitModel) {
             CreateHatArmorLayer<?, ?> layer = new CreateHatArmorLayer<>(livingRenderer);
             livingRenderer.addLayer((CreateHatArmorLayer) layer);
@@ -30,7 +30,7 @@ public class CreateHatArmorLayerMixin {
     }
 
     @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z", ordinal = 0), remap = false)
-    private void injectCustomHatModelRender(CallbackInfo ci, @Local(argsOnly = true) PoseStack ms, @Local(name = "entityModel") EntityModel<?> entityModel, @Local(name = "info") TrainHatInfo info, @Local(name = "partsToHead") List<ModelPart> partsToHead) {
+    private void create_repair$injectCustomHatModelRender(CallbackInfo ci, @Local(argsOnly = true) PoseStack ms, @Local(name = "entityModel") EntityModel<?> entityModel, @Local(name = "info") TrainHatInfo info, @Local(name = "partsToHead") List<ModelPart> partsToHead) {
         if (entityModel instanceof RabbitModel<?> model) {
             if (model.young) {
                 ms.scale(0.56666666F, 0.56666666F, 0.56666666F);
