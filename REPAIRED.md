@@ -1,6 +1,7 @@
 # Create Repair's Big List of Backports
 This is a list of bug fixes, crash fixes, recipes, visuals, tweaks, optimizations, and dupe fixes that Create Repair has backported.  
-Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Connector to be (fully) fixed on Forge.
+Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Connector to be (fully) fixed on Forge.  
+Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 
 ## Optimizations
 - [x] [Significantly optimize Funnel extraction and MountedItemStorageWrapper](https://github.com/Creators-of-Create/Create/issues/9706) (Thanks, PoppyBlossom!)
@@ -28,6 +29,7 @@ Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Conn
 - [x] [Fix blocks destroyed by tree fertilizer not dropping](https://github.com/Creators-of-Create/Create/pull/9758) (Thanks, katietheqt!)
 - [x] [Fix closing the Train Schedule menu by pressing E while typing](https://github.com/Creators-of-Create/Create/pull/9729) (Thanks, fywchis!)
 - [x] [Fix Copycats dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf) (Thanks, IThundxr!)
+- [x] [Fix Smart Chutes dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10196) (Thanks, Ocelot5836!)
 - [x] [Fix a bunch of other blocks dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24) (Thanks, IThundxr!)
 - [x] [Fix duplicate readings from Stock Links on the same storage](https://github.com/Creators-of-Create/Create/pull/9793) (Thanks, techno-sam!)
 - [x] [Fix Factory Gauges requesting packages on load](https://github.com/Creators-of-Create/Create/issues/8245) (Thanks, curryducker!)
@@ -43,6 +45,9 @@ Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Conn
 - [x] [Fix toolboxes deleting items when reloaded](https://github.com/Creators-of-Create/Create/pull/9757) (Thanks, katietheqt)
 - [x] [Fix incorrect rendering in the Wrench Rotation Menu with non-BlockEntity blocks, leading to those blocks not being rotateable](https://github.com/Creators-of-Create/Create/issues/9608) (Thanks, IThundxr!)
 - [x] [Fix item capabilities being reset when serializing contraption inventories](https://github.com/VoidLeech/Repair/issues/10)
+- [x] [Fix schematicannon not consuming gunpowder from adjacent inventories](https://github.com/Fabricators-of-Create/Create/pull/1894)
+- [x] [Fix various block/entity interactions not accounting for (in/decreased) reach](https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a) (Thanks, IThundxr!)
+- [x] [PORTING-LIB] [Fix reach attribute helpers having significantly different (lower reach) behaviour from Forge](https://github.com/Fabricators-of-Create/Porting-Lib/pull/198)
 
 ## Crashes Fixed
 - [x] [Fix a crash when filling a Cauldron with a Spout](https://github.com/Creators-of-Create/Create/issues/9843) (Thanks, IThundxr!)
@@ -53,6 +58,7 @@ Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Conn
 - [x] [Fix a crash in the CC:Tweaked lua scripts when setting the Display Link cursor position to a negative value](https://github.com/Creators-of-Create/Create/pull/9984) (Thanks, Fiona42069!)
 - [x] [Fix a crash when using a Schematicannon to place a Linked Controller Lectern](https://github.com/Creators-of-Create/Create/issues/9448)
 - [x] [Fix a crash when using the latest version of Galosphere](https://github.com/Creators-of-Create/Create/issues/10156)
+- [x] [Fix a crash when in the screen of a placed Clipboard while >10 blocks away](https://github.com/Creators-of-Create/Create/commit/394073dc1af30b5190504c10a0482cc6e2580703) (Thanks, IThundxr!)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
 
@@ -62,6 +68,7 @@ Fixes marked with [FM] require either Mixinbooster (recommended) or Sinytra Conn
 - [x] [Prevent mushrooms being harvested while on Farmer's Delight Rich Soil](https://github.com/Creators-of-Create/Create/pull/9940) (Thanks, AyOhEe!)
 - [x] [Add Plough blacklist and whitelist block tags: `#create:plough_blacklist`, `#create:plough_whitelist`](https://github.com/Creators-of-Create/Create/pull/9346)
 - [x] [Remove limit on Mixer processing time](https://github.com/Creators-of-Create/Create/pull/10022) (Thanks, AyOhEe!)
+- [x] [Allow Rabbits to wear Conductor/Stock Keeper Hats](https://github.com/VoidLeech/Repair/pull/13) (Thanks, Allmoz!)
 
 ## Dupes Fixed
 - [x] [Fix a dupe when breaking a Postbox while its menu is open](https://github.com/Creators-of-Create/Create/pull/9802) (Thanks, techno-sam!)

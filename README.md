@@ -22,9 +22,9 @@ There are three ways developers can assist with this project:
 - Backport PRs or commits from Create (please try to list the original author as co-author of your commit).
 - For bugs still present on 1.21.1+ Create, submit PRs to Create itself (we'll see them) and then, optionally, to us.
 
-Fabric requires Java 21 to build. As long as Porting-Lib doesn't have a release containing our merged PR, you'll also need to clone the submodule and run `./gradlew publishToMavenLocal` or comment out [this line](build.gradle#L81).  
+Fabric requires Java 21 to build. As long as Porting-Lib doesn't have a release containing our merged PR, you'll also need to clone the submodule and run `./gradlew publishToMavenLocal` or comment out [this line](build.gradle#L81) and deal with lower interaction ranges in a couple of places.  
 If you prefer EMI in your development environment over JEI, add the `EMI_IN_DEV_ENV` environment variable with value `true`.  
-LLM contributions will be rejected.
+LLM contributions will be rejected.  
 
 ### F.A.Q.
 **Q: Can this be used in my modpack?**  
