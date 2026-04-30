@@ -1,6 +1,11 @@
 package ch.voidlee.repair.mixin;
 
+import com.simibubi.create.Create;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.SemanticVersion;
+import net.fabricmc.loader.api.Version;
+import net.fabricmc.loader.api.VersionParsingException;
+import net.fabricmc.loader.impl.util.version.SemanticVersionImpl;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -22,6 +27,19 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        if (matches("bug_fixes.SchematicannonBlockEntityMixin", mixinClassName)) {
+            Version createFabricVersion = FabricLoader.getInstance().getModContainer(Create.ID).get().getMetadata().getVersion();
+            SemanticVersion create6081version = null;
+            try {
+                create6081version = new SemanticVersionImpl("6.0.8.1+build.1744-mc1.20.1", false);
+            }
+            catch (VersionParsingException e) {
+                throw new RuntimeException(e);
+            }
+            // We assume that should there be another release for 1.20.1 Create Fabric, that our PR is merged.
+            return createFabricVersion.compareTo(create6081version) <= 0;
+        }
+
         // No one to conflict with :)
         // No one else seems to fix bugs on Fabric :(
         return true;
