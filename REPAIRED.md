@@ -59,6 +59,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix a crash when using a Schematicannon to place a Linked Controller Lectern](https://github.com/Creators-of-Create/Create/issues/9448)
 - [x] [Fix a crash when using the latest version of Galosphere](https://github.com/Creators-of-Create/Create/issues/10156)
 - [x] [Fix a crash when in the screen of a placed Clipboard while >10 blocks away](https://github.com/Creators-of-Create/Create/commit/394073dc1af30b5190504c10a0482cc6e2580703) (Thanks, IThundxr!)
+- [x] [Fix a crash in ItemHelper when comparator updates are triggered through Fabric's transaction API (e.g. with Postboxes)](https://github.com/Creators-of-Create/Create/issues/9785)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
 
