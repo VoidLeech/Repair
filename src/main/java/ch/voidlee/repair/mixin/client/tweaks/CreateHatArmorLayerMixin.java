@@ -21,7 +21,7 @@ import java.util.List;
 @Mixin(CreateHatArmorLayer.class)
 public abstract class CreateHatArmorLayerMixin {
 
-    @Inject(method = "registerOn", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;getModel()Lnet/minecraft/client/model/EntityModel;"), cancellable = true, remap = false)
+    @Inject(method = "registerOn", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;getModel()Lnet/minecraft/client/model/EntityModel;", remap = true), cancellable = true, remap = false)
     private static void create_repair$addCustomModelException(EntityRenderer<?> entityRenderer, LivingEntityFeatureRendererRegistrationCallback.RegistrationHelper helper, CallbackInfo ci, @Local(name = "livingRenderer") LivingEntityRenderer<?, ?> livingRenderer, @Local(name = "model") EntityModel<?> model) {
         if (model instanceof RabbitModel) {
             CreateHatArmorLayer<?, ?> layer = new CreateHatArmorLayer<>(livingRenderer);
