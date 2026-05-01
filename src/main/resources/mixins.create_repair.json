@@ -65,6 +65,7 @@
     "bug_fixes.interaction_range.TrainRelocationPacketMixin",
     "crash_fixes.CTrainsMixin",
     "crash_fixes.DisplayLinkPeripheralMixin",
+    "crash_fixes.ItemHelperMixin",
     "crash_fixes.LecternControllerBlockEntityMixin",
     "crash_fixes.RotationPropagatorMixin",
     "crash_fixes.StateChangingBehaviorMixin",
