@@ -10,12 +10,12 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(ItemHelper.class)
 public abstract class ItemHelperMixin {
-    @WrapOperation(method = "calcRedstoneFromInventory", at = @At(value = "INVOKE", target = "Lio/github/fabricators_of_create/porting_lib/transfer/TransferUtil;getTransaction()Lnet/fabricmc/fabric/api/transfer/v1/transaction/Transaction;"), remap = false)
+    @WrapOperation(method = "calcRedstoneFromInventory", at = @At(value = "INVOKE", target = "Lio/github/fabricators_of_create/porting_lib/transfer/TransferUtil;getTransaction()Lnet/fabricmc/fabric/api/transfer/v1/transaction/Transaction;"), remap = false, require = 0)
     private static Transaction create_repair$fapiDoesntUseThisAndNeitherDoWe(Operation<Transaction> original) {
         return null;
     }
 
-    @WrapWithCondition(method = "calcRedstoneFromInventory", at = @At(value = "INVOKE", target = "Lnet/fabricmc/fabric/api/transfer/v1/transaction/Transaction;close()V"), remap = false)
+    @WrapWithCondition(method = "calcRedstoneFromInventory", at = @At(value = "INVOKE", target = "Lnet/fabricmc/fabric/api/transfer/v1/transaction/Transaction;close()V"), remap = false, require = 0)
     private static boolean create_repair$thereIsNothingToClose(Transaction instance) {
         return false;
     }
