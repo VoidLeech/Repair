@@ -21,6 +21,6 @@ public abstract class SuperGlueSelectionPacketMixin {
     @Expression("?.distanceToSqr(?) > ?")
     @ModifyExpressionValue(method = "lambda$handle$0", at = @At("MIXINEXTRAS:EXPRESSION"), remap = false)
     private boolean create_repair$checkRangeAttribute(boolean original, @Local(name = "player") ServerPlayer player) {
-        return player.canReach(to, 2);
+        return !player.canReach(to, 2);
     }
 }
