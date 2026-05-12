@@ -29,6 +29,7 @@
     "bug_fixes.clearable.DepotBehaviourMixin",
     "bug_fixes.clearable.DepotBlockEntityMixin",
     "bug_fixes.clearable.FunnelBlockEntityMixin",
+    "bug_fixes.clearable.ItemDrainBlockEntityMixin",
     "bug_fixes.clearable.ItemHatchBlockEntityMixin",
     "bug_fixes.clearable.ItemVaultBlockEntityMixin",
     "bug_fixes.clearable.MillstoneBlockEntityMixin",
