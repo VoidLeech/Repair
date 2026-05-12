@@ -16,6 +16,7 @@
     "bug_fixes.LecternControllerBlockEntityMixin",
     "bug_fixes.MechanicalMixerBlockEntityMixin",
     "bug_fixes.TrackNodeLocationMixin",
+    "bug_fixes.clearable.ArmBlockEntityMixin",
     "bug_fixes.clearable.BasinBlockEntityMixin",
     "bug_fixes.clearable.BeltBlockEntityMixin",
     "bug_fixes.clearable.ChainConveyorBlockEntityMixin",
