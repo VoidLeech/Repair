@@ -14,7 +14,7 @@ import java.util.*;
 
 // https://github.com/Creators-of-Create/Create/pull/9399
 @Mixin(Contraption.class)
-public class ContraptionMixin {
+public abstract class ContraptionMixin {
     @Shadow(remap = false)
     protected Map<BlockPos, StructureBlockInfo> blocks;
 

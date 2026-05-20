@@ -77,3 +77,4 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix a dupe when breaking a Postbox while its menu is open](https://github.com/Creators-of-Create/Create/pull/9802) (Thanks, techno-sam!)
 - [x] [Fix a dupe with the Schematicannon ignoring BlockEntity item requirements](https://github.com/Creators-of-Create/Create/issues/9511) (Thanks, IThundxr!)
 - [x] [Fix a dupe with the Deployer](https://github.com/Creators-of-Create/Create/commit/dd133f667969870dd6e9b96395097ac93cd91ced) (Thanks, IThundxr!)
+- [ ] [Fix a dupe when making a contraption with attached blocks to attached blocks](https://github.com/Creators-of-Create/Create/pull/9399) (Thanks, Allmoz!)
