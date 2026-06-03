@@ -6,6 +6,7 @@
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
+    "crash_fixes.CatnipServicesMixin",
     "accessor.ItemStackHandlerAccessor",
     "accessor.ToolboxInventoryAccessor",
     "bug_fixes.AttributeFilterMenuMixin",

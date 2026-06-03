@@ -64,6 +64,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix a crash in ItemHelper when comparator updates are triggered through Fabric's transaction API (e.g. with Postboxes)](https://github.com/Creators-of-Create/Create/issues/9785)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
+- [ ] [PONDER] [Fix services being susceptible to not loading correctly](https://github.com/Creators-of-Create/Ponder/pull/82)
 
 ## Tweaks
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)
