@@ -49,6 +49,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix item capabilities being reset when serializing contraption inventories](https://github.com/VoidLeech/Repair/issues/10)
 - [x] [Fix schematicannon not consuming gunpowder from adjacent inventories](https://github.com/Fabricators-of-Create/Create/pull/1894)
 - [x] [Fix various block/entity interactions not accounting for (in/decreased) reach](https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a) (Thanks, IThundxr!)
+- [ ] [Fix ejectors at high distances](https://github.com/Creators-of-Create/Create/pull/10395) (Thanks, Ocelot5836!)
 - [x] [PORTING-LIB] [Fix reach attribute helpers having significantly different (lower reach) behaviour from Forge](https://github.com/Fabricators-of-Create/Porting-Lib/pull/198)
 
 ## Crashes Fixed
