@@ -15,6 +15,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix upright item renderers using per-tick position instead of camera position](https://github.com/Creators-of-Create/Create/pull/9942)
 - [x] [Prevent ladders from being split into multiple meshes when assembled in contraptions](https://github.com/Creators-of-Create/Create/commit/25c625dfb8ff8e3fb9cad5ff5deb39ebc1fa202a) (Thanks, Jozufozu!)
 - [x] [Fix hand crank rotation visuals](https://github.com/Creators-of-Create/Create/pull/8828) (Thanks, nopeless!)
+- [ ] [Use getOnPos instead of blockPosition for turntable](https://github.com/Creators-of-Create/Create/commit/04d39f715bfca4888a68992fd0a580e7c5303b0e) (Thanks, IThundxr!)
 
 ## Recipe Tweaks
 - [x] [Adjust the Clay crushing recipe to always give 4 clay balls](https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c) (Thanks, IThundxr!)

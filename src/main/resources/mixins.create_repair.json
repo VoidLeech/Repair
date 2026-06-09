@@ -96,6 +96,7 @@
     "client.bug_fixes.CopycatModelMixin",
     "client.bug_fixes.RadialWrenchMenuMixin",
     "client.bug_fixes.ScheduleScreenMixin",
+    "client.bug_fixes.TurntableHandlerMixin",
     "client.bug_fixes.UprightItemRendererMixin",
     "client.bug_fixes.VirtualRenderWorldMixin",
     "client.bug_fixes.XaeroTrainMapMixin",
