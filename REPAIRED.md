@@ -41,7 +41,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix quick-moving an item in an Attribute Filter moving the wrong slot](https://github.com/Creators-of-Create/Create/pull/9729) (Thanks, fywchis!)
 - [x] [Fix seats not being bouncy](https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e) (Thanks, IThundxr!)
 - [x] [Fix Steam Boilers not accepting water](https://github.com/Creators-of-Create/Create/pull/9813) (Thanks, techno-sam!)
-- [x] [Fix the bottomless fluid threshold being over by 1](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!)
+- [x] [Fix the bottomless fluid threshold being over by 1](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!
 - [x] [Fix the Mechanical Mixer continuing to Mix when power is cut](https://github.com/Creators-of-Create/Create/issues/6249) (Thanks, AyOhEe and IThundxr!)
 - [x] [Respect macOS's interfaceScale for the Xaero's Train Map](https://github.com/Creators-of-Create/Create/pull/9736) (Thanks, SoprachevAK!)
 - [x] [Fix conveyors losing items when they are unloaded](https://github.com/Creators-of-Create/Create/issues/9882) (Thanks, Apertyotis!)
@@ -50,6 +50,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix item capabilities being reset when serializing contraption inventories](https://github.com/VoidLeech/Repair/issues/10)
 - [x] [Fix schematicannon not consuming gunpowder from adjacent inventories](https://github.com/Fabricators-of-Create/Create/pull/1894)
 - [x] [Fix various block/entity interactions not accounting for (in/decreased) reach](https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a) (Thanks, IThundxr!)
+- [ ] [Fix yet more block/entity interactions not accounting for (in/decreased reach)](https://github.com/Creators-of-Create/Create/commit/9c2f16dd8614544a8d47c6bc514f511be22e865a) (Thanks, IThundxr!)
 - [ ] [Fix ejectors at high distances](https://github.com/Creators-of-Create/Create/pull/10395) (Thanks, Ocelot5836!)
 - [x] [PORTING-LIB] [Fix reach attribute helpers having significantly different (lower reach) behaviour from Forge](https://github.com/Fabricators-of-Create/Porting-Lib/pull/198)
 
