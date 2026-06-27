@@ -15,6 +15,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix upright item renderers using per-tick position instead of camera position](https://github.com/Creators-of-Create/Create/pull/9942)
 - [x] [Prevent ladders from being split into multiple meshes when assembled in contraptions](https://github.com/Creators-of-Create/Create/commit/25c625dfb8ff8e3fb9cad5ff5deb39ebc1fa202a) (Thanks, Jozufozu!)
 - [x] [Fix hand crank rotation visuals](https://github.com/Creators-of-Create/Create/pull/8828) (Thanks, nopeless!)
+- [ ] [Use getOnPos instead of blockPosition for turntable](https://github.com/Creators-of-Create/Create/commit/04d39f715bfca4888a68992fd0a580e7c5303b0e) (Thanks, IThundxr!)
 
 ## Recipe Tweaks
 - [x] [Adjust the Clay crushing recipe to always give 4 clay balls](https://github.com/Creators-of-Create/Create/commit/2533d6933eed770f6d91de53c8f67b8a9633d24c) (Thanks, IThundxr!)
@@ -30,6 +31,8 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix closing the Train Schedule menu by pressing E while typing](https://github.com/Creators-of-Create/Create/pull/9729) (Thanks, fywchis!)
 - [x] [Fix Copycats dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/efc3d3e5f589fb691dfa50b1c6ca3ad2791e1bbf) (Thanks, IThundxr!)
 - [x] [Fix Smart Chutes dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10196) (Thanks, Ocelot5836!)
+- [ ] [Fix Mechanical Arms dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10224) (Thanks, aphom!)
+- [ ] [Fix Item Drains dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10352) (Thanks, Modog500000!)
 - [x] [Fix a bunch of other blocks dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24) (Thanks, IThundxr!)
 - [x] [Fix duplicate readings from Stock Links on the same storage](https://github.com/Creators-of-Create/Create/pull/9793) (Thanks, techno-sam!)
 - [x] [Fix Factory Gauges requesting packages on load](https://github.com/Creators-of-Create/Create/issues/8245) (Thanks, curryducker!)
@@ -38,7 +41,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix quick-moving an item in an Attribute Filter moving the wrong slot](https://github.com/Creators-of-Create/Create/pull/9729) (Thanks, fywchis!)
 - [x] [Fix seats not being bouncy](https://github.com/Creators-of-Create/Create/commit/6409450e032339057ac7166992f3134db972e49e) (Thanks, IThundxr!)
 - [x] [Fix Steam Boilers not accepting water](https://github.com/Creators-of-Create/Create/pull/9813) (Thanks, techno-sam!)
-- [x] [Fix the bottomless fluid threshold being over by 1](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!)
+- [x] [Fix the bottomless fluid threshold being over by 1](https://github.com/Creators-of-Create/Create/commit/ecbb4f20db4cd5224416b6415d384363af288543) (Thanks, IThundxr!
 - [x] [Fix the Mechanical Mixer continuing to Mix when power is cut](https://github.com/Creators-of-Create/Create/issues/6249) (Thanks, AyOhEe and IThundxr!)
 - [x] [Respect macOS's interfaceScale for the Xaero's Train Map](https://github.com/Creators-of-Create/Create/pull/9736) (Thanks, SoprachevAK!)
 - [x] [Fix conveyors losing items when they are unloaded](https://github.com/Creators-of-Create/Create/issues/9882) (Thanks, Apertyotis!)
@@ -47,6 +50,8 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix item capabilities being reset when serializing contraption inventories](https://github.com/VoidLeech/Repair/issues/10)
 - [x] [Fix schematicannon not consuming gunpowder from adjacent inventories](https://github.com/Fabricators-of-Create/Create/pull/1894)
 - [x] [Fix various block/entity interactions not accounting for (in/decreased) reach](https://github.com/Creators-of-Create/Create/commit/f99fe5778b127d45c1fc2dc7d1f3599ba9f5e71a) (Thanks, IThundxr!)
+- [ ] [Fix yet more block/entity interactions not accounting for (in/decreased reach)](https://github.com/Creators-of-Create/Create/commit/9c2f16dd8614544a8d47c6bc514f511be22e865a) (Thanks, IThundxr!)
+- [ ] [Fix ejectors at high distances](https://github.com/Creators-of-Create/Create/pull/10395) (Thanks, Ocelot5836!)
 - [x] [PORTING-LIB] [Fix reach attribute helpers having significantly different (lower reach) behaviour from Forge](https://github.com/Fabricators-of-Create/Porting-Lib/pull/198)
 
 ## Crashes Fixed
@@ -62,6 +67,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix a crash in ItemHelper when comparator updates are triggered through Fabric's transaction API (e.g. with Postboxes)](https://github.com/Creators-of-Create/Create/issues/9785)
 - [x] [REGISTRATE] [Fix bucket- or block-less fluids crashing when requesting their bucket/block](https://github.com/tterrag1098/Registrate/commit/2fd7712817b10c0d9a218301235894ce8148edff) (Thanks, tterrag1098!)
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
+- [ ] [PONDER] [Fix services being susceptible to not loading correctly](https://github.com/Creators-of-Create/Ponder/pull/82)
 
 ## Tweaks
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)
