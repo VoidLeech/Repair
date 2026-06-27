@@ -22,6 +22,7 @@ public abstract class SmartBlockEntityMixin extends CachedRenderBBBlockEntity {
     private void create_repair$checkRangeAttribute(Player player, CallbackInfoReturnable<Boolean> cir) {
         if (level != null && level.getBlockEntity(worldPosition) == this) {
             cir.setReturnValue(player.canReach(worldPosition, 8));
+            return;
         }
         cir.setReturnValue(false);
     }
