@@ -69,6 +69,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [PONDER] [Fix thread-unsafe keybind access, including log spam when Ponder keybind is unbound](https://github.com/Creators-of-Create/Ponder/commit/551790b9363e1d5c01f48fd21b37b00c775484ff) (Thanks, IThundxr!)
 - [ ] [PONDER] [Fix services being susceptible to not loading correctly](https://github.com/Creators-of-Create/Ponder/pull/82)
 - [ ] [PONDER] [Fix String-valued configs crashing when modified](https://github.com/Creators-of-Create/Ponder/pull/77) (Thanks, LIUKRAST and zelophed!)
+- [ ] [PONDER] [Make connected texture system thread-safe](https://github.com/Creators-of-Create/Ponder/commit/89819291b726708d119b118dea01667eae0b64c9) (Thanks, zelophed!)
 
 ## Tweaks
 - [x] [Allow any block tagged `#create:seats` to be used as a seat on contraptions](https://github.com/Creators-of-Create/Create/pull/9907) (Thanks, ashbillzw!)
