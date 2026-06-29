@@ -77,6 +77,7 @@
     "crash_fixes.ItemHelperMixin",
     "crash_fixes.LecternControllerBlockEntityMixin",
     "crash_fixes.RotationPropagatorMixin",
+    "crash_fixes.ServerboundConfigPacketMixin",
     "crash_fixes.StateChangingBehaviorMixin",
     "crash_fixes.StationBlockEntityMixin",
     "optimization.FunnelBlockEntityMixin",
@@ -111,6 +112,7 @@
     "client.crash_fixes.ContraptionUOEMixin",
     "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
     "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin",
+    "client.crash_fixes.StitchedSpriteMixin",
     "client.tweaks.CreateHatArmorLayerMixin"
   ],
   "mixinextras": {
