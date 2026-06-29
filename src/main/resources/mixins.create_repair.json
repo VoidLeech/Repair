@@ -79,6 +79,7 @@
     "crash_fixes.FluidBuilderMixin",
     "crash_fixes.LecternControllerBlockEntityMixin",
     "crash_fixes.RotationPropagatorMixin",
+    "crash_fixes.ServerboundConfigPacketMixin",
     "crash_fixes.StateChangingBehaviorMixin",
     "crash_fixes.StationBlockEntityMixin",
     "optimization.FunnelBlockEntityMixin",
