@@ -48,6 +48,7 @@ Most of this project is released under the [MIT license](LICENSE).
 
 #### Third-Party Content
 By its very nature, this project is going to be based on and contain parts of Create, whose code is licensed under the [MIT license](https://github.com/Creators-of-Create/Create/blob/mc1.21.1/dev/LICENSE.md).  
+Similarly, parts of this project are based on and contain parts of Ponder, whose code is licensed under the [MIT license](https://github.com/Creators-of-Create/Ponder/blob/mc1.21.1/dev/LICENSE).  
 [FluiderBuilderMixin](src/main/java/ch/voidlee/repair/mixin/crash_fixes/FluidBuilderMixin.java) is based on a commit to Registrate, which is licensed under the [MPL-2.0 license](https://github.com/tterrag1098/Registrate/blob/1.21.8/dev/LICENSE).  
 [OptionsMixin](src/main/java/ch/voidlee/repair/mixin/client/OptionsMixin.java) is based on Fabric API's GameOptionsMixin, which is licensed under the [Apache 2.0 license](https://github.com/FabricMC/fabric-api/blob/1.20.1/LICENSE).  
 
