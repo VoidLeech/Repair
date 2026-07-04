@@ -113,9 +113,9 @@
     "client.bug_fixes.interaction_range.TrainRelocatorMixin",
     "client.crash_fixes.ClipboardScreenMixin",
     "client.crash_fixes.ContraptionUOEMixin",
+    "client.crash_fixes.StitchedSpriteMixin",
     "client.crash_fixes.ponder_keybind.PonderKeybindsMixin",
     "client.crash_fixes.ponder_keybind.PonderTooltipHandlerMixin",
-    "client.crash_fixes.StitchedSpriteMixin",
     "client.tweaks.CreateHatArmorLayerMixin"
   ],
   "mixinextras": {

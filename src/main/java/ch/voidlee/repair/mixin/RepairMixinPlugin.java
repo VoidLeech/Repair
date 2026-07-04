@@ -1,5 +1,6 @@
 package ch.voidlee.repair.mixin;
 
+import com.bawnorton.mixinsquared.canceller.MixinCancellerRegistrar;
 import net.minecraftforge.fml.loading.LoadingModList;
 import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
 import org.objectweb.asm.tree.ClassNode;
@@ -13,7 +14,7 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-
+        MixinCancellerRegistrar.register(new RepairMixinCanceller());
     }
 
     @Override
@@ -70,11 +71,11 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     }
 
-    private boolean isModEarlyLoaded(String modId){
+    public static boolean isModEarlyLoaded(String modId){
         return LoadingModList.get().getModFileById(modId) != null;
     }
 
-    private boolean fabricMixinAvailable() {
+    public static boolean fabricMixinAvailable() {
         return isModEarlyLoaded("connectormod") || isModEarlyLoaded("mixinbooster");
     }
 
