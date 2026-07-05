@@ -1,5 +1,6 @@
 package ch.voidlee.repair.mixin;
 
+import com.bawnorton.mixinsquared.canceller.MixinCancellerRegistrar;
 import com.simibubi.create.Create;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.SemanticVersion;
@@ -17,7 +18,7 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-
+        MixinCancellerRegistrar.register(new RepairMixinCanceller());
     }
 
     @Override
@@ -65,7 +66,7 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
 
     }
 
-    private boolean isModEarlyLoaded(String modId){
+    public static boolean isModEarlyLoaded(String modId){
         return FabricLoader.getInstance().isModLoaded(modId);
     }
 

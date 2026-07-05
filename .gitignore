@@ -20,6 +20,7 @@ build
 # other
 eclipse
 run
+local-deps
 
 #submodule-only-on-fabric
 Porting-Lib
