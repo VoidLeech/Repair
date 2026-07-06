@@ -1,8 +1,8 @@
 package ch.voidlee.repair.mixin;
 
 import com.bawnorton.mixinsquared.api.MixinCanceller;
-import net.minecraftforge.fml.loading.LoadingModList;
-import org.apache.maven.artifact.versioning.ArtifactVersion;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.Version;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class RepairMixinCanceller implements MixinCanceller {
 
     public RepairMixinCanceller() {
         if (RepairMixinPlugin.isModEarlyLoaded("journeymap")) {
-            ArtifactVersion version = LoadingModList.get().getModFileById("journeymap").getMods().get(0).getVersion();
+            Version version = FabricLoader.getInstance().getModContainer("journeymap").get().getMetadata().getVersion();
             // Older versions aren't prefixed with the Minecraft version so this is straight up simpler than the necessary dependency range in mods.toml
             if (version.toString().contains("1.20.1")) {
                 shouldCancelJourneymapMixin = true;

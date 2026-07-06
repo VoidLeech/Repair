@@ -1,7 +1,6 @@
 package ch.voidlee.repair.mixin;
 
 import com.bawnorton.mixinsquared.canceller.MixinCancellerRegistrar;
-import com.simibubi.create.Create;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.SemanticVersion;
 import net.fabricmc.loader.api.Version;
@@ -29,7 +28,7 @@ public class RepairMixinPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (matches("bug_fixes.SchematicannonBlockEntityMixin", mixinClassName)) {
-            Version createFabricVersion = FabricLoader.getInstance().getModContainer(Create.ID).get().getMetadata().getVersion();
+            Version createFabricVersion = FabricLoader.getInstance().getModContainer("create").get().getMetadata().getVersion();
             SemanticVersion create6081version = null;
             try {
                 create6081version = new SemanticVersionImpl("6.0.8.1+build.1744-mc1.20.1", false);

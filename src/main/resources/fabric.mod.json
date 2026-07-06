@@ -21,6 +21,9 @@
     ],
     "client": [
       "ch.voidlee.repair.RepairClient"
+    ],
+    "journeymap": [
+      "ch.voidlee.repair.client.compat.journeymap.RepairedJourneyTrainMap"
     ]
   },
   "mixins": [
