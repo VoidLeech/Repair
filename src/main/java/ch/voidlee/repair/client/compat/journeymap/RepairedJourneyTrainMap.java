@@ -1,8 +1,8 @@
 package ch.voidlee.repair.client.compat.journeymap;
 
+import ch.voidlee.repair.Repair;
 import com.mojang.blaze3d.platform.Window;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.simibubi.create.Create;
 import com.simibubi.create.compat.trainmap.TrainMapManager;
 import com.simibubi.create.foundation.gui.RemovedGuiUtils;
 import com.simibubi.create.foundation.utility.CreateLang;
@@ -29,12 +29,12 @@ import java.util.List;
 public class RepairedJourneyTrainMap implements IClientPlugin {
     @Override
     public String getModId() {
-        return Create.ID;
+        return Repair.MOD_ID;
     }
 
     @Override
     public void initialize(IClientAPI jmClientApi) {
-        FullscreenEventRegistry.FULLSCREEN_RENDER_EVENT.subscribe(Create.ID, RepairedJourneyTrainMap::onRender);
+        FullscreenEventRegistry.FULLSCREEN_RENDER_EVENT.subscribe(Repair.MOD_ID, RepairedJourneyTrainMap::onRender);
     }
 
     // The original class's other public methods (called by TrainMapEvents) are just functional and don't cause classloading issues.
