@@ -44,6 +44,7 @@
     "bug_fixes.clearable.StockTickerBlockEntityMixin",
     "bug_fixes.clearable.ThresholdSwitchBlockEntityMixin",
     "bug_fixes.clearable.TrackObserverBlockEntityMixin",
+    "bug_fixes.dupes.ContraptionMixin",
     "bug_fixes.dupes.DeployerNotifyUpdateMixin",
     "bug_fixes.dupes.PostboxBlockEntityMixin",
     "bug_fixes.dupes.SchematicPrinterMixin",
