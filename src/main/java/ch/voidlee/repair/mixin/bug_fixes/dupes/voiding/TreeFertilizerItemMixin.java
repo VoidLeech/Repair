@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // https://github.com/Creators-of-Create/Create/pull/9758
+// https://github.com/Creators-of-Create/Create/pull/10742
 @Mixin(TreeFertilizerItem.class)
 public abstract class TreeFertilizerItemMixin {
     @Inject(method = "useOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
