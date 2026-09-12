@@ -5,6 +5,7 @@ import com.simibubi.create.content.equipment.TreeFertilizerItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.Block;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,7 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(TreeFertilizerItem.class)
 public abstract class TreeFertilizerItemMixin {
     @Inject(method = "useOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"))
-    private void create_repair$dropBlocksWhenReplaced(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, @Local(name = "actualPos") BlockPos actualPos) {
-        context.getLevel().destroyBlock(actualPos, true);
+    private void create_repair$dropBlocksWhenReplaced(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, @Local(name = "actualPos") BlockPos actualPos, @Local(name = "block") Block sapling) {
+        // TODO revisit upon resolution of 10742, for now only fix the immediate dupe
+        context.getLevel().destroyBlock(actualPos, context.getLevel().getBlockState(actualPos).getBlock() != sapling);
     }
 }
