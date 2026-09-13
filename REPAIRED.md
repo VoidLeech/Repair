@@ -34,6 +34,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [x] [Fix Mechanical Arms dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10224) (Thanks, aphom!)
 - [x] [Fix Item Drains dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10352) (Thanks, Modog500000!)
 - [x] [Fix a bunch of other blocks dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24) (Thanks, IThundxr!)
+- [ ] [Fix Millstones, Table Cloths, and Brass Tunnels dropping their items when replaced with a command](https://github.com/Creators-of-Create/Create/pull/10400) (Thanks, Ocelot5836!)
 - [x] [Fix duplicate readings from Stock Links on the same storage](https://github.com/Creators-of-Create/Create/pull/9793) (Thanks, techno-sam!)
 - [x] [Fix Factory Gauges requesting packages on load](https://github.com/Creators-of-Create/Create/issues/8245) (Thanks, curryducker!)
 - [x] [Fix Fluid Tanks not properly updating neighbors](https://github.com/Creators-of-Create/Create/pull/9814) (Thanks, techno-sam!)

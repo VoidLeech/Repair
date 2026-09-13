@@ -8,13 +8,18 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 // https://github.com/Creators-of-Create/Create/commit/3ba76bcefff6707afbcbad8e61fcedbdcff3ec24
+// https://github.com/Creators-of-Create/Create/pull/10400
 @Mixin(MillstoneBlockEntity.class)
 public abstract class MillstoneBlockEntityMixin implements Clearable {
     @Shadow(remap = false)
     public ItemStackHandler inputInv;
 
+    @Shadow(remap = false)
+    public ItemStackHandler outputInv;
+
     @Override
     public void clearContent() {
         ((ItemStackHandlerAccessor) inputInv).create_repair$getStacks().clear();
+        ((ItemStackHandlerAccessor)outputInv).create_repair$getStacks().clear();
     }
 }

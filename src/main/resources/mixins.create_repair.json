@@ -6,6 +6,7 @@
   "refmap": "mixins.create_repair.refmap.json",
   "plugin": "ch.voidlee.repair.mixin.RepairMixinPlugin",
   "mixins": [
+    "accessor.BrassTunnelBlockEntityAccessor",
     "accessor.ItemStackHandlerAccessor",
     "accessor.ToolboxInventoryAccessor",
     "bug_fixes.AttributeFilterMenuMixin",
@@ -20,6 +21,7 @@
     "bug_fixes.clearable.ArmBlockEntityMixin",
     "bug_fixes.clearable.BasinBlockEntityMixin",
     "bug_fixes.clearable.BeltBlockEntityMixin",
+    "bug_fixes.clearable.BrassTunnelBlockEntityMixin",
     "bug_fixes.clearable.ChainConveyorBlockEntityMixin",
     "bug_fixes.clearable.ChuteBlockEntityMixin",
     "bug_fixes.clearable.ContraptionControlsBlockEntityMixin",
@@ -43,6 +45,7 @@
     "bug_fixes.clearable.SmartFluidPipeBlockEntityMixin",
     "bug_fixes.clearable.SmartObserverBlockEntityMixin",
     "bug_fixes.clearable.StockTickerBlockEntityMixin",
+    "bug_fixes.clearable.TableClothBlockEntityMixin",
     "bug_fixes.clearable.ThresholdSwitchBlockEntityMixin",
     "bug_fixes.clearable.TrackObserverBlockEntityMixin",
     "bug_fixes.dupes.DeployerNotifyUpdateMixin",
