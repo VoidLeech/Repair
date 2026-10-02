@@ -11,6 +11,7 @@
     "accessor.ToolboxInventoryAccessor",
     "bug_fixes.AttributeFilterMenuMixin",
     "bug_fixes.ConnectivityHandlerMixin",
+    "bug_fixes.DeployerFakePlayerMixin",
     "bug_fixes.EntityMixin",
     "bug_fixes.FluidTankBlockMixin",
     "bug_fixes.InventoryIdentifier$PairMixin",

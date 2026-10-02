@@ -58,6 +58,7 @@ Unticked checkboxes indicate the issue is fixed in dev but not released yet.
 - [ ] [Fix ploughs breaking after extensive use](https://github.com/Creators-of-Create/Create/issues/10669) (Thanks, IThundxr!)
 - [ ] [Fix packager voiding boxes when requested amount is 0](https://github.com/Creators-of-Create/Create/pull/10426)
 - [ ] [Fix increased train camera distance persisting into other worlds](https://github.com/Creators-of-Create/Create/issues/3404)
+- [ ] [Fix deployers being able to ride entities](https://github.com/neoforged/NeoForge/commit/0103db6965e6a857667e2b5f44bf87713d6b1eb2) (Thanks, XFactHD and TelepathicGrunt)
 - [x] [PORTING-LIB] [Fix reach attribute helpers having significantly different (lower reach) behaviour from Forge](https://github.com/Fabricators-of-Create/Porting-Lib/pull/198)
 
 ## Crashes Fixed
